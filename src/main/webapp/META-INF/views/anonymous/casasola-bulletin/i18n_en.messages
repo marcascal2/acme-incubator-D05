@@ -1,0 +1,19 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.casasola-bulletin.form.title.create = Create bulletin
+
+anonymous.casasola-bulletin.label.name = Name:
+anonymous.casasola-bulletin.label.surname = Surname:
+anonymous.casasola-bulletin.label.color = Favourite color:
+anonymous.casasola-bulletin.label.number = Favourite number:
+
+anonymous.casasola-bulletin.button.create = Create 
+anonymous.casasola-bulletin.button.return = Return

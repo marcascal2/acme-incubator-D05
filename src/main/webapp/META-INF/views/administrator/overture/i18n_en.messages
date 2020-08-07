@@ -1,0 +1,26 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.overture.label.title = Title
+administrator.overture.label.creationMoment = Creation moment
+administrator.overture.label.deadline = Deadline
+administrator.overture.label.description = Description
+administrator.overture.label.maxMoney = Max money
+administrator.overture.label.minMoney = Min money
+administrator.overture.label.email = Email
+
+administrator.overture.form.error.deadline = You must write a future deadline
+administrator.overture.form.error.minMoney = Max money must be greater than min money
+administrator.overture.form.error.negativeMoney = Money value cannot be negative
+
+administrator.overture.form.button.update = Update
+administrator.overture.form.button.delete = Delete
+administrator.overture.form.button.create = Create
+administrator.overture.button.return = Return

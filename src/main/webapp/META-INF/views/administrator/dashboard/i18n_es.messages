@@ -1,0 +1,46 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.label.techPerSector = Número total de tecnologías agrupadas por el sector de actividad
+administrator.dashboard.form.label.techComparation = Ratio de tecnologías de fuente-abierta versus tecnologías de fuente-cerrada 
+administrator.dashboard.form.label.toolsPerSector = Número total de herramientas agrupadas por sector de actividad
+administrator.dashboard.form.label.toolsComparation = Ratio de herramientas de fuente-abierta versus herramientas de fuente-cerrada
+administrator.dashboard.form.label.totalNumberOfNotices = Número total de noticias
+administrator.dashboard.form.label.totalNumberOfTechnologyRecords = Número total de registros tecnológicos
+administrator.dashboard.form.label.totalNumberOfToolRecords = Número total de registros de herramientas
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMin = Mínimo del mínimo del intervalo de dinero de las consultas activas 
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMin = Máximo del mínimo del intervalo de dinero de las consultas activas
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMin = Media del mínimo del intervalo de dinero de las consultas activas
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMin = Desviación típica del mínimo del intervalo de dinero de las consultas activas
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMin = Mínimo del mínimo del intervalo de dinero de las propuestas activas
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMin = Máximo del mínimo del intervalo de dinero de las propuestas activas
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMin = Media del mínimo del intervalo de dinero de las propuestas activas
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMin = Desviación típica del mínimo del intervalo de dinero de las propuestas activas
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMax = Mínimo del máximo del intervalo de dinero de las consultas activas
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMax = Máximo del máximo del intervalo de dinero de las consultas activas
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMax = Media del máximo del intervalo de dinero de las consultas activas
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMax = Desviación típica del máximo del intervalo de dinero de las consultas activas
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMax = Mínimo del máximo del intervalo de dinero de las propuestas activas
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMax = Máximo del máximo del intervalo de dinero de las propuestas activas
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMax = Media del máximo del intervalo de dinero de las propuestas activas
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMax = Desviación típica del máximo del intervalo de dinero de las propuestas activas
+
+administrator.dashboard.form.label.applications = Ratio de aplicaciones agrupadas por estado
+administrator.dashboard.form.label.investmentRounds =  Ratio de rondas de inversores agrupadas por tipo
+
+administrator.dashboard.form.label.averageInvestmentRoundPerEntrepreneur = Media del número de rondas de inversión por empresario
+administrator.dashboard.form.label.averageApplicationPerEntrepreneur = Media del número de solicitudes por empresario
+administrator.dashboard.form.label.averageApplicationPerInvestor = Media del número de solicitudes por inversor
+
+administrator.dashboard.form.button.return = Volver

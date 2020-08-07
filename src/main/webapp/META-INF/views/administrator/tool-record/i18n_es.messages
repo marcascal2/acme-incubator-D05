@@ -1,0 +1,30 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+aadministrator.toolrecord.list.label.title = Título
+administrator.toolrecord.list.label.stars = Estrellas
+administrator.toolrecord.list.label.activitySector = Sector de actividad
+administrator.toolrecord.list.label.openSource = Fuente abierta
+
+administrator.toolrecord.form.label.title = Título:
+administrator.toolrecord.form.label.inventorName = Nombre del inventor:
+administrator.toolrecord.form.label.description = Descripción:
+administrator.toolrecord.form.label.webSite = Sitio web:
+administrator.toolrecord.form.label.openSource = Fuente abierta
+administrator.toolrecord.form.label.stars = Estrellas:
+administrator.toolrecord.form.label.sector = Sector de actividad:
+administrator.toolrecord.form.label.email = E-mail
+
+administrator.toolrecord.form.button.create = Crear
+administrator.toolrecord.form.button.delete = Eliminar
+administrator.toolrecord.form.button.update = Actualizar
+administrator.toolrecord.form.button.return = Volver
+
+administrator.toolrecords.error.sector = Este sector de actividad no está registrado en el sistema, por favor inserte uno de los valores siguientes: ARTS, BUSINESS, SCIENCE, TECHNOLOGY, HEALTH

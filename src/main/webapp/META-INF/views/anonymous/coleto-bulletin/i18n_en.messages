@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.coleto-bulletin.form.title.create = Create
+
+anonymous.coleto-bulletin.label.name = Name:
+anonymous.coleto-bulletin.label.age = Age:
+anonymous.coleto-bulletin.label.degree = Degree:
+anonymous.coleto-bulletin.label.favouriteSubject = Favourite subject:
+
+
+anonymous.coleto-bulletin.button.create = Create
+anonymous.coleto-bulletin.button.return = Return
+
+anonymous.coleto-bulletin.list.label.name = Name:
+anonymous.coleto-bulletin.list.label.age = Age:
+anonymous.coleto-bulletin.list.label.degree = Degree:
+anonymous.coleto-bulletin.list.label.favouriteSubject = Favourite subject:

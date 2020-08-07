@@ -1,0 +1,12 @@
+anonymous.javruimunbulletin.list.label.name = Name:
+anonymous.javruimunbulletin.list.label.surname = Surname:
+anonymous.javruimunbulletin.list.label.email = Email:
+anonymous.javruimunbulletin.list.label.favouriteFilms = Favourite Films:
+
+anonymous.javruimunbulletin.form.label.name = Name
+anonymous.javruimunbulletin.form.label.surname = Surname
+anonymous.javruimunbulletin.form.label.email = Email
+anonymous.javruimunbulletin.form.label.favouriteFilms = Favourite Films
+
+anonymous.javruimunbulletin.form.button.create = Create Bulletin!
+anonymous.javruimunbulletin.form.button.return = Return

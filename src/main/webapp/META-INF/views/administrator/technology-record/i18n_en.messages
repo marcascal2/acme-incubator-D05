@@ -1,0 +1,29 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.technologyrecords.list.label.title = Title
+administrator.technologyrecords.list.label.inventor = Inventor
+administrator.technologyrecords.list.label.description = Description
+
+administrator.technologyrecords.form.label.title = Title
+administrator.technologyrecords.form.label.activitySector = Activity Sector
+administrator.technologyrecords.form.label.inventor = Inventor
+administrator.technologyrecords.form.label.description = Description
+administrator.technologyrecords.form.label.email = Email
+administrator.technologyrecords.form.label.source = Source
+administrator.technologyrecords.form.label.stars = Stars
+administrator.technologyrecords.form.label.website = WebSite
+
+administrator.technologyrecords.error.sector = This sector of activity is not registered in the system, please insert one of the following values: ARTS, BUSINESS, SCIENCE, TECHNOLOGY, HEALTH
+
+administrator.technology-record.form.button.create = Create
+administrator.technology-record.form.button.delete = Delete
+administrator.technology-record.form.button.update = Update
+administrator.technologyrecords.form.button.return = Return

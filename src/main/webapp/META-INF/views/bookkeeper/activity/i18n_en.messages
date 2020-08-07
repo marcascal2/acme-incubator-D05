@@ -1,0 +1,24 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+bookkeeper.activity.list.label.startDate = Start date
+bookkeeper.activity.list.label.endDate = End date
+bookkeeper.activity.list.label.amount = Amount
+bookkeeper.activity.list.label.title = Title
+
+bookkeeper.activity.form.label.startDate = Start date
+bookkeeper.activity.form.label.endDate = End date
+bookkeeper.activity.form.label.amount = Amount
+bookkeeper.activity.form.label.title = Title
+
+bookkeeper.activity.title = Programme activities
+
+bookkeeper.activity.form.button.return = Return

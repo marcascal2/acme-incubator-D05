@@ -1,0 +1,32 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+administrator.spam_word.form.label.spamwordslist = Lista de spam
+administrator.spam_word.list.label.spamWords = Palabras spam
+administrator.spam_word.list.label.spanishTranslation = Traducción española
+administrator.spam_word.list.label.englishTranslation = Traducción inglesa
+administrator.spam_word.list.label.spamThreshold = Índice de spam
+
+administrator.spam_word.form.label.spanishTranslation = Traducción española
+administrator.spam_word.form.label.englishTranslation = Traducción inglesa
+administrator.spam_word.form.label.spamThreshold = Índice de spam
+
+administrator.spam_word.form.label.newSpamwordEnglish = Nueva spam word en inglés
+administrator.spam_word.form.label.newSpamwordSpanish = Nueva spam word en español
+administrator.spam_word.form.label.deleteSpamword = Borrar spam word
+
+administrator.spam_word.form.error.spanishTranslation = No puede estar en blanco
+administrator.spam_word.form.error.englishTranslation = No puede estar en blanco
+administrator.spam_word.form.error.no-exist = No exise esa palabra spam
+administrator.spam_word.form.error.duplicated = La palabra spam ya existe
+
+administrator.spam_word.form.button.update = Actualizar
+administrator.spam_word.form.button.return = Volver

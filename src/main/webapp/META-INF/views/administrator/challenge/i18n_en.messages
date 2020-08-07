@@ -1,0 +1,34 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.challenge.form.label.title = Title:
+administrator.challenge.form.label.deadline = Deadline:
+administrator.challenge.form.label.description = Description:
+administrator.challenge.form.label.expertGoal = Expert level goal:
+administrator.challenge.form.label.expertReward = Expert level reward:
+administrator.challenge.form.label.averageGoal = Average level goal:
+administrator.challenge.form.label.averageReward = Average level reward:
+administrator.challenge.form.label.rookieGoal = Rookie level goal:
+administrator.challenge.form.label.rookieReward = Rookie level reward:
+administrator.challenge.form.button.update = Update
+administrator.challenge.form.button.delete = Delete
+administrator.challenge.form.button.create = Create
+administrator.challenge.form.button.return = Return
+
+administrator.challenge.form.error.deadline = You must write a future deadline
+administrator.challenge.form.error.expertReward = Reward value cannot be null
+administrator.challenge.form.error.averageReward = Reward value cannot be null
+administrator.challenge.form.error.rookieReward = Reward value cannot be null
+
+administrator.challenge.list.label.deadline = Deadline
+administrator.challenge.list.label.title = Title
+administrator.challenge.list.label.expertGoal = Expert level goal
+administrator.challenge.list.label.averageGoal = Average level goal
+administrator.challenge.list.label.rookieGoal = Rookie level goal

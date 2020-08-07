@@ -1,0 +1,46 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.form.label.techPerSector = Total number of technologies grouped by activity sector
+administrator.dashboard.form.label.techComparation = Ratio of open-source technologies versus closed-source technologies. 
+administrator.dashboard.form.label.toolsPerSector = Total number of tools grouped by activity sector.
+administrator.dashboard.form.label.toolsComparation = Ratio of open-source tools versus closed-source tools.
+administrator.dashboard.form.label.totalNumberOfNotices = Total number of notices
+administrator.dashboard.form.label.totalNumberOfTechnologyRecords = Total number of technology records
+administrator.dashboard.form.label.totalNumberOfToolRecords = Total number of tool records
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMin = Minimum of the minimum money intervals of the active inquiries 
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMin = Maximum of the minimum money intervals of the active inquiries
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMin = Average of the minimum money intervals of the active inquiries
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMin = Standard deviation of the minimum money intervals of the active inquiries
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMin = Minimum of the minimum money intervals of the active overtures
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMin = Maximum of the minimum money intervals of the active overtures
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMin = Average of the minimum money intervals of the active overtures
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMin = Standard deviation of the minimum money intervals of the active overtures
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMax = Minimum of the maximum money intervals of the active inquiries 
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMax = Maximum of the maximum money intervals of the active inquiries
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMax = Average of the maximum money intervals of the active inquiries
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMax = Standard deviation of the maximum money intervals of the active inquiries
+
+administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMax = Minimum of the maximum money intervals of the active overtures
+administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMax = Maximum of the maximum money intervals of the active overtures
+administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMax = Average of the maximum money intervals of the active overtures
+administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMax = Standard deviation of the maximum money intervals of the active overtures
+
+administrator.dashboard.form.label.applications = Ratio of applications grouped by status
+administrator.dashboard.form.label.investmentRounds =  Ratio of investment rounds grouped by kind
+
+administrator.dashboard.form.label.averageInvestmentRoundPerEntrepreneur = Average number of investment rounds per entrepreneur
+administrator.dashboard.form.label.averageApplicationPerEntrepreneur = Average number of applications per entrepreneur
+administrator.dashboard.form.label.averageApplicationPerInvestor = Average number of applications per investor
+
+administrator.dashboard.form.button.return = Return
