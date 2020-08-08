@@ -38,6 +38,15 @@ public class EntrepreneurInvestmentApplicationShowService implements AbstractSho
 		assert model != null;
 
 		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer");
+
+		String roundTitle = entity.getInvestmentApplied().getTitle();
+		String description = entity.getInvestmentApplied().getDescription();
+		String link = entity.getInvestmentApplied().getLink();
+
+		model.setAttribute("roundTitle", roundTitle);
+		model.setAttribute("roundDescription", description);
+		model.setAttribute("roundLink", link);
+
 	}
 
 	@Override

@@ -7,4 +7,10 @@ entrepreneur.investment-application.form.label.creationMoment = Momento de creac
 entrepreneur.investment-application.form.label.statement = Declaración
 entrepreneur.investment-application.form.label.moneyOffer = Oferta monetaria
 
+entrepreneur.investment-application.form.label.round = Investment Round
+entrepreneur.investment-application.form.label.titleRound = Title
+entrepreneur.investment-application.form.label.desciptionRound = Description
+entrepreneur.investment-application.form.label.linkRound = Link
+
+
 entrepreneur.investment-application.button.return = Volver
