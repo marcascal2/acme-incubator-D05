@@ -133,8 +133,8 @@
     create table `discussion_forum` (
        `id` integer not null,
         `version` integer not null,
-        `investment_round_id` integer,
-        `investor_id` integer,
+        `investment_round_id` integer not null,
+        `investor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -348,11 +348,17 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    alter table `accounting_record` 
-       add constraint UK_3cwpqojk7nvy4escpx26nmrf8 unique (`round_id`);
+    alter table `discussion_forum` 
+       add constraint UK_bh0lucmvo3025w2dl16tt130i unique (`investment_round_id`);
+
+    alter table `discussion_forum` 
+       add constraint UK_4oo7vikia3xns935a09iiit6 unique (`investor_id`);
 
     alter table `discussion_forum_message` 
        add constraint UK_dtnt5j5vs1isai78v9els2f11 unique (`messages_id`);
+
+    alter table `investment_application` 
+       add constraint UK_b1dfm3w93774b32gkuqjte3uh unique (`ticker`);
 
     alter table `investment_round` 
        add constraint UK_408l1ohatdkkut5bkt0eu6ifs unique (`ticker`);
