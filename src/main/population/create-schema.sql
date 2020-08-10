@@ -134,7 +134,6 @@
        `id` integer not null,
         `version` integer not null,
         `investment_round_id` integer not null,
-        `investor_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -211,6 +210,7 @@
         `firm_name` varchar(255),
         `profile` varchar(255),
         `sector` tinyblob,
+        `forum_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -352,9 +352,6 @@
     alter table `discussion_forum` 
        add constraint UK_bh0lucmvo3025w2dl16tt130i unique (`investment_round_id`);
 
-    alter table `discussion_forum` 
-       add constraint UK_4oo7vikia3xns935a09iiit6 unique (`investor_id`);
-
     alter table `discussion_forum_message` 
        add constraint UK_dtnt5j5vs1isai78v9els2f11 unique (`messages_id`);
 
@@ -431,11 +428,6 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        foreign key (`investment_round_id`) 
        references `investment_round` (`id`);
 
-    alter table `discussion_forum` 
-       add constraint `FK8rqer1ccxm7aqd2874sr66k2p` 
-       foreign key (`investor_id`) 
-       references `investor` (`id`);
-
     alter table `discussion_forum_message` 
        add constraint `FKafe6r8il0imnloykcaegsots3` 
        foreign key (`messages_id`) 
@@ -475,6 +467,11 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        add constraint `FKni3r2yvw2xmwmkq040ts9ln4g` 
        foreign key (`investment_round_id`) 
        references `investment_round` (`id`);
+
+    alter table `investor` 
+       add constraint `FKo784feubd5sjgp36nxqllpjc4` 
+       foreign key (`forum_id`) 
+       references `discussion_forum` (`id`);
 
     alter table `investor` 
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 

@@ -2,6 +2,7 @@
 package acme.entities.discussionForums;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -35,14 +36,14 @@ public class DiscussionForum extends DomainEntity {
 	@OneToMany
 	private Collection<@Valid Message>	messages;
 
-	@OneToOne(optional = false)
-	private Investor					investor;
+	@OneToMany(mappedBy = "forum")
+	private List<@Valid Investor>		investor;
 
 
 	@Transient
 	public Boolean canPost(final InvestmentApplication app) {
 		Boolean result = false;
-		if (app.getStatus().equals(ApplicationStatus.ACCEPTED)) {
+		if (app.getStatus().equals(ApplicationStatus.ACCEPTED) && this.getInvestmentRound().getApplication().contains(app)) {
 			result = true;
 		}
 		return result;

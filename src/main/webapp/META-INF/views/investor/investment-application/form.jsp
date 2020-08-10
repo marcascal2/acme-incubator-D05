@@ -21,6 +21,7 @@
 	<acme:form-moment code="investor.investment-application.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textbox code="investor.investment-application.form.label.statement" path="statement"/>
 	<acme:form-money code="investor.investment-application.form.label.moneyOffer" path="moneyOffer"/>
-	  
+	<acme:form-textbox code="investor.investment-application.form.label.status" path="status"/>
+	
   	<acme:form-return code="investor.investment-application.button.return"/>
 </acme:form>

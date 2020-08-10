@@ -41,7 +41,7 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 			DiscussionForum a = this.repository.findOneById(forumId);
 			Investor e = this.repository.findInvestorById(investorId);
 
-			result = a.getInvestor().equals(e);
+			result = a.getInvestor().contains(e);
 		}
 		return result;
 	}
@@ -52,7 +52,7 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "investmentRound.ticker", "messages", "investor.firmName");
+		request.unbind(entity, model, "investmentRound.ticker", "messages");
 
 		int id = model.getInteger("id");
 

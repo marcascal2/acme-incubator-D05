@@ -95,7 +95,7 @@
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.banner" action="/patron/banner/list" />
 		</acme:menu-option>
-		
+
 		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
 			<acme:menu-suboption code="master.menu.bookkeeper.investment-rounds" action="/bookkeeper/investment-round/list_mine" />
 			<acme:menu-suboption code="master.menu.bookkeeper.investment-rounds-not-mine" action="/bookkeeper/investment-round-not-mine/list" />
@@ -116,6 +116,14 @@
 				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update"
 				access="hasRole('Consumer')" />
+			<acme:menu-suboption code="master.menu.user-account.become-investor" action="/authenticated/investor/create"
+				access="!hasRole('Investor')" />
+			<acme:menu-suboption code="master.menu.user-account.investor" action="/authenticated/investor/update"
+				access="hasRole('Investor')" />
+			<acme:menu-suboption code="master.menu.user-account.become-entrepreneur" action="/authenticated/entrepreneur/create"
+				access="!hasRole('Entrepreneur')" />
+			<acme:menu-suboption code="master.menu.user-account.entrepreneur" action="/authenticated/entrepreneur/update"
+				access="hasRole('Entrepreneur')" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />

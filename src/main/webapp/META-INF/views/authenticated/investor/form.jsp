@@ -15,9 +15,14 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form readonly="true">
+<acme:form>
+	<acme:form-textbox code="authenticated.investor.label.firmName" path="firmName" />
+	<acme:form-textbox code="authenticated.investor.label.sector" path="sector.sector" />
+	<acme:form-textbox code="authenticated.investor.label.profile" path="profile" />
 
-	<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker"/>
-	<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.messages" action="/authenticated/message/list?id=${forumId }"/>
-	<acme:form-return code="authenticated.discussion-forum.form.button.return" />
+	<acme:form-submit test="${command == 'create'}" code="authenticated.investor.form.button.create"
+		action="/authenticated/investor/create" />
+	<acme:form-submit test="${command == 'update'}" code="authenticated.investor.form.button.update"
+		action="/authenticated/investor/update" />
+	<acme:form-return code="authenticated.investor.button.return" />
 </acme:form>
