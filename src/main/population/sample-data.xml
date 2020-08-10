@@ -1188,6 +1188,12 @@
 				<ref bean="message04" />
 				<ref bean="message05" />
 			</list>
+			
+		</property>
+		<property name="investor">
+			<list>
+				<ref bean="investor1Investor" />
+			</list>
 		</property>
 	</bean>
 

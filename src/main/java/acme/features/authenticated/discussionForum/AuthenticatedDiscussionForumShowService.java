@@ -41,7 +41,7 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 			DiscussionForum a = this.repository.findOneById(forumId);
 			Investor e = this.repository.findInvestorById(investorId);
 
-			result = a.getInvestor().equals(e);
+			result = a.getInvestor().contains(e);
 		}
 		return result;
 	}

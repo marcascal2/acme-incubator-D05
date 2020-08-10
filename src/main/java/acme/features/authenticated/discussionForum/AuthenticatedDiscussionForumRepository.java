@@ -41,7 +41,7 @@ public interface AuthenticatedDiscussionForumRepository extends AbstractReposito
 	@Query("select a from Investor a where a.userAccount.id = ?1")
 	Investor findInvestorById(int investorId);
 
-	@Query("select a from InvestmentApplication a where a.investor.id = ?1")
+	@Query("select a from InvestmentApplication a where a.investor.userAccount.id = ?1")
 	Collection<InvestmentApplication> findApplicationsByInvestor(int investorId);
 
 }

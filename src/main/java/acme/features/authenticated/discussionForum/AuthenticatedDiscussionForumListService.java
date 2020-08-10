@@ -60,7 +60,9 @@ public class AuthenticatedDiscussionForumListService implements AbstractListServ
 			for (DiscussionForum d : allForums) {
 				for (InvestmentApplication a : applicationsByInvestor) {
 					if (d.canPost(a)) {
-						result.add(d);
+						if (!result.contains(d)) {
+							result.add(d);
+						}
 					}
 				}
 			}
