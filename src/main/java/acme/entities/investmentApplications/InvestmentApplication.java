@@ -53,6 +53,8 @@ public class InvestmentApplication extends DomainEntity {
 	@NotNull
 	private ApplicationStatus	status;
 
+	private String				justification;
+
 	@ManyToOne(optional = false)
 	private InvestmentRound		investmentApplied;
 
