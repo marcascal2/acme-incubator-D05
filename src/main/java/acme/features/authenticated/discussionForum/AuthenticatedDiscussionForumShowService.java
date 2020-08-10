@@ -58,6 +58,8 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 
 		model.setAttribute("forumId", id);
 
+		model.setAttribute("noMessages", entity.getMessages().isEmpty());
+
 	}
 
 	@Override

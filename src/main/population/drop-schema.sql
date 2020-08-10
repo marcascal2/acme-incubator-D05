@@ -71,6 +71,10 @@
        drop 
        foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
 
+    alter table `investment_round` 
+       drop 
+       foreign key `FK4awqwgh5l0b0j16ur2g6afu0p`;
+
     alter table `investment_round_investment_application` 
        drop 
        foreign key `FKqs2rsd4sb5errg2uiv8tww7g3`;
@@ -82,6 +86,10 @@
     alter table `investor` 
        drop 
        foreign key `FKo784feubd5sjgp36nxqllpjc4`;
+
+    alter table `investor` 
+       drop 
+       foreign key `FKdhwcb7642hi219n23ajpvow43`;
 
     alter table `investor` 
        drop 

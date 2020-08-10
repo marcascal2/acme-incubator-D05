@@ -17,7 +17,18 @@
 
 <acme:form readonly="true">
 
-	<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker"/>
-	<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.messages" action="/authenticated/message/list?id=${forumId }"/>
+	<jstl:if test="${command != 'create'}">
+	<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker" />
+	</jstl:if>
+	
+	<acme:form-submit test = "${command != 'create'}" method="get" code="authenticated.discussion-forum.form.button.messages"
+		action="/authenticated/message/list?id=${forumId }" />
+
+	<acme:message code="authenticated.discussion-forum.check.create" />
+	
+	<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.create-forum"
+		action="/authenticated/discussion-forum/create?id=${invId}" />
+
 	<acme:form-return code="authenticated.discussion-forum.form.button.return" />
+
 </acme:form>

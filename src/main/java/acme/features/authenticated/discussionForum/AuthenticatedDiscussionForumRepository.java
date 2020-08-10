@@ -19,6 +19,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.discussionForums.DiscussionForum;
 import acme.entities.investmentApplications.InvestmentApplication;
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
 import acme.framework.repositories.AbstractRepository;
@@ -43,5 +44,8 @@ public interface AuthenticatedDiscussionForumRepository extends AbstractReposito
 
 	@Query("select a from InvestmentApplication a where a.investor.userAccount.id = ?1")
 	Collection<InvestmentApplication> findApplicationsByInvestor(int investorId);
+
+	@Query("select a from InvestmentRound a where a.id = ?1")
+	InvestmentRound findInvestorRecordById(Integer investorRecordId);
 
 }

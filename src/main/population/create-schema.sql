@@ -195,6 +195,7 @@
         `ticker` varchar(255),
         `title` varchar(255),
         `entrepreneur_id` integer not null,
+        `forum_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -209,8 +210,8 @@
         `user_account_id` integer,
         `firm_name` varchar(255),
         `profile` varchar(255),
-        `sector` tinyblob,
         `forum_id` integer,
+        `sector_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -458,6 +459,11 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        foreign key (`entrepreneur_id`) 
        references `entrepreneur` (`id`);
 
+    alter table `investment_round` 
+       add constraint `FK4awqwgh5l0b0j16ur2g6afu0p` 
+       foreign key (`forum_id`) 
+       references `discussion_forum` (`id`);
+
     alter table `investment_round_investment_application` 
        add constraint `FKqs2rsd4sb5errg2uiv8tww7g3` 
        foreign key (`application_id`) 
@@ -472,6 +478,11 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        add constraint `FKo784feubd5sjgp36nxqllpjc4` 
        foreign key (`forum_id`) 
        references `discussion_forum` (`id`);
+
+    alter table `investor` 
+       add constraint `FKdhwcb7642hi219n23ajpvow43` 
+       foreign key (`sector_id`) 
+       references `activity_sector` (`id`);
 
     alter table `investor` 
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 

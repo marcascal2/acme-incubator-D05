@@ -41,8 +41,10 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "link");
 
 		int id = model.getInteger("id");
-
 		model.setAttribute("invId", id);
+
+		//Para el boton de mostrar
+		model.setAttribute("createForum", entity.getForum() == null);
 	}
 
 	@Override

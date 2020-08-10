@@ -16,4 +16,7 @@ authenticated.discussion-forum.form.label.investment-round.ticker = Ticker
 authenticated.discussion-forum.form.label.investor.firmName = Investor firm name
 authenticated.discussion-forum.form.button.messages = Messages
 
+authenticated.discussion-forum.check.create = Are you sure to create a new forum?
+authenticated.discussion-forum.form.button.create-forum = Create new forum
+
 authenticated.discussion-forum.form.button.return = Return

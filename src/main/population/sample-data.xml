@@ -520,6 +520,7 @@
 				<ref bean="accountingRecord05" />
 			</list>
 		</property>
+		<property name="forum" ref = "forum01"/>
 
 	</bean>
 
