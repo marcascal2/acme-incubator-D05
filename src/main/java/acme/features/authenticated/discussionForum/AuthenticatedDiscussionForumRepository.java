@@ -22,6 +22,7 @@ import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
+import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -46,6 +47,14 @@ public interface AuthenticatedDiscussionForumRepository extends AbstractReposito
 	Collection<InvestmentApplication> findApplicationsByInvestor(int investorId);
 
 	@Query("select a from InvestmentRound a where a.id = ?1")
-	InvestmentRound findInvestorRecordById(Integer investorRecordId);
+	InvestmentRound findInvestmentRoundById(Integer investorRecordId);
 
+	@Query("select a from UserAccount a where a.id = ?1")
+	UserAccount findOneUserAccountById(int idUA);
+
+	@Query("select a.entrepreneur.userAccount from InvestmentRound a where a.id = ?1")
+	UserAccount findEntrepreneurUserAccount(int invId);
+
+	@Query("select a from Investor a where a.userAccount.id = ?1")
+	Investor findInvestorByUserAccountId(int userId);
 }

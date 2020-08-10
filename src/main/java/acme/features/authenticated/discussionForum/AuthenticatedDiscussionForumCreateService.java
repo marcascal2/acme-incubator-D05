@@ -2,18 +2,23 @@
 package acme.features.authenticated.discussionForum;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.discussionForums.DiscussionForum;
+import acme.entities.investmentApplications.ApplicationStatus;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.messages.Message;
+import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -26,7 +31,17 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 	@Override
 	public boolean authorise(final Request<DiscussionForum> request) {
 		assert request != null;
-		return true;
+
+		Boolean result = false;
+		int idUA = request.getPrincipal().getAccountId();
+		UserAccount ua = this.repository.findOneUserAccountById(idUA);
+		Entrepreneur e = this.repository.findEntrepreneurById(idUA);
+
+		if (ua.getRoles().contains(e)) {
+			result = true;
+		}
+
+		return result;
 	}
 
 	@Override
@@ -35,7 +50,7 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "investmentRound", "investor", "messages");
 
 	}
 
@@ -45,11 +60,26 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		assert entity != null;
 		assert model != null;
 
+		int invId = request.getModel().getInteger("invId");
+
+		InvestmentRound round = this.repository.findInvestmentRoundById(invId);
+
+		List<UserAccount> acceptedUserAccounts = round.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).map(x -> x.getInvestor().getUserAccount()).collect(Collectors.toList());
+
+		List<String> ids = acceptedUserAccounts.stream().map(x -> String.valueOf(x.getId())).collect(Collectors.toList());
+		List<String> usernames = acceptedUserAccounts.stream().map(x -> x.getUsername()).collect(Collectors.toList());
+
+		String[] ids_arrays = ids.stream().toArray(n -> new String[n]);
+		String[] usernames_arrays = usernames.stream().toArray(n -> new String[n]);
+
+		model.setAttribute("user_usernames", usernames_arrays);
+		System.out.println(usernames_arrays);
+		model.setAttribute("user_ids", ids_arrays);
+		System.out.println(ids_arrays);
+		model.setAttribute("invId", invId);
+		model.setAttribute("checkCreate", false);
+
 		request.unbind(entity, model);
-
-		String investorRecordId = request.getServletRequest().getParameter("id");
-
-		model.setAttribute("invId", Integer.parseInt(investorRecordId));
 
 	}
 
@@ -58,6 +88,9 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		assert request != null;
 
 		DiscussionForum result = new DiscussionForum();
+
+		result.setInvestmentRound(new InvestmentRound());
+
 		return result;
 	}
 
@@ -66,7 +99,10 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		System.out.println("Hola2");
+
+		Boolean check = request.getModel().getBoolean("checkCreate");
+
+		errors.state(request, !check || check == null, "checkCreate", "authenticated.discussion-forum.check.error");
 
 	}
 
@@ -74,14 +110,21 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 	public void create(final Request<DiscussionForum> request, final DiscussionForum entity) {
 		assert request != null;
 		assert entity != null;
-		System.out.println("Hola3");
 
-		entity.setInvestor(new ArrayList<Investor>());
-		entity.setMessages(new ArrayList<Message>());
+		int invId = request.getModel().getInteger("invId");
+		int userId = request.getModel().getInteger("userToAdd");
 
-		String investorRecordId = request.getServletRequest().getParameter("id");
-		InvestmentRound investmentRound = this.repository.findInvestorRecordById(Integer.parseInt(investorRecordId));
+		InvestmentRound investmentRound = this.repository.findInvestmentRoundById(invId);
+
 		entity.setInvestmentRound(investmentRound);
+
+		Investor investor = this.repository.findInvestorByUserAccountId(userId);
+		List<Investor> invs = new ArrayList<>();
+
+		invs.add(investor);
+
+		entity.setInvestor(invs);
+		entity.setMessages(new ArrayList<Message>());
 
 		this.repository.save(entity);
 	}

@@ -18,17 +18,26 @@
 <acme:form readonly="true">
 
 	<jstl:if test="${command != 'create'}">
-	<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker" />
+		<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker" />
+	</jstl:if>
+
+	<acme:form-submit test="${command != 'create'}" method="get" code="authenticated.discussion-forum.form.button.messages"
+		action="/authenticated/message/list?id=${forumId}" />
+
+	<jstl:if test="${command == 'create' }">
+		<acme:form-select code="authenticated.discussion-forum.form.label.investor" path="userToAdd" readonly="false">
+			<jstl:forEach items="${user_usernames}" var="username" varStatus="loop">
+				<acme:form-option code="${username}" value="${user_ids[loop.index]}" />
+			</jstl:forEach>
+		</acme:form-select>
+
+		<acme:form-checkbox code="authenticated.discussion-forum.check.create" path="checkCreate" readonly="false" />
+		<acme:form-submit code="authenticated.discussion-forum.form.button.create" method="post"
+			action="/authenticated/discussion-forum/create" />
 	</jstl:if>
 	
-	<acme:form-submit test = "${command != 'create'}" method="get" code="authenticated.discussion-forum.form.button.messages"
-		action="/authenticated/message/list?id=${forumId }" />
-
-	<acme:message code="authenticated.discussion-forum.check.create" />
+	<input id="invId" name="invId" value="${invId}" type="hidden" />
 	
-	<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.create-forum"
-		action="/authenticated/discussion-forum/create?id=${invId}" />
-
 	<acme:form-return code="authenticated.discussion-forum.form.button.return" />
 
 </acme:form>
