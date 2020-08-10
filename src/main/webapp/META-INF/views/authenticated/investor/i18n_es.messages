@@ -8,8 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.investor.form.title.show = Mostrar inversor
-
 authenticated.investor.label.firmName = Nombre de firma
 authenticated.investor.label.sector = Sector de actividad
 authenticated.investor.label.profile = Perfil

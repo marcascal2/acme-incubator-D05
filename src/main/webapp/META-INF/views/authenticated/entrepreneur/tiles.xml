@@ -10,8 +10,7 @@
 	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-
-	<definition name="authenticated/investor/form" extends="master">
-		<put-attribute name="body" type="template" value="../authenticated/investor/form.jsp" />
+	<definition name="authenticated/entrepreneur/form" extends="master">
+		<put-attribute name="body" type="template" value="../authenticated/entrepreneur/form.jsp" />
 	</definition>
 </tiles-definitions>
