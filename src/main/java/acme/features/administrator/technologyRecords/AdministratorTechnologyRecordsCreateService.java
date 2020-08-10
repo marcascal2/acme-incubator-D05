@@ -78,7 +78,6 @@ public class AdministratorTechnologyRecordsCreateService implements AbstractCrea
 
 		String sector = entity.getActivitySector().getSector().toUpperCase();
 		ActivitySector a = this.repository.findSector(sector);
-		a.setSector(sector);
 		entity.setActivitySector(a);
 		this.repository.save(entity);
 
