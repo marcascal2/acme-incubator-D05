@@ -41,7 +41,7 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 			Message a = this.repository.findOneById(forumId);
 			Investor e = this.repository.findInvestorById(investorId);
 
-			result = a.getForum().getInvestor().equals(e);
+			result = a.getForum().getInvestor().contains(e);
 		}
 		return result;
 	}

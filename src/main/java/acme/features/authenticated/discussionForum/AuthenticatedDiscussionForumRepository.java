@@ -18,6 +18,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.discussionForums.DiscussionForum;
+import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
 import acme.framework.repositories.AbstractRepository;
@@ -28,8 +29,8 @@ public interface AuthenticatedDiscussionForumRepository extends AbstractReposito
 	@Query("select a from DiscussionForum a where a.investmentRound.entrepreneur.userAccount.id = ?1")
 	Collection<DiscussionForum> findManyByInvestment(int activeRoleId);
 
-	@Query("select a from DiscussionForum a where a.investor.userAccount.id = ?1")
-	Collection<DiscussionForum> findManyByApplication(int activeRoleId);
+	@Query("select a from DiscussionForum a")
+	Collection<DiscussionForum> findAllDiscussionforum();
 
 	@Query("select o from DiscussionForum o where o.id = ?1")
 	DiscussionForum findOneById(int id);
@@ -39,5 +40,8 @@ public interface AuthenticatedDiscussionForumRepository extends AbstractReposito
 
 	@Query("select a from Investor a where a.userAccount.id = ?1")
 	Investor findInvestorById(int investorId);
+
+	@Query("select a from InvestmentApplication a where a.investor.userAccount.id = ?1")
+	Collection<InvestmentApplication> findApplicationsByInvestor(int investorId);
 
 }

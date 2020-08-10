@@ -47,10 +47,6 @@
        drop 
        foreign key `FKmcgrpw22g3baap51wq319v1bp`;
 
-    alter table `discussion_forum` 
-       drop 
-       foreign key `FK8rqer1ccxm7aqd2874sr66k2p`;
-
     alter table `discussion_forum_message` 
        drop 
        foreign key `FKafe6r8il0imnloykcaegsots3`;
@@ -82,6 +78,10 @@
     alter table `investment_round_investment_application` 
        drop 
        foreign key `FKni3r2yvw2xmwmkq040ts9ln4g`;
+
+    alter table `investor` 
+       drop 
+       foreign key `FKo784feubd5sjgp36nxqllpjc4`;
 
     alter table `investor` 
        drop 

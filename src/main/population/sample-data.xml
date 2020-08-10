@@ -195,6 +195,7 @@
 	<bean id="investor1Investor" class="acme.entities.roles.Investor">
 		<property name="firmName" value="Acme SL" />
 		<property name="sector" ref="activitySector01" />
+		<property name="forum" ref="forum01" />
 		<property name="profile"
 			value="Cinematographic and audiovisual production, distribution and exhibition; theatrical production and distribution, and creation and production of advertising campaigns and events" />
 		<property name="userAccount" ref="investor1UserAccount" />
@@ -251,7 +252,7 @@
 	<bean id="invApplication2" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="SCI-19-222222" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
-		<property name="status" value="PENDING" />
+		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound02" />
@@ -263,7 +264,7 @@
 	<bean id="invApplication3" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-18-190709" />
 		<property name="creationMoment" value="2018/04/02 19:22" />
-		<property name="status" value="REJECTED" />
+		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1200 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
@@ -1172,7 +1173,11 @@
 				<ref bean="message02" />
 			</list>
 		</property>
-		<property name="investor" ref="investor1Investor" />
+		<property name="investor">
+			<list>
+				<ref bean="investor1Investor" />
+			</list>
+		</property>
 	</bean>
 
 	<bean id="forum02" class="acme.entities.discussionForums.DiscussionForum">
@@ -1182,9 +1187,13 @@
 				<ref bean="message03" />
 				<ref bean="message04" />
 				<ref bean="message05" />
+			</list>			
+		</property>
+		<property name="investor">
+			<list>
+				<ref bean="investor1Investor" />
 			</list>
 		</property>
-		<property name="investor" ref="investor2Investor" />
 	</bean>
 
 </beans>
