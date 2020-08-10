@@ -6,11 +6,15 @@ entrepreneur.investment-application.form.label.ticker = Ticker
 entrepreneur.investment-application.form.label.creationMoment = Momento de creación
 entrepreneur.investment-application.form.label.statement = Declaración
 entrepreneur.investment-application.form.label.moneyOffer = Oferta monetaria
+entrepreneur.investment-application.form.label.status = Estado
+entrepreneur.investment-application.form.label.rejected = Rechazado
+entrepreneur.investment-application.form.label.accepted = Aceptado
 
-entrepreneur.investment-application.form.label.round = Investment Round
-entrepreneur.investment-application.form.label.titleRound = Title
-entrepreneur.investment-application.form.label.desciptionRound = Description
-entrepreneur.investment-application.form.label.linkRound = Link
+entrepreneur.investment-application.list.label.tickerRound = Ticker
+entrepreneur.investment-application.list.label.descriptionRound = Descripción de Investment
 
+entrepreneur.investment-application.form.label.justification = Justificación
+
+entrepreneur.investment-application.form.button.update = Actualizar
 
 entrepreneur.investment-application.button.return = Volver

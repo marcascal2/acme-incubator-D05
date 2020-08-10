@@ -25,6 +25,9 @@ public class EntrepreneurInvestmentApplicationController extends AbstractControl
 	@Autowired
 	private EntrepreneurInvestmentApplicationShowService	showService;
 
+	@Autowired
+	private EntrepreneurInvestmentApplicationUpdateService	updateService;
+
 
 	// Constructors -----------------------------------------------------------
 
@@ -32,6 +35,7 @@ public class EntrepreneurInvestmentApplicationController extends AbstractControl
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

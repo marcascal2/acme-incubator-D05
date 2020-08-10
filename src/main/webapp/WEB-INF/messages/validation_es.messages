@@ -42,4 +42,7 @@ acme.validation.length = La longitud debe ser entre {0} y {1}
 acme.validation.range = Debe estar entre {0} y {1}
 acme.validation.script = El script "{0}" debe devolver true
 
+acme.validation.justification = Necesitas  una justificación para rechazar esta aplicación
+
+
 administrator.notice.errorLink = El valor introducido no sigue el formato de un link

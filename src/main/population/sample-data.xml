@@ -239,7 +239,7 @@
 	<bean id="invApplication1" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-19-090909" />
 		<property name="creationMoment" value="2019/02/02 19:22" />
-		<property name="status" value="ACCEPTED"/>
+		<property name="status" value="PENDING"/>
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1000 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
@@ -262,7 +262,7 @@
 	<bean id="invApplication3" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-18-190709" />
 		<property name="creationMoment" value="2018/04/02 19:22" />
-		<property name="status" value="REJECTED"/>
+		<property name="status" value="PENDING"/>
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1200 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
@@ -284,7 +284,7 @@
 	<bean id="invApplication5" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333333" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
-		<property name="status" value="ACCEPTED"/>
+		<property name="status" value="PENDING"/>
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound02" />
