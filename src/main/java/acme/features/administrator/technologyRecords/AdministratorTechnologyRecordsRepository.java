@@ -14,7 +14,7 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorTechnologyRecordsRepository extends AbstractRepository {
 
-	@Query("select a from TechnologyRecord a group by stars, activitySector")
+	@Query("select a from TechnologyRecord a")
 	Collection<TechnologyRecord> findManyOrder();
 
 	@Query("select t from TechnologyRecord t where t.id = ?1")

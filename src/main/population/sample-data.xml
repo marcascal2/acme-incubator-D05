@@ -195,8 +195,9 @@
 	<bean id="investor1Investor" class="acme.entities.roles.Investor">
 		<property name="firmName" value="Acme SL" />
 		<property name="sector" ref="activitySector01" />
-		<property name="profile" value="2021/02/02 19:22" />
 		<property name="forum" ref="forum01" />
+		<property name="profile"
+			value="Cinematographic and audiovisual production, distribution and exhibition; theatrical production and distribution, and creation and production of advertising campaigns and events" />
 		<property name="userAccount" ref="investor1UserAccount" />
 
 	</bean>
@@ -225,9 +226,9 @@
 	</bean>
 
 	<bean id="investor2Investor" class="acme.entities.roles.Investor">
-		<property name="firmName" value="Acme SL" />
+		<property name="firmName" value="DIGITAL ASSETS DEPLOYMENT" />
 		<property name="sector" ref="activitySector02" />
-		<property name="profile" value="2021/02/02 19:22" />
+		<property name="profile" value="This fund is one of the oldest investment companies in Spain. It was launched by the legendary Rodolfo Carpintier more than a decade ago and focuses on offering seed capital" />
 		<property name="userAccount" ref="investor2UserAccount" />
 
 	</bean>
@@ -1177,7 +1178,6 @@
 				<ref bean="investor1Investor" />
 			</list>
 		</property>
-
 	</bean>
 
 	<bean id="forum02" class="acme.entities.discussionForums.DiscussionForum">
@@ -1187,8 +1187,7 @@
 				<ref bean="message03" />
 				<ref bean="message04" />
 				<ref bean="message05" />
-			</list>
-			
+			</list>			
 		</property>
 		<property name="investor">
 			<list>

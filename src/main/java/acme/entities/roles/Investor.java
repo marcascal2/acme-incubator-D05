@@ -3,6 +3,7 @@ package acme.entities.roles;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -30,6 +31,7 @@ public class Investor extends UserRole {
 
 	@NotNull
 	@Valid
+	@OneToOne()
 	private ActivitySector		sector;
 
 	@NotBlank
