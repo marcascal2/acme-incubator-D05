@@ -18,7 +18,6 @@
 <acme:form readonly="true">
 
 	<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker"/>
-	<acme:form-textbox code="authenticated.discussion-forum.form.label.investor.firmName" path="investor.firmName"/>
 	<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.messages" action="/authenticated/message/list?id=${forumId }"/>
 	<acme:form-return code="authenticated.discussion-forum.form.button.return" />
 </acme:form>

@@ -17,4 +17,6 @@ investor.investment-application.form.label.creationMoment = Momento de creación
 investor.investment-application.form.label.statement = Declaración
 investor.investment-application.form.label.moneyOffer = Oferta monetaria
 
+investor.investment-application.form.label.status = Estado
+
 investor.investment-application.button.return = Volver

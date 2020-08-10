@@ -52,7 +52,7 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "investmentRound.ticker", "messages", "investor.firmName");
+		request.unbind(entity, model, "investmentRound.ticker", "messages");
 
 		int id = model.getInteger("id");
 
