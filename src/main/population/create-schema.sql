@@ -71,6 +71,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `bookkeeper_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm_name` varchar(255),
+        `responsibility` varchar(255),
+        `status` varchar(255),
+        `authenticated_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `casasola_bulletin` (
        `id` integer not null,
         `version` integer not null,
@@ -209,8 +219,8 @@
         `user_account_id` integer,
         `firm_name` varchar(255),
         `profile` varchar(255),
-        `sector` tinyblob,
         `forum_id` integer,
+        `sector_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -349,6 +359,9 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    alter table `bookkeeper_request` 
+       add constraint UK_qvxp9h7at8vjbwgpi9q5s3fpl unique (`authenticated_id`);
+
     alter table `discussion_forum` 
        add constraint UK_bh0lucmvo3025w2dl16tt130i unique (`investment_round_id`);
 
@@ -413,6 +426,11 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `bookkeeper_request` 
+       add constraint `FKhdducua8c58xhfrls8oiih3j0` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
     alter table `consumer` 
        add constraint FK_6cyha9f1wpj0dpbxrrjddrqed 
        foreign key (`user_account_id`) 
@@ -472,6 +490,11 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        add constraint `FKo784feubd5sjgp36nxqllpjc4` 
        foreign key (`forum_id`) 
        references `discussion_forum` (`id`);
+
+    alter table `investor` 
+       add constraint `FKdhwcb7642hi219n23ajpvow43` 
+       foreign key (`sector_id`) 
+       references `activity_sector` (`id`);
 
     alter table `investor` 
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 

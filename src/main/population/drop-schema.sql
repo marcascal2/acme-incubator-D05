@@ -35,6 +35,10 @@
        drop 
        foreign key FK_krvjp9eaqyapewl2igugbo9o8;
 
+    alter table `bookkeeper_request` 
+       drop 
+       foreign key `FKhdducua8c58xhfrls8oiih3j0`;
+
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
@@ -82,6 +86,10 @@
     alter table `investor` 
        drop 
        foreign key `FKo784feubd5sjgp36nxqllpjc4`;
+
+    alter table `investor` 
+       drop 
+       foreign key `FKdhwcb7642hi219n23ajpvow43`;
 
     alter table `investor` 
        drop 
@@ -134,6 +142,8 @@
     drop table if exists `banner`;
 
     drop table if exists `bookkeeper`;
+
+    drop table if exists `bookkeeper_request`;
 
     drop table if exists `casasola_bulletin`;
 

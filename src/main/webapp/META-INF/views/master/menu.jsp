@@ -72,6 +72,8 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show" />
 			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.administrator.bookkeeper-request" action="/administrator/bookkeeper-request/list" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
 		</acme:menu-option>
 
@@ -124,6 +126,10 @@
 				access="!hasRole('Entrepreneur')" />
 			<acme:menu-suboption code="master.menu.user-account.entrepreneur" action="/authenticated/entrepreneur/update"
 				access="hasRole('Entrepreneur')" />
+			<acme:menu-suboption code="master.menu.user-account.become-bookkeeper" action="/authenticated/bookkeeper-request/create"
+				access="!hasRole('Bookkeeper')" />
+<%-- 			<acme:menu-suboption code="master.menu.user-account.bookkeeper" action="/authenticated/bookkeeper-request/create" --%>
+<%-- 				access="hasRole('Bookkeeper')" /> --%>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />
