@@ -21,4 +21,11 @@ entrepreneur.activity.form.label.title = Title
 
 entrepreneur.activity.title = Programme activities
 
+entrepreneur.activity.form.button.create = Create
+entrepreneur.activity.form.button.update = Update
 entrepreneur.activity.form.button.return = Return
+
+entrepreneur.activity.form.error.startDate = Start date must be after current date
+entrepreneur.activity.form.error.endDate = End date must be after current date
+entrepreneur.activity.form.error.endDate.after = End date must be after start date
+entrepreneur.activity.form.error.sum = Cannot create activity
