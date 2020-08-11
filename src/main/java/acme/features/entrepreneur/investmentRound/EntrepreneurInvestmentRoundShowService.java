@@ -1,11 +1,18 @@
 
 package acme.features.entrepreneur.investmentRound;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.activities.Activity;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
+import acme.entities.spamWords.SpamList;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
@@ -43,6 +50,24 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		int id = model.getInteger("id");
 
 		model.setAttribute("invId", id);
+
+		Collection<String> englishWords = this.repository.findAllSpamWordsEnglish();
+		Collection<String> spanishWords = this.repository.findAllSpamWordsSpanish();
+		String totalText = entity.getTicker() + " " + entity.getTitle() + " " + entity.getDescription() + entity.getLink();
+
+		Boolean isSpamEN = this.isSpam(totalText, englishWords);
+		Boolean isSpamES = this.isSpam(totalText, spanishWords);
+
+		model.setAttribute("finalMode", !isSpamEN && !isSpamES && entity.sumUp());
+
+		model.setAttribute("canDelete", !entity.getApplication().stream().anyMatch(x -> x.getInvestor() != null));
+
+		Double sum = 0.;
+		for (Activity a : entity.getWorkProgramme()) {
+			sum += a.getAmount().getAmount();
+		}
+
+		model.setAttribute("sumUp", entity.sumUp());
 	}
 
 	@Override
@@ -51,6 +76,19 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		Integer id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
 		return result;
+	}
+
+	private boolean isSpam(final String totalText, final Collection<String> words) {
+		List<String> list = Arrays.asList(totalText.split(" "));
+		SpamList spamList = this.repository.findSpamList();
+		for (String spamWord : words) {
+			double frequency = (double) Collections.frequency(list, spamWord) / list.size() * 100;
+			if (frequency > spamList.getSpamThreshold()) {
+				return true;
+			}
+
+		}
+		return false;
 	}
 
 }
