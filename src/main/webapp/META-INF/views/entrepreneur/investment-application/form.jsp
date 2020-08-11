@@ -20,10 +20,9 @@
 	<acme:form-moment readonly="true" code="entrepreneur.investment-application.form.label.creationMoment" path="creationMoment" />
 	<acme:form-textbox readonly="true" code="entrepreneur.investment-application.form.label.statement" path="statement" />
 	<acme:form-money readonly="true" code="entrepreneur.investment-application.form.label.moneyOffer" path="moneyOffer" />
-	
 
-	<acme:form-textbox code="entrepreneur.investment-application.form.label.justification" path="justification"/>
-	
+
+	<acme:form-textbox code="entrepreneur.investment-application.form.label.justification" path="justification"/>	
 	<jstl:if test="${command =='update' || oldstatus == 'PENDING'}">
 		<acme:form-select code="entrepreneur.investment-application.form.label.status" path="status">
 			<acme:form-option code="entrepreneur.investment-application.form.label.rejected" value="REJECTED" />
@@ -36,8 +35,8 @@
 		action="/entrepreneur/investment-application/update" />
 	<acme:form-submit test="${command == 'update'}" code="entrepreneur.investment-application.form.button.update"
 		action="/entrepreneur/investment-application/update" />
-		
-		
+
+
 	<acme:form-return code="entrepreneur.investment-application.button.return" />
 
 </acme:form>

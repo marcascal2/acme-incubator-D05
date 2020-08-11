@@ -78,6 +78,7 @@ master.menu.administrator.notice.create = Create notices
 master.menu.administrator.banners.create = Create banner
 master.menu.administrator.toolrecord.create = Create tool record
 
+master.menu.administrator.bookkeeper-request = Bookkeeper Requests
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shutdown = Shut down
 
@@ -125,6 +126,9 @@ master.menu.user-account.investor = Investor data
 master.menu.user-account.become-investor = Become a investor
 master.menu.user-account.entrepreneur = Entrepreneur data
 master.menu.user-account.become-entrepreneur = Become a entrepreneur
+master.menu.user-account.become-bookkeeper = Become Bookkeeper
+master.menu.user-account.bookkeeper = Bookkeeper data
+
 
 # master.footer ###############################################################
 

@@ -78,6 +78,7 @@ master.menu.administrator.overtures.create = Crear propuesta
 master.menu.administrator.banners.create = Crear pancarta
 master.menu.administrator.toolrecord.create = Crear registro de herramienta
 
+master.menu.administrator.bookkeeper-request = Solicitudes para contables
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.shutdown = Shut down
 
@@ -125,6 +126,8 @@ master.menu.user-account.investor = Datos de inversor
 master.menu.user-account.become-investor = Hazte inversor
 master.menu.user-account.entrepreneur = Datos de empresario
 master.menu.user-account.become-entrepreneur = Hazte empresario
+master.menu.user-account.become-bookkeeper = Hazte contador
+master.menu.user-account.bookkeeper = Datos contador
 
 ﻿# master.footer ###############################################################
 
