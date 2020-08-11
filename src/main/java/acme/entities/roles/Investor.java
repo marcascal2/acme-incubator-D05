@@ -40,4 +40,5 @@ public class Investor extends UserRole {
 	@Valid
 	@ManyToOne(optional = true)
 	private DiscussionForum		forum;
+
 }

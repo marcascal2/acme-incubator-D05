@@ -1,0 +1,23 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+investor.activity.list.label.startDate = Fecha de comienzo
+investor.activity.list.label.endDate = Fecha de fin
+investor.activity.list.label.amount = Cantidad
+investor.activity.list.label.title = Título
+
+investor.activity.form.label.startDate = Fecha de comienzo
+investor.activity.form.label.endDate = Fecha de fin
+investor.activity.form.label.amount = Cantidad
+investor.activity.form.label.title = Título
+
+investor.activity.title = Actividades del programa
+
+investor.activity.form.button.return = Volver

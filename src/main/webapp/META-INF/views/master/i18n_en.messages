@@ -108,6 +108,7 @@ master.menu.bookkeeper.investment-rounds-not-mine = Another Investments Rounds
 
 master.menu.investor = Investor
 master.menu.investor.investment-applications = Investment Applications
+master.menu.investor.investment-round = Possible rounds to apply
 
 # master.menu.patron #########################################################
 

@@ -10,34 +10,38 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.investor.investmentApplication;
+package acme.features.investor.investmentRound;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.investmentApplications.InvestmentApplication;
+import acme.entities.activities.Activity;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
-import acme.framework.entities.UserAccount;
+import acme.entities.spamWords.SpamList;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface InvestorInvestmentApplicationRepository extends AbstractRepository {
+public interface InvestorInvestmentRoundRepository extends AbstractRepository {
 
-	@Query("select o from InvestmentApplication o where o.id = ?1")
-	InvestmentApplication findOneById(int id);
+	@Query("select o from InvestmentRound o where o.id = ?1")
+	InvestmentRound findOneById(int id);
 
-	@Query("select a from InvestmentApplication a where a.investor.id = ?1")
-	Collection<InvestmentApplication> findManyByInvestorId(int jobId);
+	@Query("select a from InvestmentRound a")
+	Collection<InvestmentRound> findMany();
 
 	@Query("select e from Investor e where e.id = ?1")
 	Investor findInvestorById(int accountId);
 
-	@Query("select e from InvestmentRound e where e.id = ?1")
-	InvestmentRound findInvestmentRoundById(int invId);
+	@Query("select i.workProgramme from InvestmentRound i where i.id = ?1")
+	List<Activity> findByInvestmentRoundId(int id);
 
-	@Query("select e from UserAccount e where e.id = ?1")
-	UserAccount findOneUserAccountById(int idUA);
+	@Query("select j from InvestmentRound j where j.ticker = ?1")
+	InvestmentRound findOneByTicker(String newTicker);
+
+	@Query("select w from SpamList w where w.id = 1115")
+	SpamList findSpamList();
 }

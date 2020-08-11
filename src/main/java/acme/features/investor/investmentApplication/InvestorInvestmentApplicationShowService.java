@@ -4,6 +4,7 @@ package acme.features.investor.investmentApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentApplications.ApplicationStatus;
 import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.roles.Investor;
 import acme.framework.components.Model;
@@ -44,8 +45,12 @@ public class InvestorInvestmentApplicationShowService implements AbstractShowSer
 	@Override
 	public InvestmentApplication findOne(final Request<InvestmentApplication> request) {
 		InvestmentApplication result;
+
 		Integer id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
+
+		request.getModel().setAttribute("isAccepted", result.getStatus().equals(ApplicationStatus.ACCEPTED));
+
 		return result;
 	}
 
