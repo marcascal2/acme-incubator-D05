@@ -195,7 +195,11 @@
 	<bean id="investor1Investor" class="acme.entities.roles.Investor">
 		<property name="firmName" value="Acme SL" />
 		<property name="sector" ref="activitySector01" />
-		<property name="forum" ref="forum01" />
+		<property name="forum">
+			<list>
+			 <ref bean="forum01"></ref>
+			</list>
+		</property>
 		<property name="profile"
 			value="Cinematographic and audiovisual production, distribution and exhibition; theatrical production and distribution, and creation and production of advertising campaigns and events" />
 		<property name="userAccount" ref="investor1UserAccount" />

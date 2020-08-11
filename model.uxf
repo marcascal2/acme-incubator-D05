@@ -979,7 +979,7 @@ bg=yellow</panel_attributes>
       <h>336</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=1
+m1=0..*
 m2=0..*
 belong ^</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0;150.0;130.0;150.0;370.0;610.0;370.0;610.0;460.0</additional_attributes>

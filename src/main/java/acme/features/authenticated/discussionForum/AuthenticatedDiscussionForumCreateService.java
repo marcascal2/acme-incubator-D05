@@ -50,7 +50,7 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "investmentRound", "messages");
+		request.bind(entity, errors, "messages", "investor", "investmentRound");
 
 	}
 
@@ -74,13 +74,12 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 
 		model.setAttribute("user_usernames", usernames_arrays);
 		model.setAttribute("user_ids", ids_arrays);
-		System.out.println(ids_arrays[1]);
 		model.setAttribute("invId", invId);
 
 		model.setAttribute("userToAdd", null);
 		model.setAttribute("checkCreate", false);
 
-		request.unbind(entity, model, "investor");
+		request.unbind(entity, model);
 
 	}
 
@@ -88,10 +87,14 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 	public DiscussionForum instantiate(final Request<DiscussionForum> request) {
 		assert request != null;
 
+		List<Investor> invs = new ArrayList<>();
+		InvestmentRound investmentRound = new InvestmentRound();
+		List<Message> messages = new ArrayList<Message>();
 		DiscussionForum result = new DiscussionForum();
 
-		result.setInvestmentRound(new InvestmentRound());
-		result.setMessages(new ArrayList<Message>());
+		result.setInvestor(invs);
+		result.setInvestmentRound(investmentRound);
+		result.setMessages(messages);
 
 		return result;
 	}
@@ -119,17 +122,18 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		InvestmentRound investmentRound = this.repository.findInvestmentRoundById(invId);
 
 		Investor investor = this.repository.findInvestorByUserAccountId(userId);
-		List<Investor> invs = new ArrayList<>();
-		invs.add(investor);
 
-		entity.setInvestor(invs);
-		entity.setInvestmentRound(investmentRound);
-		this.repository.save(entity);
+		List<DiscussionForum> forum = new ArrayList<>();
+		forum.add(entity);
+
+		investor.setForum(forum);
 
 		investmentRound.setForum(entity);
 
-		this.repository.save(investmentRound);
+		entity.getInvestor().add(investor);
+		entity.setInvestmentRound(investmentRound);
 
+		this.repository.save(entity);
 	}
 
 }

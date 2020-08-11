@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -36,7 +37,7 @@ public class DiscussionForum extends DomainEntity {
 	@OneToMany
 	private Collection<@Valid Message>	messages;
 
-	@OneToMany(mappedBy = "forum")
+	@ManyToMany
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<@Valid Investor>		investor;
 
