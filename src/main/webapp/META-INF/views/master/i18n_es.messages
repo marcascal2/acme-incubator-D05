@@ -84,8 +84,9 @@ master.menu.administrator.shutdown = Shut down
 
 # master.menu.entrepreneur ##########################################################
 master.menu.entrepreneur = Empresario
-master.menu.entrepreneur.favourite-link = Enlace favorito
 master.menu.entrepreneur.applications = Aplicaciones
+master.menu.entrepreneur.investment-rounds = Rondas de inversión
+master.menu.entrepreneur.investment-round.create = Crear ronda de inversión
 
 # master.menu.provider ########################################################
 
@@ -96,13 +97,6 @@ master.menu.provider.favourite-link = Enlace favorito
 
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
-
-
-# master.menu.entrepreneur ##########################################################
-
-master.menu.entrepreneur = Empresario
-master.menu.entrepreneur.investment-rounds = Rondas de inversión
-
 
 # master.menu.bookkeeper #########################################################
 

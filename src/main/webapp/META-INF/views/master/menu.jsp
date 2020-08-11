@@ -93,6 +93,8 @@
 			<acme:menu-suboption code="master.menu.entrepreneur.applications" action="/entrepreneur/investment-application/list_mine" />
 			<acme:menu-suboption code="master.menu.entrepreneur.investment-rounds" action="/entrepreneur/investment-round/list_mine" />
 			<acme:menu-suboption code="master.menu.authenticated.discussionForum" action="/authenticated/discussion-forum/list_mine" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.entrepreneur.investment-round.create" action="/entrepreneur/investment-round/create" />
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.banner" action="/patron/banner/list" />

@@ -30,10 +30,16 @@ public class EntrepreneurActivityController extends AbstractController<Entrepren
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private EntrepreneurActivityListService	listService;
+	private EntrepreneurActivityListService		listService;
 
 	@Autowired
-	private EntrepreneurActivityShowService	showService;
+	private EntrepreneurActivityShowService		showService;
+
+	@Autowired
+	private EntrepreneurActivityCreateService	createService;
+
+	@Autowired
+	private EntrepreneurActivityUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -42,6 +48,8 @@ public class EntrepreneurActivityController extends AbstractController<Entrepren
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }
