@@ -37,6 +37,7 @@ public class DiscussionForum extends DomainEntity {
 	private Collection<@Valid Message>	messages;
 
 	@OneToMany(mappedBy = "forum")
+	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<@Valid Investor>		investor;
 
 

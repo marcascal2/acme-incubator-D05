@@ -19,4 +19,6 @@ authenticated.discussion-forum.form.button.messages = Messages
 authenticated.discussion-forum.check.create = Are you sure to create a new forum?
 authenticated.discussion-forum.form.button.create = Create
 
+authenticated.discussion-forum.form.label.investor = Initial investor
+
 authenticated.discussion-forum.form.button.return = Return

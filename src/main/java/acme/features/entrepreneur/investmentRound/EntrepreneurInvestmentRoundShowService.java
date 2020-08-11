@@ -1,9 +1,14 @@
 
 package acme.features.entrepreneur.investmentRound;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentApplications.ApplicationStatus;
+import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
@@ -44,7 +49,8 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		model.setAttribute("invId", id);
 
 		//Para el boton de mostrar
-		model.setAttribute("createForum", entity.getForum() == null);
+		List<InvestmentApplication> list = entity.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).collect(Collectors.toList());
+		model.setAttribute("createForum", entity.getForum() == null && !list.isEmpty());
 	}
 
 	@Override
