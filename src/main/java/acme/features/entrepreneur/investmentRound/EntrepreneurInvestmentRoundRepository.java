@@ -48,6 +48,6 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 	@Query("select w.spanishTranslation from SpamWord w")
 	Collection<String> findAllSpamWordsSpanish();
 
-	@Query("select w from SpamList w where w.id = 1115")
+	@Query("select w from SpamList w")
 	SpamList findSpamList();
 }
