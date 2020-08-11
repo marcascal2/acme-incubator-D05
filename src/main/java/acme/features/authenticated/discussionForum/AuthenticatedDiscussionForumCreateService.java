@@ -87,6 +87,21 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 	public DiscussionForum instantiate(final Request<DiscussionForum> request) {
 		assert request != null;
 
+		int invId = request.getModel().getInteger("invId");
+
+		InvestmentRound round = this.repository.findInvestmentRoundById(invId);
+
+		List<UserAccount> acceptedUserAccounts = round.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).map(x -> x.getInvestor().getUserAccount()).collect(Collectors.toList());
+
+		List<String> ids = acceptedUserAccounts.stream().map(x -> String.valueOf(x.getId())).collect(Collectors.toList());
+		List<String> usernames = acceptedUserAccounts.stream().map(x -> x.getUsername()).collect(Collectors.toList());
+
+		String[] ids_arrays = ids.stream().toArray(n -> new String[n]);
+		String[] usernames_arrays = usernames.stream().toArray(n -> new String[n]);
+
+		request.getModel().setAttribute("user_usernames", usernames_arrays);
+		request.getModel().setAttribute("user_ids", ids_arrays);
+
 		List<Investor> invs = new ArrayList<>();
 		InvestmentRound investmentRound = new InvestmentRound();
 		List<Message> messages = new ArrayList<Message>();
