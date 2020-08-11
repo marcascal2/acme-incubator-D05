@@ -328,6 +328,75 @@ new Chart(context, {
 </script>
 <br>
 <br>
+<acme:message code="administrator.dashboard.form.title.applicationsInLast15Days" />
+
+<div>
+	<canvas id="canvas5"></canvas>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var data = {
+				labels: [
+					<jstl:forEach var="label" items="${labels2}">
+					<jstl:out value="${label}" escapeXml="false"/>,
+					</jstl:forEach>
+				],
+				datasets : [
+					{
+						label: "Rejected",
+						data: [
+							<jstl:forEach var = "rejected" items = "${numberOfRejectedApplications}">
+								<jstl:out value="${rejected}" escapeXml="false"/>,
+							</jstl:forEach>
+						],backgroundColor: ["#FF8C00"]	
+					},
+					{
+						label: "Accepted",
+						data: [
+							<jstl:forEach var = "accepted" items = "${numberOfAcceptedApplications}">
+								<jstl:out value="${accepted}" escapeXml="false"/>,
+							</jstl:forEach>
+						],backgroundColor: ["#7FFF00"]
+					},
+					{
+						label: "Pending",
+						data: [
+							<jstl:forEach var = "pending" items = "${numberOfPendingApplications}">
+								<jstl:out value="${pending}" escapeXml="false"/>,
+							</jstl:forEach>
+						],backgroundColor: ["#00FFFF"]	
+					}
+				]		
+		};
+		
+		var options = {
+				scales : {
+					yAxes : [
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 10.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : true
+				}
+		};
+		
+		var canvas, context;
+		
+		canvas = document.getElementById("canvas5");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type : "line",
+			data : data,
+			options : options
+		});
+	});
+</script>
 
 <acme:form-return code="administrator.dashboard.form.button.return"/>
 

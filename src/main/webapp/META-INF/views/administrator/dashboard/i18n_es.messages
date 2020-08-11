@@ -43,4 +43,7 @@ administrator.dashboard.form.label.averageInvestmentRoundPerEntrepreneur = Media
 administrator.dashboard.form.label.averageApplicationPerEntrepreneur = Media del número de solicitudes por empresario
 administrator.dashboard.form.label.averageApplicationPerInvestor = Media del número de solicitudes por inversor
 
+administrator.dashboard.form.title.applicationsInLast15Days = Aplicaciones en los últimos 15 días
+
+
 administrator.dashboard.form.button.return = Volver
