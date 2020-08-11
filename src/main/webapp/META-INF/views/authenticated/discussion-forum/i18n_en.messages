@@ -16,4 +16,12 @@ authenticated.discussion-forum.form.label.investment-round.ticker = Ticker
 authenticated.discussion-forum.form.label.investor.firmName = Investor firm name
 authenticated.discussion-forum.form.button.messages = Messages
 
+authenticated.discussion-forum.check.create = Are you sure to create a new forum?
+authenticated.discussion-forum.form.button.create = Create
+
+authenticated.discussion-forum.form.label.investor = Initial investor
+authenticated.discussion-forum.check.error = It's necessary a forum creation confirmation
+
+authenticated.discussion-forum.form.button.delete = Delete forum
+
 authenticated.discussion-forum.form.button.return = Return

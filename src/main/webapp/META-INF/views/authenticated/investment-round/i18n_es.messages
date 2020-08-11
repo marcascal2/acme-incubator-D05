@@ -16,5 +16,7 @@ authenticated.investment-round.label.description = Descripción
 authenticated.investment-round.label.link = Link
 authenticated.investment-round.label.ticker = Ticker
 
+authenticated.investment-round.label.messages = Actualmente no hay mensajes en este foro
+
 authenticated.investment-round.button.return = Volver
 authenticated.investment-round.form.button.activity = Mostrar programa de trabajo

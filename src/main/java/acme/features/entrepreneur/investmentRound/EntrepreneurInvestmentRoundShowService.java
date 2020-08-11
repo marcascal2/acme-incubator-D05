@@ -1,6 +1,7 @@
 
 package acme.features.entrepreneur.investmentRound;
 
+import java.util.stream.Collectors;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
@@ -9,6 +10,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentApplications.ApplicationStatus;
+import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.activities.Activity;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
@@ -48,8 +51,11 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "link");
 
 		int id = model.getInteger("id");
-
 		model.setAttribute("invId", id);
+
+		//Para el boton de mostrar
+		List<InvestmentApplication> list = entity.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).collect(Collectors.toList());
+		model.setAttribute("createForum", entity.getForum() == null && !list.isEmpty());
 
 		Collection<String> englishWords = this.repository.findAllSpamWordsEnglish();
 		Collection<String> spanishWords = this.repository.findAllSpamWordsSpanish();

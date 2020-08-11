@@ -21,6 +21,7 @@ entrepreneur.investment-round.form.label.amount = Amount of money
 entrepreneur.investment-round.form.label.link = Link
 entrepreneur.investment-round.form.button.activity = Show work programme
 
+entrepreneur.investment-round.form.button.create-forum = Create new forum
 entrepreneur.investment-round.form.button.create = Create
 entrepreneur.investment-round.form.button.update = Update
 entrepreneur.investment-round.form.button.delete = Delete
