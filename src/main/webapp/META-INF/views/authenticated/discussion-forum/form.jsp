@@ -35,9 +35,11 @@
 		<acme:form-submit code="authenticated.discussion-forum.form.button.create" method="post"
 			action="/authenticated/discussion-forum/create" />
 	</jstl:if>
-	
+
 	<input id="invId" name="invId" value="${invId}" type="hidden" />
-	
+
+	<acme:form-submit test = "${command != 'create'}" code="authenticated.discussion-forum.form.button.delete" action="/authenticated/discussion-forum/delete" />
+
 	<acme:form-return code="authenticated.discussion-forum.form.button.return" />
 
 </acme:form>

@@ -39,6 +39,9 @@ public class AuthenticatedDiscussionForumController extends AbstractController<A
 	@Autowired
 	private AuthenticatedDiscussionForumCreateService	createService;
 
+	@Autowired
+	private AuthenticatedDiscussionForumDeleteService	deleteService;
+
 
 	// Constructors -----------------------------------------------------------
 
@@ -47,6 +50,7 @@ public class AuthenticatedDiscussionForumController extends AbstractController<A
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 
 }

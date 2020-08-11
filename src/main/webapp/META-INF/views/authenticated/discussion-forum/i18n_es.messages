@@ -23,4 +23,6 @@ authenticated.discussion-forum.form.button.create = Crear
 
 authenticated.discussion-forum.check.error = Es necesaria una confirmación de creación del foro
 
+authenticated.discussion-forum.form.button.delete = Eliminar foro
+
 authenticated.discussion-forum.form.button.return = Volver

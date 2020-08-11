@@ -137,6 +137,11 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `discussion_forum_investor` (
+       `discussion_forum_id` integer not null,
+        `investor_id` integer not null
+    ) engine=InnoDB;
+
     create table `discussion_forum_message` (
        `discussion_forum_id` integer not null,
         `messages_id` integer not null
@@ -210,9 +215,13 @@
         `user_account_id` integer,
         `firm_name` varchar(255),
         `profile` varchar(255),
-        `forum_id` integer,
         `sector_id` integer,
         primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `investor_discussion_forum` (
+       `investor_id` integer not null,
+        `forum_id` integer not null
     ) engine=InnoDB;
 
     create table `message` (
@@ -429,6 +438,16 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        foreign key (`investment_round_id`) 
        references `investment_round` (`id`);
 
+    alter table `discussion_forum_investor` 
+       add constraint `FK3r7nywnm4qywhfagth8r77m0i` 
+       foreign key (`investor_id`) 
+       references `investor` (`id`);
+
+    alter table `discussion_forum_investor` 
+       add constraint `FKm5owhlecb7x22m3y73l50p0pb` 
+       foreign key (`discussion_forum_id`) 
+       references `discussion_forum` (`id`);
+
     alter table `discussion_forum_message` 
        add constraint `FKafe6r8il0imnloykcaegsots3` 
        foreign key (`messages_id`) 
@@ -475,11 +494,6 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        references `investment_round` (`id`);
 
     alter table `investor` 
-       add constraint `FKo784feubd5sjgp36nxqllpjc4` 
-       foreign key (`forum_id`) 
-       references `discussion_forum` (`id`);
-
-    alter table `investor` 
        add constraint `FKdhwcb7642hi219n23ajpvow43` 
        foreign key (`sector_id`) 
        references `activity_sector` (`id`);
@@ -488,6 +502,16 @@ create index IDXhanrt2fsn54h9gc72io7efxv1 on `spam_word` (`english_translation`)
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `investor_discussion_forum` 
+       add constraint `FKrgsomed4msuh6btdjre6h85qf` 
+       foreign key (`forum_id`) 
+       references `discussion_forum` (`id`);
+
+    alter table `investor_discussion_forum` 
+       add constraint `FK3e7mj2mcs1kg5oiyjkjusng2x` 
+       foreign key (`investor_id`) 
+       references `investor` (`id`);
 
     alter table `message` 
        add constraint `FK7ju7uxmh5mdbjgrfwgoem3eqd` 
