@@ -1,26 +1,42 @@
 
-package acme.features.authenticated.investmentRound;
+package acme.features.investor.investmentRound;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.roles.Investor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedInvestmentRoundShowService implements AbstractShowService<Authenticated, InvestmentRound> {
+public class InvestorInvestmentRoundShowService implements AbstractShowService<Investor, InvestmentRound> {
 
 	@Autowired
-	AuthenticatedInvestmentRoundRepository repository;
+	InvestorInvestmentRoundRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
-		return true;
+		Boolean canApply = true;
+
+		int id = request.getModel().getInteger("id");
+		int idUser = request.getPrincipal().getActiveRoleId();
+
+		InvestmentRound inv = this.repository.findOneById(id);
+		Investor w = this.repository.findInvestorById(idUser);
+
+		for (InvestmentApplication a : inv.getApplication()) {
+			if (a.getInvestor().equals(w)) {
+				canApply = false;
+				break;
+			}
+		}
+
+		return canApply;
 	}
 
 	@Override
@@ -29,7 +45,7 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "kindOfRound", "creationDate", "description", "amount", "link", "ticker");
+		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "link");
 
 		int id = model.getInteger("id");
 
@@ -41,7 +57,7 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 	public InvestmentRound findOne(final Request<InvestmentRound> request) {
 		InvestmentRound result;
 		Integer id = request.getModel().getInteger("id");
-		result = this.repository.findOneInvestmentRoundById(id);
+		result = this.repository.findOneById(id);
 		return result;
 	}
 

@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.investor.investmentApplication;
+package acme.features.investor.activity;
 
 import javax.annotation.PostConstruct;
 
@@ -18,35 +18,30 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.components.CustomCommand;
-import acme.entities.investmentApplications.InvestmentApplication;
+import acme.entities.activities.Activity;
 import acme.entities.roles.Investor;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/investor/investment-application/")
-public class InvestorInvestmentApplicationController extends AbstractController<Investor, InvestmentApplication> {
+@RequestMapping("/investor/activity/")
+public class InvestorActivityController extends AbstractController<Investor, Activity> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private InvestorInvestmentApplicationListService	listService;
+	private InvestorActivityListService	listService;
 
 	@Autowired
-	private InvestorInvestmentApplicationShowService	showService;
-
-	@Autowired
-	private InvestorInvestmentApplicationCreateService	createService;
+	private InvestorActivityShowService	showService;
 
 
 	// Constructors -----------------------------------------------------------
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listService);
+		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 
 }

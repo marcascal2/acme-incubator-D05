@@ -107,6 +107,7 @@ master.menu.bookkeeper.investment-rounds-not-mine = Otras rondas de inversiones
 
 master.menu.investor = Inversor
 master.menu.investor.investment-applications = Solicitudes de inversión
+master.menu.investor.investment-round = Rondas que puedo solicitar
 
 # master.menu.patron #########################################################
 

@@ -792,7 +792,7 @@ DiscussionForum
       <h>84</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=1
+m1=0..1
 m2=1
 is associated with ^</panel_attributes>
     <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
