@@ -1,11 +1,15 @@
 
 package acme.features.entrepreneur.investmentApplication;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.discussionForums.DiscussionForum;
 import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.roles.Entrepreneur;
+import acme.entities.roles.Investor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -81,6 +85,18 @@ public class EntrepreneurInvestmentApplicationUpdateService implements AbstractU
 	public void update(final Request<InvestmentApplication> request, final InvestmentApplication entity) {
 		assert request != null;
 		assert entity != null;
+
+		if (request.getModel().getAttribute("status").equals("ACCEPTED")) {
+			DiscussionForum foro = entity.getInvestmentApplied().getForum();
+			if (foro != null) {
+				List<Investor> investorsPerForum = foro.getInvestor();
+				investorsPerForum.add(entity.getInvestor());
+
+				entity.getInvestor().getForum().add(foro);
+
+			}
+
+		}
 
 		this.repository.save(entity);
 

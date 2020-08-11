@@ -269,11 +269,11 @@
 	<bean id="invApplication3" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-18-190709" />
 		<property name="creationMoment" value="2018/04/02 19:22" />
-		<property name="status" value="REJECTED" />
+		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1200 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
-		<property name="investor" ref="investor1Investor" />
+		<property name="investor" ref="investor2Investor" />
 
 
 	</bean>
