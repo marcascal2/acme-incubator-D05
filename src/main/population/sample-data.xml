@@ -246,7 +246,7 @@
 	<bean id="invApplication1" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-19-090909" />
 		<property name="creationMoment" value="2019/02/02 19:22" />
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1000 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
@@ -257,7 +257,7 @@
 	<bean id="invApplication2" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="SCI-19-222222" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
-		<property name="status" value="ACCEPTED" />
+		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound02" />
@@ -272,10 +272,8 @@
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1200 €" />
-		<property name="investmentApplied" ref="investmentRound01" />
-		<property name="investor" ref="investor2Investor" />
-
-
+		<property name="investmentApplied" ref="investmentRound03" />
+		<property name="investor" ref="investor1Investor" />
 	</bean>
 
 	<bean id="invApplication4" class="acme.entities.investmentApplications.InvestmentApplication">
@@ -294,7 +292,7 @@
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
-		<property name="investmentApplied" ref="investmentRound02" />
+		<property name="investmentApplied" ref="investmentRound01" />
 		<property name="investor" ref="investor2Investor" />
 	</bean>
 
@@ -576,8 +574,7 @@
 		<property name="application">
 			<list>
 				<ref bean="invApplication1" />
-				<ref bean="invApplication3" />
-
+				<ref bean="invApplication5" />
 			</list>
 		</property>
 		<property name="record">
@@ -609,7 +606,6 @@
 			<list>
 				<ref bean="invApplication2" />
 				<ref bean="invApplication4" />
-				<ref bean="invApplication5" />
 			</list>
 		</property>
 		<property name="record">
@@ -636,8 +632,7 @@
 		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
 		<property name="application">
 			<list>
-				<ref bean="invApplication6" />
-				<ref bean="invApplication7" />
+				<ref bean="invApplication3" />
 			</list>
 		</property>
 		<property name="record">

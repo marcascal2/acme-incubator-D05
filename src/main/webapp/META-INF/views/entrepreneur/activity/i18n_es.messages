@@ -20,4 +20,6 @@ entrepreneur.activity.form.label.title = Título
 
 entrepreneur.activity.title = Actividades del programa
 
+entrepreneur.activity.form.button.create = Crear
+entrepreneur.activity.form.button.update = Actualizar
 entrepreneur.activity.form.button.return = Volver

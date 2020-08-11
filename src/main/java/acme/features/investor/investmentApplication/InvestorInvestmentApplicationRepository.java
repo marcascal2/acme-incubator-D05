@@ -18,7 +18,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.investmentApplications.InvestmentApplication;
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
+import acme.framework.entities.UserAccount;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -32,4 +34,10 @@ public interface InvestorInvestmentApplicationRepository extends AbstractReposit
 
 	@Query("select e from Investor e where e.id = ?1")
 	Investor findInvestorById(int accountId);
+
+	@Query("select e from InvestmentRound e where e.id = ?1")
+	InvestmentRound findInvestmentRoundById(int invId);
+
+	@Query("select e from UserAccount e where e.id = ?1")
+	UserAccount findOneUserAccountById(int idUA);
 }

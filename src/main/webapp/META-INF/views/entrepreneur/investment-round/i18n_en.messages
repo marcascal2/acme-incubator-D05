@@ -22,5 +22,12 @@ entrepreneur.investment-round.form.label.link = Link
 entrepreneur.investment-round.form.button.activity = Show work programme
 
 entrepreneur.investment-round.form.button.create-forum = Create new forum
-
+entrepreneur.investment-round.form.button.create = Create
+entrepreneur.investment-round.form.button.update = Update
+entrepreneur.investment-round.form.button.delete = Delete
 entrepreneur.investment-round.form.button.return = Return
+entrepreneur.activity.form.button.create = Create activity
+
+entrepreneur.investment-round.form.error.ticker = This ticker is already used
+entrepreneur.investment-round.form.error.application = It has an application. Cannot delete
+entrepreneur.investment-round.form.error.spam = There are many spam words

@@ -16,7 +16,7 @@ investor.investment-application.form.label.ticker = Ticker
 investor.investment-application.form.label.creationMoment = Creation Moment
 investor.investment-application.form.label.statement = Statement
 investor.investment-application.form.label.moneyOffer = Money Offer
-
 investor.investment-application.form.label.status = Status
 
+investor.investment-application.form.create = Apply for
 investor.investment-application.button.return = Return

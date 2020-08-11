@@ -72,6 +72,7 @@ public class InvestmentRound extends DomainEntity {
 	@ManyToOne(optional = false)
 	private Entrepreneur								entrepreneur;
 
+	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany()
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<@Valid InvestmentApplication>	application;
@@ -90,9 +91,10 @@ public class InvestmentRound extends DomainEntity {
 		for (Activity a : this.workProgramme) {
 			sum += a.getAmount().getAmount();
 		}
-		if (sum == this.amount.getAmount()) {
+		if (this.amount.getAmount().equals(sum)) {
 			result = true;
 		}
 		return result;
 	}
+
 }

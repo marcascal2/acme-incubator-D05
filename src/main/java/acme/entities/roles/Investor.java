@@ -42,7 +42,9 @@ public class Investor extends UserRole {
 	@NotBlank
 	private String							profile;
 
+
 	@ManyToMany
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<@Valid DiscussionForum>	forum;
+
 }

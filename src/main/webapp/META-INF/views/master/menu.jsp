@@ -72,6 +72,8 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show" />
 			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.administrator.bookkeeper-request" action="/administrator/bookkeeper-request/list" />
+			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
 		</acme:menu-option>
 
@@ -85,12 +87,15 @@
 
 		<acme:menu-option code="master.menu.investor" access="hasRole('Investor')">
 			<acme:menu-suboption code="master.menu.investor.investment-applications" action="/investor/investment-application/list_mine" />
+			<acme:menu-suboption code="master.menu.investor.investment-round" action="/investor/investment-round/list_mine" />
 			<acme:menu-suboption code="master.menu.authenticated.discussionForum" action="/authenticated/discussion-forum/list_mine" />
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
 			<acme:menu-suboption code="master.menu.entrepreneur.applications" action="/entrepreneur/investment-application/list_mine" />
 			<acme:menu-suboption code="master.menu.entrepreneur.investment-rounds" action="/entrepreneur/investment-round/list_mine" />
 			<acme:menu-suboption code="master.menu.authenticated.discussionForum" action="/authenticated/discussion-forum/list_mine" />
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.entrepreneur.investment-round.create" action="/entrepreneur/investment-round/create" />
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.banner" action="/patron/banner/list" />
@@ -124,6 +129,10 @@
 				access="!hasRole('Entrepreneur')" />
 			<acme:menu-suboption code="master.menu.user-account.entrepreneur" action="/authenticated/entrepreneur/update"
 				access="hasRole('Entrepreneur')" />
+			<acme:menu-suboption code="master.menu.user-account.become-bookkeeper" action="/authenticated/bookkeeper-request/create"
+				access="!hasRole('Bookkeeper')" />
+<%-- 			<acme:menu-suboption code="master.menu.user-account.bookkeeper" action="/authenticated/bookkeeper-request/create" --%>
+<%-- 				access="hasRole('Bookkeeper')" /> --%>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />

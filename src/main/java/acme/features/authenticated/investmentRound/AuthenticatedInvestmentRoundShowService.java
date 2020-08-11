@@ -34,6 +34,7 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 		int id = model.getInteger("id");
 
 		model.setAttribute("invId", id);
+
 	}
 
 	@Override

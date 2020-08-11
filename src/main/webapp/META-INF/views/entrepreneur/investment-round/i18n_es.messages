@@ -24,3 +24,14 @@ entrepreneur.investment-round.form.button.activity = Mostrar programa de trabajo
 entrepreneur.investment-round.form.button.create-forum = Crear nuevo foro
 
 entrepreneur.investment-round.form.button.return = Volver
+
+entrepreneur.investment-round.form.button.create = Crear
+entrepreneur.investment-round.form.button.update = Actualizar
+entrepreneur.investment-round.form.button.delete = Borrar
+entrepreneur.investment-round.form.button.return = Volver
+entrepreneur.activity.form.button.create = Crear actividad
+
+entrepreneur.investment-round.form.error.ticker = Este ticker ya está siendo utilizado
+entrepreneur.investment-round.form.error.application = Tiene una solicitud. No se puede borrar
+entrepreneur.investment-round.form.error.spam = Contiene muchas palabras spam
+
