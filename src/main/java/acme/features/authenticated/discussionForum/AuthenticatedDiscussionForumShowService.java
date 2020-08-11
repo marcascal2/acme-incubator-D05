@@ -60,6 +60,8 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 
 		model.setAttribute("noMessages", entity.getMessages().isEmpty());
 
+		model.setAttribute("isInvestor", request.getPrincipal().hasRole(Investor.class));
+
 	}
 
 	@Override
