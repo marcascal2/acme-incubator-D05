@@ -1,4 +1,4 @@
-# i18n_en.messages
+# i18n_es.messages
 #
 # Copyright (c) 2019 Rafael Corchuelo.
 #
@@ -8,10 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.card.label.holder = Titular
+authenticated.card.label.brand = Marca
+authenticated.card.label.number = Número
+authenticated.card.label.expirationDate = Fecha de expiración
+authenticated.card.label.cvv = CVV
 
-authenticated.bookkeeper-request.form.firmName = FirmName
-authenticated.bookkeeper-request.form.responsibility = Responsibility
-
-authenticated.bookkeeper-request.form.button.update = Update
-authenticated.bookkeeper-request.form.label.create = Create
-authenticated.bookkeeper-request.button.return = Return
+authenticated.card.button.return = Volver
+authenticated.card.form.button.update = Actualizar
+authenticated.card.form.button.create = Crear

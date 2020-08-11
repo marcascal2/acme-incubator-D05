@@ -22,6 +22,11 @@
 
 	<acme:form-submit test="${command == 'create'}" code="authenticated.bookkeeper-request.form.label.create"
 		action="/authenticated/bookkeeper-request/create" />
+		
+		<acme:form-submit test="${command == 'update'}" code="authenticated.bookkeeper-request.form.button.update"
+		action="/authenticated/bookkeeper-request/update" />
+	<acme:form-submit test="${command == 'show'}" code="authenticated.bookkeeper-request.form.button.update"
+		action="/authenticated/bookkeeper-request/update" />
 
 	<acme:form-return code="authenticated.bookkeeper-request.button.return" />
 </acme:form>

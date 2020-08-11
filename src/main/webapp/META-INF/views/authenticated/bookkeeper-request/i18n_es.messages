@@ -12,5 +12,6 @@
 authenticated.bookkeeper-request.form.firmName = Nombre de la empresa
 authenticated.bookkeeper-request.form.responsibility = Responsabilidad
 
+authenticated.bookkeeper-request.form.button.update = Actualizar
 authenticated.bookkeeper-request.form.label.create = Crear
 authenticated.bookkeeper-request.button.return = Volver

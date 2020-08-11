@@ -8,10 +8,10 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.patron.label.organisationName = Organisation Name
 
-authenticated.bookkeeper-request.form.firmName = FirmName
-authenticated.bookkeeper-request.form.responsibility = Responsibility
-
-authenticated.bookkeeper-request.form.button.update = Update
-authenticated.bookkeeper-request.form.label.create = Create
-authenticated.bookkeeper-request.button.return = Return
+authenticated.patron.form.button.card.create = Create card
+authenticated.patron.form.button.card = Card
+authenticated.patron.button.return = Return
+authenticated.patron.form.button.update = Update
+authenticated.patron.form.button.create = Create

@@ -8,10 +8,12 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+authenticated.card.label.holder = Holder
+authenticated.card.label.number = Number
+authenticated.card.label.brand = Brand
+authenticated.card.label.expirationDate = Expiration Date
+authenticated.card.label.cvv = CVV
 
-authenticated.bookkeeper-request.form.firmName = FirmName
-authenticated.bookkeeper-request.form.responsibility = Responsibility
-
-authenticated.bookkeeper-request.form.button.update = Update
-authenticated.bookkeeper-request.form.label.create = Create
-authenticated.bookkeeper-request.button.return = Return
+authenticated.card.button.return = Return
+authenticated.card.form.button.update = Update
+authenticated.card.form.button.create = Create
