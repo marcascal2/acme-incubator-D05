@@ -23,8 +23,8 @@
 		<acme:form-textbox code="investor.investment-application.form.label.statement" path="statement" readonly="true" />
 		<acme:form-money code="investor.investment-application.form.label.moneyOffer" path="moneyOffer" readonly="true" />
 		<acme:form-textbox code="investor.investment-application.form.label.status" path="status" readonly="true" />
-		<jstl:if test="isAccepted">
-			<acme:form-textarea code="investor.investment-application.form.label.status" path="justification" readonly="true"/>
+		<jstl:if test="${isRejected}">
+			<acme:form-textarea code="investor.investment-application.form.label.justification" path="justification" readonly="true"/>
 		</jstl:if>
 	</jstl:if>
 

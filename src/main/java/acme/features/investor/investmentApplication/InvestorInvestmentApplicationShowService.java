@@ -49,7 +49,7 @@ public class InvestorInvestmentApplicationShowService implements AbstractShowSer
 		Integer id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
 
-		request.getModel().setAttribute("isAccepted", result.getStatus().equals(ApplicationStatus.ACCEPTED));
+		request.getModel().setAttribute("isRejected", result.getStatus().equals(ApplicationStatus.REJECTED));
 
 		return result;
 	}

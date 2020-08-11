@@ -74,7 +74,6 @@ public class InvestmentRound extends DomainEntity {
 
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany()
-	@LazyCollection(LazyCollectionOption.FALSE)
 	private Collection<@Valid InvestmentApplication>	application;
 
 	@OneToMany(mappedBy = "round")

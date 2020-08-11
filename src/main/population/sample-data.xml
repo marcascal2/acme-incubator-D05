@@ -242,6 +242,70 @@
 		<property name="userAccount" ref="investor2UserAccount" />
 	</bean>
 
+	<bean name="investor3UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor3" />
+		<property name="password" value="investor3" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Emi" />
+				<property name="surname" value="Col" />
+				<property name="email" value="emi@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor3Investor" />
+				<ref bean="investor3Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="investor3Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="ENCOMENDA" />
+		<property name="sector" ref="activitySector05" />
+		<property name="profile"
+			value="Super Angel Fund, invests in entrepreneurs who have already developed the minimum viable product and also in those who have already achieved their first metrics" />
+		<property name="userAccount" ref="investor3UserAccount" />
+
+	</bean>
+
+	<bean name="investor3Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor3UserAccount" />
+	</bean>
+	
+	<bean name="investor4UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="investor4" />
+		<property name="password" value="investor4" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Mari" />
+				<property name="surname" value="Cas" />
+				<property name="email" value="mari@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="investor4Investor" />
+				<ref bean="investor4Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="investor4Investor" class="acme.entities.roles.Investor">
+		<property name="firmName" value="SEAYA VENTURES" />
+		<property name="sector" ref="activitySector04" />
+		<property name="profile"
+			value="Usually put a tab in businesses that have to do with the internet and technology" />
+		<property name="userAccount" ref="investor4UserAccount" />
+
+	</bean>
+
+	<bean name="investor4Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="investor4UserAccount" />
+	</bean>
+
 	<!-- Investment Applications -->
 	<bean id="invApplication1" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-19-090909" />
@@ -250,7 +314,7 @@
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1000 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
-		<property name="investor" ref="investor1Investor" />
+		<property name="investor" ref="investor4Investor" />
 
 	</bean>
 
@@ -303,7 +367,7 @@
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound03" />
-		<property name="investor" ref="investor2Investor" />
+		<property name="investor" ref="investor4Investor" />
 	</bean>
 
 	<bean id="invApplication7" class="acme.entities.investmentApplications.InvestmentApplication">
@@ -312,32 +376,32 @@
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
-		<property name="investmentApplied" ref="investmentRound03" />
+		<property name="investmentApplied" ref="investmentRound04" />
 		<property name="investor" ref="investor2Investor" />
 	</bean>
 
 
-<bean id="invApplication8" class="acme.entities.investmentApplications.InvestmentApplication">
+	<bean id="invApplication8" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333338" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound04" />
-		<property name="investor" ref="investor2Investor" />
+		<property name="investor" ref="investor3Investor" />
 	</bean>
-	
+
 	<bean id="invApplication9" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333337" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
-		<property name="investmentApplied" ref="investmentRound04" />
-		<property name="investor" ref="investor2Investor" />
+		<property name="investmentApplied" ref="investmentRound02" />
+		<property name="investor" ref="investor3Investor" />
 	</bean>
 
-<bean id="invApplication10" class="acme.entities.investmentApplications.InvestmentApplication">
+	<bean id="invApplication10" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333336" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
 		<property name="status" value="PENDING" />
@@ -346,7 +410,7 @@
 		<property name="investmentApplied" ref="investmentRound05" />
 		<property name="investor" ref="investor2Investor" />
 	</bean>
-	
+
 	<bean id="invApplication11" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333335" />
 		<property name="creationMoment" value="2019/04/02 19:22" />
@@ -354,7 +418,7 @@
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound05" />
-		<property name="investor" ref="investor2Investor" />
+		<property name="investor" ref="investor3Investor" />
 	</bean>
 
 
@@ -606,6 +670,7 @@
 			<list>
 				<ref bean="invApplication2" />
 				<ref bean="invApplication4" />
+				<ref bean="invApplication9" />
 			</list>
 		</property>
 		<property name="record">
@@ -633,6 +698,7 @@
 		<property name="application">
 			<list>
 				<ref bean="invApplication3" />
+				<ref bean="invApplication6" />
 			</list>
 		</property>
 		<property name="record">
@@ -660,7 +726,7 @@
 		<property name="application">
 			<list>
 				<ref bean="invApplication8" />
-				<ref bean="invApplication9" />
+				<ref bean="invApplication7" />
 			</list>
 		</property>
 	</bean>

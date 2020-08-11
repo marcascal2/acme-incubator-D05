@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.discussionForums.DiscussionForum;
+import acme.entities.investmentApplications.ApplicationStatus;
 import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
@@ -63,6 +64,7 @@ public class EntrepreneurInvestmentApplicationUpdateService implements AbstractU
 		InvestmentApplication result;
 		Integer id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
+		request.getModel().setAttribute("isAccepted", result.getStatus().equals(ApplicationStatus.ACCEPTED));
 		return result;
 	}
 

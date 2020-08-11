@@ -51,8 +51,6 @@
 
 	<acme:form-return code="entrepreneur.investment-round.form.button.return" />
 
-	<acme:form-submit method="get" code="entrepreneur.investment-round.form.button.activity" action="/entrepreneur/activity/list?id=${invId}"/>
-	
-	<acme:form-submit test="${createForum}" method="get" code="entrepreneur.investment-round.form.button.create-forum" action="/authenticated/discussion-forum/create?invId=${invId}"/>
+	<acme:form-submit test="${createForum and command != 'create'}" method="get" code="entrepreneur.investment-round.form.button.create-forum" action="/authenticated/discussion-forum/create?invId=${invId}"/>
 
 </acme:form>
