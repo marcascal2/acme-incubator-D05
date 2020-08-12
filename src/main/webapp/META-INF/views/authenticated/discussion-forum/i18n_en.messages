@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.discussion-forum.list.label.investmentRound.ticker = Ticker
+authenticated.discussion-forum.list.label.investmentRound.ticker = Round ticker
 authenticated.discussion-forum.list.label.investmentRound.kindOfRound = Kind of Round
 authenticated.discussion-forum.list.label.investmentRound.title = Title
 
@@ -18,6 +18,8 @@ authenticated.discussion-forum.form.button.messages = Messages
 
 authenticated.discussion-forum.check.create = Are you sure to create a new forum?
 authenticated.discussion-forum.form.button.create = Create
+authenticated.discussion-forum.form.button.update.forum = Manage forum
+authenticated.discussion-forum.form.button.update = Add user
 
 authenticated.discussion-forum.form.label.investor = Initial investor
 authenticated.discussion-forum.check.error = It's necessary a forum creation confirmation
