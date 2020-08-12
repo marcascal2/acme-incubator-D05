@@ -76,7 +76,7 @@
 		<property name="title" value="Accounting record 2" />
 		<property name="creationMoment" value="2020/03/12 23:43" />
 		<property name="status" value="PUBLISHED" />
-		<property name="body" value="Accounting record for investment round 3" />
+		<property name="body" value="Accounting record for investment round 2" />
 		<property name="round" ref="investmentRound02" />
 		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
 	</bean>
@@ -85,7 +85,7 @@
 		<property name="title" value="Accounting record 3" />
 		<property name="creationMoment" value="2019/12/06 03:42" />
 		<property name="status" value="DRAFT" />
-		<property name="body" value="Accounting record for investment round 4" />
+		<property name="body" value="Accounting record for investment round 1" />
 		<property name="round" ref="investmentRound01" />
 		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
@@ -94,7 +94,7 @@
 		<property name="title" value="Accounting record 4" />
 		<property name="creationMoment" value="2019/12/06 03:42" />
 		<property name="status" value="DRAFT" />
-		<property name="body" value="Accounting record for investment round 4" />
+		<property name="body" value="Accounting record for investment round 3" />
 		<property name="round" ref="investmentRound03" />
 		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
 	</bean>
@@ -102,9 +102,63 @@
 	<bean id="accountingRecord05" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 5" />
 		<property name="creationMoment" value="2019/12/06 03:42" />
-		<property name="status" value="DRAFT" />
-		<property name="body" value="Accounting record for investment round 4" />
+		<property name="status" value="PUBLISHED" />
+		<property name="body" value="Accounting record for investment round 1" />
 		<property name="round" ref="investmentRound01" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord06" class="acme.entities.acountingRecords.AccountingRecord">
+		<property name="title" value="Accounting record 6" />
+		<property name="creationMoment" value="2020/01/06 03:42" />
+		<property name="status" value="PUBLISHED" />
+		<property name="body" value="Accounting record for investment round 5" />
+		<property name="round" ref="investmentRound05" />
+		<property name="bookkeeper" ref="bookkeeper3Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord07" class="acme.entities.acountingRecords.AccountingRecord">
+		<property name="title" value="Accounting record 7" />
+		<property name="creationMoment" value="2019/11/06 03:42" />
+		<property name="status" value="DRAFT" />
+		<property name="body" value="Accounting record for investment round 2" />
+		<property name="round" ref="investmentRound02" />
+		<property name="bookkeeper" ref="bookkeeper3Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord08" class="acme.entities.acountingRecords.AccountingRecord">
+		<property name="title" value="Accounting record 8" />
+		<property name="creationMoment" value="2019/10/31 03:42" />
+		<property name="status" value="PUBLISHED" />
+		<property name="body" value="Accounting record for investment round 4" />
+		<property name="round" ref="investmentRound04" />
+		<property name="bookkeeper" ref="bookkeeper3Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord09" class="acme.entities.acountingRecords.AccountingRecord">
+		<property name="title" value="Accounting record 9" />
+		<property name="creationMoment" value="2018/12/06 03:42" />
+		<property name="status" value="PUBLISHED" />
+		<property name="body" value="Accounting record for investment round 2" />
+		<property name="round" ref="investmentRound02" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord10" class="acme.entities.acountingRecords.AccountingRecord">
+		<property name="title" value="Accounting record 10" />
+		<property name="creationMoment" value="2019/01/14 03:42" />
+		<property name="status" value="PUBLISHED" />
+		<property name="body" value="Accounting record for investment round 3" />
+		<property name="round" ref="investmentRound03" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+	</bean>
+	
+	<bean id="accountingRecord11" class="acme.entities.acountingRecords.AccountingRecord">
+		<property name="title" value="Accounting record 11" />
+		<property name="creationMoment" value="2019/10/29 03:42" />
+		<property name="status" value="PUBLISHED" />
+		<property name="body" value="Accounting record for investment round 5" />
+		<property name="round" ref="investmentRound05" />
 		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
 
@@ -131,6 +185,14 @@
 	<bean id="bookkeeper1Bookkeeper" class="acme.entities.roles.Bookkeeper">
 		<property name="firmName" value="Acme SL" />
 		<property name="responsibility" value="Counting dollars" />
+		<property name="records">
+			<list>
+				<ref bean="accountingRecord01" />
+				<ref bean="accountingRecord02" />
+				<ref bean="accountingRecord04" />
+				<ref bean="accountingRecord10" />
+			</list>
+		</property>
 		<property name="userAccount" ref="bookkeeper1UserAccount" />
 
 	</bean>
@@ -162,6 +224,14 @@
 	<bean id="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
 		<property name="firmName" value="Acme SA" />
 		<property name="responsibility" value="Counting millions" />
+		<property name="records">
+			<list>
+				<ref bean="accountingRecord03" />
+				<ref bean="accountingRecord05" />
+				<ref bean="accountingRecord09" />
+				<ref bean="accountingRecord11" />
+			</list>
+		</property>
 		<property name="userAccount" ref="bookkeeper2UserAccount" />
 
 	</bean>
@@ -170,9 +240,44 @@
 		<property name="userAccount" ref="bookkeeper2UserAccount" />
 	</bean>
 
+	<bean name="bookkeeper3UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper3" />
+		<property name="password" value="bookkeeper3" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Jhon" />
+				<property name="surname" value="Fill" />
+				<property name="email" value="jhon@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeper3Bookkeeper" />
+				<ref bean="bookkeeper3Authenticated" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="bookkeeper3Bookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="firmName" value="Acme ST" />
+		<property name="responsibility" value="Counter" />
+		<property name="records">
+			<list>
+				<ref bean="accountingRecord06" />
+				<ref bean="accountingRecord07" />
+				<ref bean="accountingRecord08" />
+			</list>
+		</property>
+		<property name="userAccount" ref="bookkeeper3UserAccount" />
+
+	</bean>
+
+	<bean name="bookkeeper3Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeper3UserAccount" />
+	</bean>
 
 	<!-- Investors -->
-
 	<bean name="investor1UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="investor1" />
 		<property name="password" value="investor1" />
@@ -620,7 +725,6 @@
 	</bean>
 
 	<!-- Investment rounds -->
-
 	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
 		<property name="ticker" value="ABC-00-123456" />
 		<property name="creationDate" value="2020/03/05 18:00" />
@@ -676,6 +780,8 @@
 		<property name="record">
 			<list>
 				<ref bean="accountingRecord02" />
+				<ref bean="accountingRecord07" />
+				<ref bean="accountingRecord09" />
 			</list>
 		</property>
 
@@ -704,6 +810,7 @@
 		<property name="record">
 			<list>
 				<ref bean="accountingRecord04" />
+				<ref bean="accountingRecord10" />
 			</list>
 		</property>
 
@@ -729,6 +836,11 @@
 				<ref bean="invApplication7" />
 			</list>
 		</property>
+		<property name="record">
+			<list>
+				<ref bean="accountingRecord08" />
+			</list>
+		</property>
 	</bean>
 
 	<bean name="investmentRound05" class="acme.entities.investmentRounds.InvestmentRound">
@@ -749,6 +861,12 @@
 			<list>
 				<ref bean="invApplication10" />
 				<ref bean="invApplication11" />
+			</list>
+		</property>
+		<property name="record">
+			<list>
+				<ref bean="accountingRecord06" />
+				<ref bean="accountingRecord11" />
 			</list>
 		</property>
 	</bean>

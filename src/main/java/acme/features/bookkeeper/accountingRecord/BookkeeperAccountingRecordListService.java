@@ -2,11 +2,13 @@
 package acme.features.bookkeeper.accountingRecord;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.acountingRecords.AccountingRecord;
+import acme.entities.acountingRecords.StatusAR;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -43,6 +45,9 @@ public class BookkeeperAccountingRecordListService implements AbstractListServic
 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findManyByInvestmentId(id);
+
+		result = result.stream().filter(a -> a.getStatus() == StatusAR.PUBLISHED).collect(Collectors.toList()); //Solo se muestran los que están published
+
 		return result;
 	}
 
