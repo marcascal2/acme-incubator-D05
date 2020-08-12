@@ -309,7 +309,7 @@
 	<!-- Investment Applications -->
 	<bean id="invApplication1" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-19-090909" />
-		<property name="creationMoment" value="2019/02/02 19:22" />
+		<property name="creationMoment" value="2020/07/28 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1000 €" />
@@ -320,7 +320,7 @@
 
 	<bean id="invApplication2" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="SCI-19-222222" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/04 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -332,7 +332,7 @@
 
 	<bean id="invApplication3" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="TEC-18-190709" />
-		<property name="creationMoment" value="2018/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/05 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1200 €" />
@@ -342,7 +342,7 @@
 
 	<bean id="invApplication4" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="SCI-17-244222" />
-		<property name="creationMoment" value="2017/04/02 19:22" />
+		<property name="creationMoment" value="2020/07/29 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1500 €" />
@@ -352,7 +352,7 @@
 
 	<bean id="invApplication5" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333333" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/07/31 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -362,7 +362,7 @@
 
 	<bean id="invApplication6" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333330" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/09 19:22" />
 		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -372,7 +372,7 @@
 
 	<bean id="invApplication7" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333339" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/10 19:22" />
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -383,7 +383,7 @@
 
 	<bean id="invApplication8" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333338" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/07/25 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -393,7 +393,7 @@
 
 	<bean id="invApplication9" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333337" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/03 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -403,7 +403,7 @@
 
 	<bean id="invApplication10" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333336" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/08 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
@@ -413,7 +413,7 @@
 
 	<bean id="invApplication11" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333335" />
-		<property name="creationMoment" value="2019/04/02 19:22" />
+		<property name="creationMoment" value="2020/08/10 19:22" />
 		<property name="status" value="PENDING" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />

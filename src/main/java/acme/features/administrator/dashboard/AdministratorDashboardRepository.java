@@ -1,6 +1,7 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.Query;
@@ -123,5 +124,14 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 
 	@Query("select AVG(select count(a) from InvestmentApplication a where a.investor.id = w.id) from Investor w")
 	Double averageApplicationPerInvestor();
+
+	@Query("select a.creationMoment, count(*) from InvestmentApplication a where a.status = acme.entities.investmentApplications.ApplicationStatus.PENDING >= ?1 group by a.creationMoment")
+	List<String[]> numberOfPendingApplicationsPerDay(Date limit_date);
+
+	@Query("select a.creationMoment, count(a) from InvestmentApplication a where a.status = acme.entities.investmentApplications.ApplicationStatus.ACCEPTED >= ?1 group by a.creationMoment")
+	List<String[]> numberOfAcceptedApplicationsPerDay(Date limit_date);
+
+	@Query("select a.creationMoment, count(a) from InvestmentApplication a where a.status = acme.entities.investmentApplications.ApplicationStatus.REJECTED and a.creationMoment >= ?1 group by a.creationMoment")
+	List<String[]> numberOfRejectedApplicationsPerDay(Date limit_date);
 
 }
