@@ -97,6 +97,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		model.setAttribute("averageApplicationPerEntrepreneur", averageApplicationPerEntrepreneur);
 		model.setAttribute("averageApplicationPerInvestor", averageApplicationPerInvestor);
 
+		Date limit_date = Date.valueOf(LocalDate.now().minusDays(15));
+		List<LocalDate> dates = this.getDates(limit_date);
+		List<String> labels = dates.stream().map(d -> d.toString()).collect(Collectors.toList());
+
+		model.setAttribute("labels", labels);
+
 		request.unbind(entity, model, "numberOfPendingApplicationsPerDay", "numberOfAcceptedApplicationsPerDay", "numberOfRejectedApplicationsPerDay");
 
 	}
@@ -145,8 +151,6 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 
 		result.setTechnologyPerSector(techPerSector);
 		result.setToolPerSector(toolPerSector);
-
-		//Tablas de aplicaciones con su estado por día
 
 		Date limit_date = Date.valueOf(LocalDate.now().minusDays(15));
 

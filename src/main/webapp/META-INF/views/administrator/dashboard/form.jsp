@@ -17,39 +17,57 @@
 
 
 <acme:form readonly="true">
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfNotices" path="totalNumberOfNotices"/>
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfTechnologyRecords" path="totalNumberOfTechnologyRecords"/>
-	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfToolRecords" path="totalNumberOfToolRecords"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMin" path="minimumOfMoneyIntervalsOfActiveInquiriesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMax" path="minimumOfMoneyIntervalsOfActiveInquiriesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMin" path="maximumOfMoneyIntervalsOfActiveInquiriesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMax" path="maximumOfMoneyIntervalsOfActiveInquiriesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMin" path="averageOfMoneyIntervalsOfActiveInquiriesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMax" path="averageOfMoneyIntervalsOfActiveInquiriesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMin" path="desviationOfMoneyIntervalsOfActiveInquiriesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMax" path="desviationOfMoneyIntervalsOfActiveInquiriesMax"/>
-	
-	
-	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMin" path="minimumOfMoneyIntervalsOfActiveOverturesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMax" path="minimumOfMoneyIntervalsOfActiveOverturesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMin" path="maximumOfMoneyIntervalsOfActiveOverturesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMax" path="maximumOfMoneyIntervalsOfActiveOverturesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMin" path="averageOfMoneyIntervalsOfActiveOverturesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMax" path="averageOfMoneyIntervalsOfActiveOverturesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMin" path="desviationOfMoneyIntervalsOfActiveOverturesMin"/>
-	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMax" path="desviationOfMoneyIntervalsOfActiveOverturesMax"/>
-	
-	<acme:form-double code="administrator.dashboard.form.label.averageInvestmentRoundPerEntrepreneur" path="averageInvestmentRoundPerEntrepreneur"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageApplicationPerEntrepreneur" path="averageApplicationPerEntrepreneur"/>
-	<acme:form-double code="administrator.dashboard.form.label.averageApplicationPerInvestor" path="averageApplicationPerInvestor"/>
-	
+	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfNotices" path="totalNumberOfNotices" />
+	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfTechnologyRecords" path="totalNumberOfTechnologyRecords" />
+	<acme:form-double code="administrator.dashboard.form.label.totalNumberOfToolRecords" path="totalNumberOfToolRecords" />
+
+	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMin"
+		path="minimumOfMoneyIntervalsOfActiveInquiriesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveInquiriesMax"
+		path="minimumOfMoneyIntervalsOfActiveInquiriesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMin"
+		path="maximumOfMoneyIntervalsOfActiveInquiriesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveInquiriesMax"
+		path="maximumOfMoneyIntervalsOfActiveInquiriesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMin"
+		path="averageOfMoneyIntervalsOfActiveInquiriesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveInquiriesMax"
+		path="averageOfMoneyIntervalsOfActiveInquiriesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMin"
+		path="desviationOfMoneyIntervalsOfActiveInquiriesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveInquiriesMax"
+		path="desviationOfMoneyIntervalsOfActiveInquiriesMax" />
+
+
+	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMin"
+		path="minimumOfMoneyIntervalsOfActiveOverturesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.minimumOfMoneyIntervalsOfActiveOverturesMax"
+		path="minimumOfMoneyIntervalsOfActiveOverturesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMin"
+		path="maximumOfMoneyIntervalsOfActiveOverturesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.maximumOfMoneyIntervalsOfActiveOverturesMax"
+		path="maximumOfMoneyIntervalsOfActiveOverturesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMin"
+		path="averageOfMoneyIntervalsOfActiveOverturesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.averageOfMoneyIntervalsOfActiveOverturesMax"
+		path="averageOfMoneyIntervalsOfActiveOverturesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMin"
+		path="desviationOfMoneyIntervalsOfActiveOverturesMin" />
+	<acme:form-double code="administrator.dashboard.form.label.desviationOfMoneyIntervalsOfActiveOverturesMax"
+		path="desviationOfMoneyIntervalsOfActiveOverturesMax" />
+
+	<acme:form-double code="administrator.dashboard.form.label.averageInvestmentRoundPerEntrepreneur"
+		path="averageInvestmentRoundPerEntrepreneur" />
+	<acme:form-double code="administrator.dashboard.form.label.averageApplicationPerEntrepreneur"
+		path="averageApplicationPerEntrepreneur" />
+	<acme:form-double code="administrator.dashboard.form.label.averageApplicationPerInvestor" path="averageApplicationPerInvestor" />
+
 </acme:form>
 <br>
 <br>
@@ -326,11 +344,12 @@ new Chart(context, {
     options: options
 });
 </script>
-<br>
-<br>
-<h3><acme:message code="administrator.dashboard.form.label.numberOfPendingApplicationsInLast15Days"/></h3>
-<canvas id="myChart4" width="400" height="400"></canvas>
 
+<h3>
+	<acme:message code="administrator.dashboard.form.label.numberOfPendingApplicationsInLast15Days" />
+</h3>
+
+<canvas id="numberOfPendingApplicationsInLast15Days" width="400" height="400"></canvas>
 <script>
 var data = {
 	labels: [
@@ -363,7 +382,7 @@ var options = {
 		display: false
 	}
 };
-var context = document.getElementById('myChart4').getContext('2d');
+var context = document.getElementById('numberOfPendingApplicationsInLast15Days').getContext('2d');
 new Chart(context, {
     type: 'bar',
     data: data,
@@ -424,6 +443,6 @@ new Chart(context, {
 });
 </script>
 
-<acme:form-return code="administrator.dashboard.form.button.return"/>
+<acme:form-return code="administrator.dashboard.form.button.return" />
 
 
