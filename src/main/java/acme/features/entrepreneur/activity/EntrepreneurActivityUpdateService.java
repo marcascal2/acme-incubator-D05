@@ -2,7 +2,6 @@
 package acme.features.entrepreneur.activity;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,7 +119,7 @@ public class EntrepreneurActivityUpdateService implements AbstractUpdateService<
 
 		for (String spamword : sl) {
 			numSpamWords = numSpamWords + this.numDeSpamwords(reallyBigString.toLowerCase(), spamword, 0.);
-			double frequency = (double) Collections.frequency(sl, spamword) / sl.size() * 100;
+			double frequency = numSpamWords / sl.size() * 100;
 			if (frequency > spamList.getSpamThreshold()) {
 				return true;
 			}

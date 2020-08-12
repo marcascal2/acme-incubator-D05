@@ -24,7 +24,6 @@
 
 	<acme:form-submit method="post" test="${command == 'create'}" code="authenticated.card.form.button.create" action="/authenticated/credit-card/create" />
 	<acme:form-submit test="${command == 'update'}" code="authenticated.card.form.button.update" action="/authenticated/credit-card/update" />
-	<input id="patron" name="patron" value="${patron}" type="hidden" />
 	<input id="card" name="card" value="${card}" type="hidden" />
 	<acme:form-return code="authenticated.card.button.return" />
 </acme:form>

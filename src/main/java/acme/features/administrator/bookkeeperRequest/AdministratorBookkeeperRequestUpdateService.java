@@ -42,7 +42,6 @@ public class AdministratorBookkeeperRequestUpdateService implements AbstractUpda
 
 		request.unbind(entity, model, "status");
 		model.setAttribute("oldstatus", entity.getStatus());
-		System.out.println(entity.getStatus());
 	}
 
 	@Override

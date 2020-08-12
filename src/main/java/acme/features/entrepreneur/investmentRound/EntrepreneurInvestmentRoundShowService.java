@@ -2,7 +2,6 @@
 package acme.features.entrepreneur.investmentRound;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -65,7 +64,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 
 		model.setAttribute("finalMode", !isSpamEN && !isSpamES && entity.sumUp());
 
-		model.setAttribute("canDelete", !entity.getApplication().stream().anyMatch(x -> x.getInvestor() != null));
+		model.setAttribute("canDelete", entity.getApplication().stream().allMatch(x -> x.getStatus().equals(ApplicationStatus.REJECTED)));
 
 		Double sum = 0.;
 		for (Activity a : entity.getWorkProgramme()) {
@@ -89,7 +88,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 
 		for (String spamword : sl) {
 			numSpamWords = numSpamWords + this.numDeSpamwords(reallyBigString.toLowerCase(), spamword, 0.);
-			double frequency = (double) Collections.frequency(sl, spamword) / sl.size() * 100;
+			double frequency = numSpamWords / sl.size() * 100;
 			if (frequency > spamList.getSpamThreshold()) {
 				return true;
 			}

@@ -16,8 +16,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="entrepreneur.investment-round.form.label.ticker" path="ticker" placeholder="SSS-YY-NNNNNN" />
 	<jstl:if test="${command != 'create'}">
+		<acme:form-textbox code="entrepreneur.investment-round.form.label.ticker" path="ticker" readonly="true" />
 		<acme:form-moment code="entrepreneur.investment-round.form.label.creationDate" path="creationDate" readonly="true" />
 	</jstl:if>
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.kindOfRound" path="kindOfRound"
@@ -51,6 +51,7 @@
 
 	<acme:form-return code="entrepreneur.investment-round.form.button.return" />
 
-	<acme:form-submit test="${createForum and command != 'create'}" method="get" code="entrepreneur.investment-round.form.button.create-forum" action="/authenticated/discussion-forum/create?invId=${invId}"/>
+	<acme:form-submit test="${createForum and command != 'create'}" method="get"
+		code="entrepreneur.investment-round.form.button.create-forum" action="/authenticated/discussion-forum/create?invId=${invId}" />
 
 </acme:form>

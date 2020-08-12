@@ -2,7 +2,6 @@
 package acme.features.patron.banner;
 
 import java.util.Collection;
-import java.util.Collections;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -101,7 +100,7 @@ public class PatronBannerUpdateService implements AbstractUpdateService<Patron, 
 
 		for (String spamword : sl) {
 			numSpamWords = numSpamWords + this.numDeSpamwords(reallyBigString.toLowerCase(), spamword, 0.);
-			double frequency = (double) Collections.frequency(sl, spamword) / sl.size() * 100;
+			double frequency = numSpamWords / sl.size() * 100;
 			if (frequency > spamList.getSpamThreshold()) {
 				return true;
 			}

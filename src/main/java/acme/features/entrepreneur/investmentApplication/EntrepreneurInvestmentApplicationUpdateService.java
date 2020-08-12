@@ -43,7 +43,6 @@ public class EntrepreneurInvestmentApplicationUpdateService implements AbstractU
 		assert entity != null;
 		assert errors != null;
 
-		System.out.println(entity.getStatus());
 		request.bind(entity, errors);
 
 	}

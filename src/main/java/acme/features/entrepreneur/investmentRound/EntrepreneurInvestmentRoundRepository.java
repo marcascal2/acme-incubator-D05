@@ -18,8 +18,11 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.acountingRecords.AccountingRecord;
 import acme.entities.activities.Activity;
+import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.messages.Message;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.spamWords.SpamList;
 import acme.framework.repositories.AbstractRepository;
@@ -32,6 +35,15 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select a from InvestmentRound a where a.entrepreneur.id = ?1")
 	Collection<InvestmentRound> findManyByEntrepreneurId(int entId);
+
+	@Query("select a.workProgramme from InvestmentRound a where a.id = ?1")
+	Collection<Activity> findManyActivities(int entId);
+
+	@Query("select a.application from InvestmentRound a where a.id = ?1")
+	Collection<InvestmentApplication> findManyApplications(int entId);
+
+	@Query("select a.record from InvestmentRound a where a.id = ?1")
+	Collection<AccountingRecord> findManyRecords(int entId);
 
 	@Query("select e from Entrepreneur e where e.id = ?1")
 	Entrepreneur findEntrepreneurById(int accountId);
@@ -50,4 +62,7 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select w from SpamList w")
 	SpamList findSpamList();
+
+	@Query("select m from Message m")
+	Collection<Message> findAllMessages();
 }
