@@ -38,9 +38,10 @@ public class InvestorInvestmentApplicationShowService implements AbstractShowSer
 		assert entity != null;
 		assert model != null;
 
+		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "status", "justification");
+
 		model.setAttribute("isRejected", entity.getStatus() == ApplicationStatus.REJECTED);
 
-		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "status");
 
 	}
 

@@ -10,6 +10,8 @@ entrepreneur.investment-application.form.label.status = Status
 entrepreneur.investment-application.form.label.rejected = Rejected
 entrepreneur.investment-application.form.label.accepted = Accepted
 
+entrepreneur.investment-application.list.label.status = Status
+
 entrepreneur.investment-application.list.label.tickerRound = Round Ticker
 entrepreneur.investment-application.list.label.descriptionRound = Round description
 

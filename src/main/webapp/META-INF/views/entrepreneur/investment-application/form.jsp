@@ -20,7 +20,7 @@
 	<acme:form-moment readonly="true" code="entrepreneur.investment-application.form.label.creationMoment" path="creationMoment" />
 	<acme:form-textbox readonly="true" code="entrepreneur.investment-application.form.label.statement" path="statement" />
 	<acme:form-money readonly="true" code="entrepreneur.investment-application.form.label.moneyOffer" path="moneyOffer" />
-
+	
 	<jstl:if test="${!isAccepted}">
 		<acme:form-textbox code="entrepreneur.investment-application.form.label.justification" path="justification" />
 	</jstl:if>
