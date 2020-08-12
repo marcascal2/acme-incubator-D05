@@ -3,6 +3,7 @@ package acme.entities.investmentRounds;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -77,7 +78,8 @@ public class InvestmentRound extends DomainEntity {
 	private Collection<@Valid InvestmentApplication>	application;
 
 	@OneToMany(mappedBy = "round")
-	private Collection<AccountingRecord>				record;
+	@LazyCollection(LazyCollectionOption.FALSE)
+	private List<AccountingRecord>						record;
 
 	@OneToOne(optional = true)
 	private DiscussionForum								forum;

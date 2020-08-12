@@ -17,5 +17,6 @@ bookkeeper.accounting-record.form.label.creationMoment = Momento de creación
 bookkeeper.accounting-record.form.label.status = Estado
 bookkeeper.accounting-record.form.label.title = Título
 
-
+bookkeeper.accounting-record.form.button.update = Actializar
 bookkeeper.accounting-record.form.button.return = Volver
+bookkeeper.accounting-record.form.button.create = Escribir

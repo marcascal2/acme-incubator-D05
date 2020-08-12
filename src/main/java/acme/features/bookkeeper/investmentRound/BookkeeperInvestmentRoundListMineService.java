@@ -1,13 +1,12 @@
 
 package acme.features.bookkeeper.investmentRound;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.acountingRecords.AccountingRecord;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.Model;
@@ -33,7 +32,7 @@ public class BookkeeperInvestmentRoundListMineService implements AbstractListSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "kindOfRound", "amount");
+		request.unbind(entity, model, "title", "ticker", "kindOfRound", "amount");
 
 	}
 
@@ -41,21 +40,13 @@ public class BookkeeperInvestmentRoundListMineService implements AbstractListSer
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
 		Collection<InvestmentRound> collection;
-		Collection<InvestmentRound> result = new ArrayList<>();
 
 		int bookkeeperId = request.getPrincipal().getActiveRoleId();
 
-		Bookkeeper b = this.repository.findBookkeeperById(bookkeeperId);
-		collection = this.repository.findMany();
+		collection = this.repository.findInvestmetnRoundByBookkeeperId(bookkeeperId);
+		collection = collection.stream().distinct().collect(Collectors.toList());
 
-		for (InvestmentRound i : collection) {
-			for (AccountingRecord a : i.getRecord()) {
-				if (a.getBookkeeper().equals(b)) {
-					result.add(i);
-				}
-			}
-		}
-		return result;
+		return collection;
 	}
 
 }

@@ -1,13 +1,13 @@
 
 package acme.features.bookkeeper.investmentRoundNotMine;
 
-import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.acountingRecords.AccountingRecord;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.Model;
@@ -33,30 +33,23 @@ public class BookkeeperInvestmentRoundNotMineListService implements AbstractList
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "kindOfRound", "amount");
+		request.unbind(entity, model, "title", "ticker", "kindOfRound", "amount");
 
 	}
 
 	@Override
 	public Collection<InvestmentRound> findMany(final Request<InvestmentRound> request) {
 		assert request != null;
-		Collection<InvestmentRound> result = new ArrayList<>();
-		Collection<InvestmentRound> collection;
+		List<InvestmentRound> collection;
 
 		int bookkeeperId = request.getPrincipal().getActiveRoleId();
 
-		Bookkeeper b = this.repository.findBookkeeperById(bookkeeperId);
+		collection = this.repository.findNotInvestmentRoundsByBookkeeperId(bookkeeperId);
 
-		collection = this.repository.findMany();
+		collection = collection.stream().distinct().collect(Collectors.toList());
 
-		for (InvestmentRound i : collection) {
-			for (AccountingRecord a : i.getRecord()) {
-				if (!a.getBookkeeper().equals(b) || a.getBookkeeper() == null) {
-					result.add(i);
-				}
-			}
-		}
+		collection = collection.stream().filter(i -> i.getRecord().stream().allMatch(a -> a.getBookkeeper().getId() != bookkeeperId)).collect(Collectors.toList());
 
-		return result;
+		return collection;
 	}
 }

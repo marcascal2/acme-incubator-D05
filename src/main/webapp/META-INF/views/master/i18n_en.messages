@@ -103,6 +103,7 @@ master.menu.consumer.favourite-link = Favourite link
 master.menu.bookkeeper = Bookkeeper
 master.menu.bookkeeper.investment-rounds = My Investments Rounds
 master.menu.bookkeeper.investment-rounds-not-mine = Another Investments Rounds
+master.menu.bookkeeper.accounting-records = My accounting records
 
 # master.menu.investor #########################################################
 

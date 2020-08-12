@@ -20,3 +20,5 @@ bookkeeper.accounting-record.form.label.title = Title
 
 
 bookkeeper.accounting-record.form.button.return = Return
+bookkeeper.accounting-record.form.button.create = Write
+bookkeeper.accounting-record.form.button.update = Update
