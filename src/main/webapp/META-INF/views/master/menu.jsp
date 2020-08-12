@@ -99,6 +99,7 @@
 		</acme:menu-option>
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
 			<acme:menu-suboption code="master.menu.patron.banner" action="/patron/banner/list" />
+			<acme:menu-suboption code="master.menu.patron.banner.create" action="/patron/banner/create" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">

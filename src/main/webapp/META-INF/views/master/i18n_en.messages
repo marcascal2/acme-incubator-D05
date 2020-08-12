@@ -114,6 +114,7 @@ master.menu.investor.investment-round = Possible rounds to apply
 
 master.menu.patron = Patron
 master.menu.patron.banner = Banners
+master.menu.patron.banner.create = Create banner
 
 # master.menu.user-account ####################################################
 

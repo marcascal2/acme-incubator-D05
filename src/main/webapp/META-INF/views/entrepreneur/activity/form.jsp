@@ -21,6 +21,7 @@
 	<acme:form-moment code="entrepreneur.activity.form.label.endDate" path="endDate" />
 	<acme:form-double code="entrepreneur.activity.form.label.amount" path="amount" />
 	
+	<acme:form-errors path="spam"/>
 		<acme:form-submit method="post" test="${command == 'create'}" code="entrepreneur.activity.form.button.create"
 		action="/entrepreneur/activity/create?id=${id}" />
 	

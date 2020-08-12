@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.banners.Banner;
 import acme.entities.roles.Patron;
+import acme.entities.spamWords.SpamList;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -21,4 +22,13 @@ public interface PatronBannerRepository extends AbstractRepository {
 
 	@Query("select e from Patron e where e.id = ?1")
 	Patron findPatronById(int patronId);
+
+	@Query("select w.englishTranslation from SpamWord w")
+	Collection<String> findAllSpamWordsEnglish();
+
+	@Query("select w.spanishTranslation from SpamWord w")
+	Collection<String> findAllSpamWordsSpanish();
+
+	@Query("select w from SpamList w")
+	SpamList findSpamList();
 }

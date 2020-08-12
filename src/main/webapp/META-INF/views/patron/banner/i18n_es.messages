@@ -11,15 +11,17 @@
 patron.banner.form.label.picture = Fotografía:
 patron.banner.form.label.slogan = Eslogan:
 patron.banner.form.label.url = URL:
-patron.banner.form.label.card.holder = Titular:
-patron.banner.form.label.card.number = Número:
-patron.banner.form.label.card.brand = Marca:
-patron.banner.form.label.card.expirationDate = Feha de expiración:
-patron.banner.form.label.card.cvv = CVV:
-patron.banner.form.label.card = Tarjeta
 
+
+patron.banner.form.button.create = Crear
+patron.banner.form.button.update = Actualizar
+patron.banner.form.button.delete = Borrar
 patron.banner.form.button.return = Volver
+patron.banner.form.button.card.create = Crear tarjeta de crédito
+patron.banner.form.button.card = Tarjeta de crédito
 
 patron.banner.list.label.picture = Fotografía
 patron.banner.list.label.slogan = Eslogan
 patron.banner.list.label.url = URL
+
+patron.banner.form.error.spam = Hay muchas palabras spam

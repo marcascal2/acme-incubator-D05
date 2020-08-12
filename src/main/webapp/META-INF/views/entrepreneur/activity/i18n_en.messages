@@ -28,4 +28,5 @@ entrepreneur.activity.form.button.return = Return
 entrepreneur.activity.form.error.startDate = Start date must be after current date
 entrepreneur.activity.form.error.endDate = End date must be after current date
 entrepreneur.activity.form.error.endDate.after = End date must be after start date
-entrepreneur.activity.form.error.sum = Cannot create activity
+entrepreneur.activity.form.error.sum = The sum of money has reached its limit
+entrepreneur.activity.form.error.spam = There are many spam words
