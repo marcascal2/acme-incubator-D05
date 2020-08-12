@@ -40,6 +40,9 @@ public class InvestorInvestmentApplicationShowService implements AbstractShowSer
 
 		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "status", "justification");
 
+		model.setAttribute("isRejected", entity.getStatus() == ApplicationStatus.REJECTED);
+
+
 	}
 
 	@Override
@@ -48,8 +51,6 @@ public class InvestorInvestmentApplicationShowService implements AbstractShowSer
 
 		Integer id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
-
-		request.getModel().setAttribute("isRejected", result.getStatus().equals(ApplicationStatus.REJECTED));
 
 		return result;
 	}
