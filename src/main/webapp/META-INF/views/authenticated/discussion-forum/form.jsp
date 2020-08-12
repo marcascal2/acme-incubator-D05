@@ -17,13 +17,6 @@
 
 <acme:form>
 
-	<jstl:if test="${command != 'create'}">
-		<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker" />
-	</jstl:if>
-
-	<acme:form-submit test="${command != 'create'}" method="get" code="authenticated.discussion-forum.form.button.messages"
-		action="/authenticated/message/list?id=${forumId}" />
-
 	<jstl:if test="${command == 'create' }">
 		<acme:form-select code="authenticated.discussion-forum.form.label.investor" path="userToAdd" readonly="false">
 			<jstl:forEach items="${user_usernames}" var="username" varStatus="loop">
@@ -36,14 +29,35 @@
 			action="/authenticated/discussion-forum/create" />
 	</jstl:if>
 
-	<acme:form-submit test="${command != 'create'}" method="get" code="authenticated.discussion-forum.form.button.message.create"
-		action="/authenticated/message/create?forumId=${forumId}" />
+	<jstl:if test="${command == 'show'}">
+		<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker"
+			readonly="true" />
+
+		<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.messages"
+			action="/authenticated/message/list?id=${forumId}" />
+
+		<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.update.forum"
+			action="/authenticated/discussion-forum/update?id=${forumId}" />
+
+		<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.message.create"
+			action="/authenticated/message/create?forumId=${forumId}" />
+
+		<acme:form-submit test="${!isInvestor}" code="authenticated.discussion-forum.form.button.delete"
+			action="/authenticated/discussion-forum/delete" />
+	</jstl:if>
+	
+	<jstl:if test="${command == 'update'}">
+		<acme:form-select code="authenticated.discussion-forum.form.label.investor" path="userToAdd" readonly="false">
+			<jstl:forEach items="${user_usernames}" var="username" varStatus="loop">
+				<acme:form-option code="${username}" value="${user_ids[loop.index]}" />
+			</jstl:forEach>
+		</acme:form-select>
+		
+		<acme:form-submit code="authenticated.discussion-forum.form.button.update" method="post"
+			action="/authenticated/discussion-forum/update" />
+	</jstl:if>
 
 	<input id="invId" name="invId" value="${invId}" type="hidden" />
-
-	<acme:form-submit test="${command != 'create' && !isInvestor}" code="authenticated.discussion-forum.form.button.delete"
-		action="/authenticated/discussion-forum/delete" />
-
 	<acme:form-return code="authenticated.discussion-forum.form.button.return" />
 
 </acme:form>

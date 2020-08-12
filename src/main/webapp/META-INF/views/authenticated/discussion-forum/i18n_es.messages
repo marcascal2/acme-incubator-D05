@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.discussion-forum.list.label.investmentRound.ticker = Ticker
+authenticated.discussion-forum.list.label.investmentRound.ticker = Ticker de la ronda
 authenticated.discussion-forum.list.label.investmentRound.kindOfRound = Tipo de ronda
 authenticated.discussion-forum.list.label.investmentRound.title = Título
 
@@ -20,6 +20,8 @@ authenticated.discussion-forum.form.label.investor = Inversor inicial
 
 authenticated.discussion-forum.check.create = ¿Estás seguro de crear un nuevo foro?
 authenticated.discussion-forum.form.button.create = Crear
+authenticated.discussion-forum.form.button.update.forum = Gestionar foro
+authenticated.discussion-forum.form.button.update = Añadir usuario
 
 authenticated.discussion-forum.check.error = Es necesaria una confirmación de creación del foro
 
