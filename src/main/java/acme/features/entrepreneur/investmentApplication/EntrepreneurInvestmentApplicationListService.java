@@ -32,7 +32,7 @@ public class EntrepreneurInvestmentApplicationListService implements AbstractLis
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationMoment", "statement");
+		request.unbind(entity, model, "ticker", "creationMoment", "statement", "status");
 
 		String tickerRound = entity.getInvestmentApplied().getTicker();
 		String descriptionRound = entity.getInvestmentApplied().getDescription();

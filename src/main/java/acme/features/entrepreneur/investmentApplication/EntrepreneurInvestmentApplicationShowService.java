@@ -40,6 +40,7 @@ public class EntrepreneurInvestmentApplicationShowService implements AbstractSho
 
 		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "status", "justification");
 		model.setAttribute("oldstatus", entity.getStatus());
+		model.setAttribute("isAccepted", entity.getStatus().equals(ApplicationStatus.ACCEPTED));
 
 	}
 
@@ -48,7 +49,7 @@ public class EntrepreneurInvestmentApplicationShowService implements AbstractSho
 		InvestmentApplication result;
 		Integer id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
-		request.getModel().setAttribute("isAccepted", result.getStatus().equals(ApplicationStatus.ACCEPTED));
+
 		return result;
 	}
 

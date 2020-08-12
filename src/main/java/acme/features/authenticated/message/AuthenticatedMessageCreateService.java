@@ -127,6 +127,12 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		entity.setTags(tags);
 
 		this.repository.save(entity);
+
+		int forumId = request.getModel().getInteger("forumId");
+		DiscussionForum forum = this.repository.findDiscussionForum(forumId);
+
+		forum.getMessages().add(entity);
+		this.repository.save(forum);
 	}
 
 	private Boolean isSpam(final String reallyBigString, final Collection<String> sl) {

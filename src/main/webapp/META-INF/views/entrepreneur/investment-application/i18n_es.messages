@@ -10,6 +10,8 @@ entrepreneur.investment-application.form.label.status = Estado
 entrepreneur.investment-application.form.label.rejected = Rechazado
 entrepreneur.investment-application.form.label.accepted = Aceptado
 
+entrepreneur.investment-application.list.label.status = Estado
+
 entrepreneur.investment-application.list.label.tickerRound = Ticker
 entrepreneur.investment-application.list.label.descriptionRound = Descripción de Investment
 

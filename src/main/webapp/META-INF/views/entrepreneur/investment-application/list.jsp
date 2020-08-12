@@ -9,5 +9,6 @@
     <acme:list-column code="entrepreneur.investment-application.list.label.statement" path="statement" width="40%"/>
     <acme:list-column code="entrepreneur.investment-application.list.label.tickerRound" path="tickerRound" width="40%"/>
     <acme:list-column code="entrepreneur.investment-application.list.label.descriptionRound" path="descriptionRound" width="40%"/>
-    
+	<acme:list-column code="entrepreneur.investment-application.list.label.status" path="status" width="40%" />
+
 </acme:list> 

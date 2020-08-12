@@ -107,7 +107,7 @@
 		<property name="round" ref="investmentRound01" />
 		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
-	
+
 	<bean id="accountingRecord06" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 6" />
 		<property name="creationMoment" value="2020/01/06 03:42" />
@@ -116,7 +116,7 @@
 		<property name="round" ref="investmentRound05" />
 		<property name="bookkeeper" ref="bookkeeper3Bookkeeper" />
 	</bean>
-	
+
 	<bean id="accountingRecord07" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 7" />
 		<property name="creationMoment" value="2019/11/06 03:42" />
@@ -125,7 +125,7 @@
 		<property name="round" ref="investmentRound02" />
 		<property name="bookkeeper" ref="bookkeeper3Bookkeeper" />
 	</bean>
-	
+
 	<bean id="accountingRecord08" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 8" />
 		<property name="creationMoment" value="2019/10/31 03:42" />
@@ -134,7 +134,7 @@
 		<property name="round" ref="investmentRound04" />
 		<property name="bookkeeper" ref="bookkeeper3Bookkeeper" />
 	</bean>
-	
+
 	<bean id="accountingRecord09" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 9" />
 		<property name="creationMoment" value="2018/12/06 03:42" />
@@ -143,7 +143,7 @@
 		<property name="round" ref="investmentRound02" />
 		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
-	
+
 	<bean id="accountingRecord10" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 10" />
 		<property name="creationMoment" value="2019/01/14 03:42" />
@@ -152,7 +152,7 @@
 		<property name="round" ref="investmentRound03" />
 		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
 	</bean>
-	
+
 	<bean id="accountingRecord11" class="acme.entities.acountingRecords.AccountingRecord">
 		<property name="title" value="Accounting record 11" />
 		<property name="creationMoment" value="2019/10/29 03:42" />
@@ -378,7 +378,7 @@
 	<bean name="investor3Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="investor3UserAccount" />
 	</bean>
-	
+
 	<bean name="investor4UserAccount" class="acme.framework.entities.UserAccount">
 		<property name="username" value="investor4" />
 		<property name="password" value="investor4" />
@@ -401,8 +401,7 @@
 	<bean id="investor4Investor" class="acme.entities.roles.Investor">
 		<property name="firmName" value="SEAYA VENTURES" />
 		<property name="sector" ref="activitySector04" />
-		<property name="profile"
-			value="Usually put a tab in businesses that have to do with the internet and technology" />
+		<property name="profile" value="Usually put a tab in businesses that have to do with the internet and technology" />
 		<property name="userAccount" ref="investor4UserAccount" />
 
 	</bean>
@@ -481,6 +480,7 @@
 		<property name="status" value="REJECTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
+		<property name="justification" value="This is the application number 7 justification" />
 		<property name="investmentApplied" ref="investmentRound04" />
 		<property name="investor" ref="investor2Investor" />
 	</bean>
@@ -870,7 +870,7 @@
 			</list>
 		</property>
 	</bean>
-
+	
 	<!-- Overtures -->
 	<bean id="overture1" class="acme.entities.overtures.Overture">
 		<property name="title" value="First proposal" />

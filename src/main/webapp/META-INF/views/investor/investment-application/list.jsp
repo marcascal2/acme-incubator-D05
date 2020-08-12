@@ -20,4 +20,5 @@
     <acme:list-column code="investor.investment-application.list.label.ticker" path="ticker" width="30%"/>
     <acme:list-column code="investor.investment-application.list.label.creationMoment" path="creationMoment" width="30%"/>
     <acme:list-column code="investor.investment-application.list.label.statement" path="statement" width="40%"/>
+    
 </acme:list>
