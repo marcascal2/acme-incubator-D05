@@ -17,6 +17,13 @@
 
 <acme:form>
 
+	<jstl:if test="${command != 'create'}">
+		<acme:form-textbox code="authenticated.discussion-forum.form.label.investment-round.ticker" path="investmentRound.ticker" readonly="true" />
+	</jstl:if>
+
+	<acme:form-submit test="${command != 'create'}" method="get" code="authenticated.discussion-forum.form.button.messages"
+		action="/authenticated/message/list?id=${forumId}" />
+
 	<jstl:if test="${command == 'create' }">
 		<acme:form-select code="authenticated.discussion-forum.form.label.investor" path="userToAdd" readonly="false">
 			<jstl:forEach items="${user_usernames}" var="username" varStatus="loop">

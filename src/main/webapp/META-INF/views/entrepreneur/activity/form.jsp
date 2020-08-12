@@ -28,4 +28,6 @@
 	<acme:form-submit test="${command != 'create'}" code="entrepreneur.activity.form.button.update"
 		action="/entrepreneur/activity/update" />
 	<acme:form-return code="entrepreneur.activity.form.button.return" />
+	
+	<input id="id" name="id" value="${id}" type="hidden" />
 </acme:form>

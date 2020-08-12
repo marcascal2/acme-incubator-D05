@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
-import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -24,15 +23,7 @@ public class EntrepreneurActivityListService implements AbstractListService<Entr
 	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
 
-		int roundId = request.getModel().getInteger("id");
-		int entrepreneurId = request.getPrincipal().getActiveRoleId();
-
-		InvestmentRound round = this.repository.findInvestmentRound(roundId);
-		Entrepreneur entrepreneur = this.repository.findEntrepreneurById(entrepreneurId);
-
-		boolean isAuthorised = round.getEntrepreneur().equals(entrepreneur);
-
-		return isAuthorised;
+		return true;
 	}
 
 	@Override
@@ -42,6 +33,10 @@ public class EntrepreneurActivityListService implements AbstractListService<Entr
 		assert model != null;
 
 		request.unbind(entity, model, "amount", "startDate", "endDate", "title");
+
+		int id = request.getModel().getInteger("id");
+
+		model.setAttribute("id", id);
 	}
 
 	@Override

@@ -9,4 +9,5 @@
 	<acme:list-column code="entrepreneur.activity.list.label.startDate" path="startDate" width="25%" />
 	<acme:list-column code="entrepreneur.activity.list.label.endDate" path="endDate" width="25%" />
 	<acme:list-column code="entrepreneur.activity.list.label.amount" path="amount" width="25%" />
+	<input id="id" name="id" value="${id}" type="hidden" />
 </acme:list>
