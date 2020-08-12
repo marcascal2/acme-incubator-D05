@@ -22,6 +22,7 @@ authenticated.discussion-forum.form.button.create = Create
 authenticated.discussion-forum.form.label.investor = Initial investor
 authenticated.discussion-forum.check.error = It's necessary a forum creation confirmation
 
+authenticated.discussion-forum.form.button.message.create = Create message
 authenticated.discussion-forum.form.button.delete = Delete forum
 
 authenticated.discussion-forum.form.button.return = Return

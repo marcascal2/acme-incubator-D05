@@ -17,4 +17,10 @@ authenticated.message.form.label.moment = Momento
 authenticated.message.form.label.body = Cuerpo
 authenticated.message.form.label.tags = Tags
 
+authenticated.message.form.label.confirmation = Confirma la creación
+authenticated.message.form.button.create = Crear
 authenticated.message.form.button.return = Volver
+
+authenticated.message.form.error.confirmation = Debes confirmar la creación
+authenticated.message.form.error.spam = Hay muchas palabras spam
+authenticated.message.form.tag.message = Por favor separa los tags con comas. Por ejemplo: tag,tag
