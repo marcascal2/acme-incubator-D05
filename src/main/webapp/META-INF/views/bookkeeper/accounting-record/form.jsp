@@ -16,22 +16,23 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<jstl:if test="${command == 'show'}">
+	<jstl:if test="${command != 'create' && !canUpdate}">
 		<acme:form-textbox code="bookkeeper.accounting-record.form.label.title" path="title" readonly="true" />
 		<acme:form-textbox code="bookkeeper.accounting-record.form.label.status" path="status" readonly="true" />
 		<acme:form-moment code="bookkeeper.accounting-record.form.label.creationMoment" path="creationMoment" readonly="true" />
 		<acme:form-textbox code="bookkeeper.accounting-record.form.label.body" path="body" readonly="true" />
 	</jstl:if>
 
-	<jstl:if test="${command == 'create'}">
-		<acme:form-textbox code="bookkeeper.accounting-record.form.label.title" path="title"/>
-		<acme:form-textbox code="bookkeeper.accounting-record.form.label.status" path="status"/>
-		<acme:form-textbox code="bookkeeper.accounting-record.form.label.body" path="body"/>
-		
-		<acme:form-submit code="bookkeeper.accounting-record.form.button.create" action="/bookkeeper/accounting-record/create"/>
+	<jstl:if test="${command == 'create' || canUpdate}">
+		<acme:form-textbox code="bookkeeper.accounting-record.form.label.title" path="title" />
+		<acme:form-textbox code="bookkeeper.accounting-record.form.label.status" path="status" />
+		<acme:form-textbox code="bookkeeper.accounting-record.form.label.body" path="body" />
+
+		<acme:form-submit test="${command == 'create'}" code="bookkeeper.accounting-record.form.button.create" action="/bookkeeper/accounting-record/create" />
+		<acme:form-submit test="${command != 'create'}" code="bookkeeper.accounting-record.form.button.update" action="/bookkeeper/accounting-record/update" />
 	</jstl:if>
-	
-	<input id="invId" name="invId" value="${invId}" hidden="true"/>
+
+	<input id="invId" name="invId" value="${invId}" hidden="true" />
 
 	<acme:form-return code="bookkeeper.accounting-record.form.button.return" />
 </acme:form>

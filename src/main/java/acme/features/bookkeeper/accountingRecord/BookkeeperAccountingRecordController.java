@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.acountingRecords.AccountingRecord;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.BasicCommand;
@@ -30,13 +31,19 @@ public class BookkeeperAccountingRecordController extends AbstractController<Boo
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private BookkeeperAccountingRecordListService	listService;
+	private BookkeeperAccountingRecordListService		listService;
 
 	@Autowired
-	private BookkeeperAccountingRecordShowService	showService;
+	private BookkeeperAccountingRecordListMineService	listMineService;
 
 	@Autowired
-	private BookkeeperAccountingRecordCreateService	createService;
+	private BookkeeperAccountingRecordShowService		showService;
+
+	@Autowired
+	private BookkeeperAccountingRecordCreateService		createService;
+
+	@Autowired
+	private BookkeeperAccountingRecordUpdateService		updateService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -45,7 +52,9 @@ public class BookkeeperAccountingRecordController extends AbstractController<Boo
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

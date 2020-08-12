@@ -43,4 +43,7 @@ public interface BookkeeperAccountingRecordRepository extends AbstractRepository
 
 	@Query("select b from Bookkeeper b where b.id = ?1")
 	Bookkeeper findBookkeeperById(int id);
+
+	@Query("select a from AccountingRecord a where a.bookkeeper.id = ?1")
+	Collection<AccountingRecord> findMine(int id);
 }
