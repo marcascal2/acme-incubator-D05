@@ -42,8 +42,14 @@ public class PatronBannerShowService implements AbstractShowService<Patron, Bann
 		assert model != null;
 
 		model.setAttribute("hasCard", !(entity.getCard() == null));
+		int id = entity.getId();
 
-		request.unbind(entity, model, "picture", "slogan", "url", "card.holder", "card.number", "card.brand", "card.expirationDate", "card.cvv");
+		model.setAttribute("banner", id);
+		if (entity.getCard() != null) {
+			model.setAttribute("card", entity.getCard().getId());
+		}
+
+		request.unbind(entity, model, "picture", "slogan", "url");
 	}
 
 	@Override

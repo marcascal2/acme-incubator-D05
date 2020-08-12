@@ -11,15 +11,17 @@
 patron.banner.form.label.picture = Picture:
 patron.banner.form.label.slogan = Slogan:
 patron.banner.form.label.url = URL:
-patron.banner.form.label.card.holder = Holder:
-patron.banner.form.label.card.number = Number:
-patron.banner.form.label.card.brand = Brand:
-patron.banner.form.label.card.expirationDate = Expiration date:
-patron.banner.form.label.card.cvv = CVV:
-patron.banner.form.label.card = Card
 
+
+patron.banner.form.button.create = Create
+patron.banner.form.button.update = Update
+patron.banner.form.button.delete = Delete
 patron.banner.form.button.return = Return
+patron.banner.form.button.card.create = Create credit card
+patron.banner.form.button.card = Credit card
 
 patron.banner.list.label.picture = Picture
 patron.banner.list.label.slogan = Slogan
 patron.banner.list.label.url = URL
+
+patron.banner.form.error.spam = There are many spam words

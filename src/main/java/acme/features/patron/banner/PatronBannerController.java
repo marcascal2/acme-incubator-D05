@@ -17,15 +17,27 @@ import acme.framework.controllers.AbstractController;
 public class PatronBannerController extends AbstractController<Patron, Banner> {
 
 	@Autowired
-	PatronBannerShowService	showService;
+	PatronBannerShowService		showService;
 
 	@Autowired
-	PatronBannerListService	listService;
+	PatronBannerListService		listService;
+
+	@Autowired
+	PatronBannerCreateService	createService;
+
+	@Autowired
+	PatronBannerUpdateService	updateService;
+
+	@Autowired
+	PatronBannerDeleteService	deleteService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
 }

@@ -20,6 +20,7 @@ import org.springframework.stereotype.Repository;
 import acme.entities.activities.Activity;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
+import acme.entities.spamWords.SpamList;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -36,4 +37,13 @@ public interface EntrepreneurActivityRepository extends AbstractRepository {
 
 	@Query("select o from InvestmentRound o where o.id = ?1")
 	InvestmentRound findInvestmentRound(int roundId);
+
+	@Query("select w.englishTranslation from SpamWord w")
+	Collection<String> findAllSpamWordsEnglish();
+
+	@Query("select w.spanishTranslation from SpamWord w")
+	Collection<String> findAllSpamWordsSpanish();
+
+	@Query("select w from SpamList w")
+	SpamList findSpamList();
 }

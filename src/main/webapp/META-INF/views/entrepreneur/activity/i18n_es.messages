@@ -23,3 +23,9 @@ entrepreneur.activity.title = Actividades del programa
 entrepreneur.activity.form.button.create = Crear
 entrepreneur.activity.form.button.update = Actualizar
 entrepreneur.activity.form.button.return = Volver
+
+entrepreneur.activity.form.error.startDate = La fecha de comienzo debe ser después de la fecha actual
+entrepreneur.activity.form.error.endDate = La fecha de fin debe ser después de la fecha actual
+entrepreneur.activity.form.error.endDate.after = La fecha de fin debe ser después de la de comienzo
+entrepreneur.activity.form.error.sum = La suma de dinero ha llegado al tope
+entrepreneur.activity.form.error.spam = Hay algunas palabras spam

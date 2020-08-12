@@ -19,15 +19,23 @@
 	<acme:form-url code="patron.banner.form.label.picture" path="picture" />
 	<acme:form-textbox code="patron.banner.form.label.slogan" path="slogan" />
 	<acme:form-url code="patron.banner.form.label.url" path="url" />
-	<jstl:if test="${hasCard}">
-		<h3>
-			<acme:message code="patron.banner.form.label.card" />
-		</h3>
-		<acme:form-textbox code="patron.banner.form.label.card.holder" path="card.holder" readonly="true" />
-		<acme:form-textbox code="patron.banner.form.label.card.number" path="card.number" readonly="true" />
-		<acme:form-textbox code="patron.banner.form.label.card.brand" path="card.brand" readonly="true" />
-		<acme:form-textbox code="patron.banner.form.label.card.expirationDate" path="card.expirationDate" readonly="true" />
-		<acme:form-textbox code="patron.banner.form.label.card.cvv" path="card.cvv" readonly="true" />
+	<acme:form-errors path="spam"/>
+
+	<acme:form-submit method="post" test="${command == 'create'}" code="patron.banner.form.button.create"
+		action="/patron/banner/create" />
+
+	<acme:form-submit test="${command != 'create'}" code="patron.banner.form.button.update" action="/patron/banner/update" />
+
+	<acme:form-submit test="${command != 'create'}" code="patron.banner.form.button.delete" action="/patron/banner/delete" />
+	
+	<jstl:if test="${command != 'create' and not hasCard}">
+		<acme:form-submit method="get" code="patron.banner.form.button.card.create" action="/patron/credit-card/create?banner=${banner}"/>	
 	</jstl:if>
+	<jstl:if test="${command != 'create' and hasCard}">
+		<acme:form-submit method="get" code="patron.banner.form.button.card" action="/patron/credit-card/update?card=${card}"/>	
+	</jstl:if>
+	
+	
+
 	<acme:form-return code="patron.banner.form.button.return" />
 </acme:form>
