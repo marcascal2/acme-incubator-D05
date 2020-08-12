@@ -50,6 +50,7 @@
 	</jstl:if>
 
 	<acme:form-return code="entrepreneur.investment-round.form.button.return" />
+	<input id="invId" name="invId" value="${invId}" type="hidden" />
 
 	<acme:form-submit test="${createForum and command != 'create'}" method="get"
 		code="entrepreneur.investment-round.form.button.create-forum" action="/authenticated/discussion-forum/create?invId=${invId}" />

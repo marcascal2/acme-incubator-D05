@@ -457,7 +457,7 @@
 	<bean id="invApplication5" class="acme.entities.investmentApplications.InvestmentApplication">
 		<property name="ticker" value="BUS-19-333333" />
 		<property name="creationMoment" value="2020/07/31 19:22" />
-		<property name="status" value="PENDING" />
+		<property name="status" value="ACCEPTED" />
 		<property name="statement" value="This is a statement" />
 		<property name="moneyOffer" value="1600 €" />
 		<property name="investmentApplied" ref="investmentRound01" />
@@ -1392,7 +1392,7 @@
 		</property>
 		<property name="investor">
 			<list>
-				<ref bean="investor1Investor" />
+				<ref bean="investor2Investor" />
 			</list>
 		</property>
 	</bean>
