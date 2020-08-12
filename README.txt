@@ -13,5 +13,6 @@ who have enroled the Design and Testing subject of the Software Engineering curr
 University of Sevilla.  This project provides a template our students can use to get their projects 
 up and running very quickly.
 
-We consider that the relationship of Investment Round with Activity is ManyToMany because we think that the same
-Activity can be performed in different work programs
+We consider that the relationship of Investment Round with Activity is ManyToMany because we think that the same Activity can be performed in different work programs
+
+We consider that when a request from a user to be an bookkeeper is rejected, that user cannot make more requests to be an bookkeeper.
