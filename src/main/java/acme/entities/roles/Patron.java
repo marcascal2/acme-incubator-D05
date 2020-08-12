@@ -9,6 +9,9 @@ import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import acme.entities.banners.Banner;
 import acme.entities.creditCards.CreditCard;
 import acme.framework.entities.UserRole;
@@ -32,6 +35,7 @@ public class Patron extends UserRole {
 	@Valid
 	private CreditCard					card;
 
-	@OneToMany(mappedBy = "patron")
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany
 	private Collection<@Valid Banner>	banners;
 }

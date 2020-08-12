@@ -40,7 +40,7 @@ public class PatronBannerDeleteService implements AbstractDeleteService<Patron, 
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "creditCard");
+		request.bind(entity, errors);
 	}
 
 	@Override
@@ -75,9 +75,8 @@ public class PatronBannerDeleteService implements AbstractDeleteService<Patron, 
 		assert request != null;
 		assert entity != null;
 
-		if (entity.getCard() != null) {
-			this.repository.delete(entity.getCard());
-		}
+		entity.setCard(null);
 		this.repository.delete(entity);
+
 	}
 }

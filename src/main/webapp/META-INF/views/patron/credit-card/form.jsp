@@ -26,5 +26,6 @@
 	<acme:form-submit test="${command == 'update'}" code="patron.card.form.button.update" action="/patron/credit-card/update" />
 	<input id="banner" name="banner" value="${banner}" type="hidden" />
 	<input id="card" name="card" value="${card}" type="hidden" />
+	<input id="patron" name="patron" value="${patron}" type="hidden" />
 	<acme:form-return code="patron.card.button.return" />
 </acme:form>

@@ -45,6 +45,7 @@ public class AuthenticatedCardUpdateService implements AbstractUpdateService<Aut
 		int id = request.getModel().getInteger("card");
 
 		model.setAttribute("card", id);
+
 	}
 
 	@Override
@@ -70,6 +71,8 @@ public class AuthenticatedCardUpdateService implements AbstractUpdateService<Aut
 	public void update(final Request<CreditCard> request, final CreditCard entity) {
 		assert request != null;
 		assert entity != null;
+
+		entity.getPatron().setCard(entity);
 
 		this.repository.save(entity);
 

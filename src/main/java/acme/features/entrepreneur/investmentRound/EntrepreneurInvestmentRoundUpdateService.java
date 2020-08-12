@@ -2,7 +2,6 @@
 package acme.features.entrepreneur.investmentRound;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +52,10 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "link");
+		int id = model.getInteger("id");
+		model.setAttribute("invId", id);
 
+		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "link");
 	}
 
 	@Override
@@ -73,21 +74,13 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		assert entity != null;
 		assert errors != null;
 
-		String newTicker = entity.getTicker();
-		if (!errors.hasErrors("ticker")) {
-			InvestmentRound repeatedRound = this.repository.findOneByTicker(newTicker);
-			boolean isRepeated = repeatedRound != null;
-			errors.state(request, isRepeated, "ticker", "entrepreneur.investment-round.form.error.ticker");
-		}
-
 		Collection<String> englishWords = this.repository.findAllSpamWordsEnglish();
 		Collection<String> spanishWords = this.repository.findAllSpamWordsSpanish();
-		String totalText = entity.getTicker() + " " + entity.getTitle() + " " + entity.getDescription() + entity.getLink();
-
-		Boolean isSpamEN = this.isSpam(totalText, englishWords);
-		Boolean isSpamES = this.isSpam(totalText, spanishWords);
-
 		if (!errors.hasErrors()) {
+			String totalText = entity.getTicker() + " " + entity.getTitle() + " " + entity.getDescription() + entity.getLink();
+			Boolean isSpamEN = this.isSpam(totalText, englishWords);
+			Boolean isSpamES = this.isSpam(totalText, spanishWords);
+
 			errors.state(request, !isSpamEN, "finalMode", "entrepreneur.investment-round.form.error.spam");
 			errors.state(request, !isSpamES, "finalMode", "entrepreneur.investment-round.form.error.spam");
 		}
@@ -111,7 +104,7 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 
 		for (String spamword : sl) {
 			numSpamWords = numSpamWords + this.numDeSpamwords(reallyBigString.toLowerCase(), spamword, 0.);
-			double frequency = (double) Collections.frequency(sl, spamword) / sl.size() * 100;
+			double frequency = numSpamWords / sl.size() * 100;
 			if (frequency > spamList.getSpamThreshold()) {
 				return true;
 			}

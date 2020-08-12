@@ -7,6 +7,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentApplications.ApplicationStatus;
 import acme.entities.activities.Activity;
 import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
@@ -71,8 +72,8 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert errors != null;
 
 		Collection<InvestmentApplication> applications = entity.getApplication();
-		boolean canDelete = applications.stream().anyMatch(x -> x.getInvestor() != null);
-		errors.state(request, !canDelete, "application", "entrepreneur.investment-round.form.error.application");
+		boolean canDelete = applications.stream().allMatch(x -> x.getStatus().equals(ApplicationStatus.REJECTED));
+		errors.state(request, canDelete, "application", "entrepreneur.investment-round.form.error.application");
 	}
 
 	@Override
@@ -89,7 +90,6 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 			this.repository.deleteAll(entity.getRecord());
 		}
 
-		this.repository.delete(entity);
-
+		this.repository.delete(entity);		
 	}
 }

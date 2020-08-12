@@ -2,8 +2,8 @@
 package acme.features.entrepreneur.investmentRound;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Date;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +45,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "creationDate");
+		request.bind(entity, errors, "ticker", "creationDate");
 
 	}
 
@@ -55,7 +55,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "link");
+		request.unbind(entity, model, "kindOfRound", "title", "description", "amount", "link");
 	}
 
 	@Override
@@ -68,6 +68,9 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 
 		result.setEntrepreneur(entrepreneur);
 		result.setApplication(null);
+
+		String ticker = this.generateTicker(result, result.getEntrepreneur().getActivitySector().getSector());
+		result.setTicker(ticker);
 
 		Date date = new Date(System.currentTimeMillis() - 1);
 		result.setCreationDate(date);
@@ -82,21 +85,14 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert errors != null;
 
-		String newTicker = entity.getTicker();
-		if (!errors.hasErrors("ticker")) {
-			InvestmentRound repeatedRound = this.repository.findOneByTicker(newTicker);
-			boolean isRepeated = repeatedRound != null;
-			errors.state(request, !isRepeated, "ticker", "entrepreneur.investment-round.form.error.ticker");
-		}
-
 		Collection<String> englishWords = this.repository.findAllSpamWordsEnglish();
 		Collection<String> spanishWords = this.repository.findAllSpamWordsSpanish();
-		String totalText = entity.getTicker() + " " + entity.getTitle() + " " + entity.getDescription() + entity.getLink();
-
-		Boolean isSpamEN = this.isSpam(totalText, englishWords);
-		Boolean isSpamES = this.isSpam(totalText, spanishWords);
-
 		if (!errors.hasErrors()) {
+			String totalText = entity.getTicker() + " " + entity.getTitle() + " " + entity.getDescription() + entity.getLink();
+
+			Boolean isSpamEN = this.isSpam(totalText, englishWords);
+			Boolean isSpamES = this.isSpam(totalText, spanishWords);
+
 			errors.state(request, !isSpamEN, "finalMode", "entrepreneur.investment-round.form.error.spam");
 			errors.state(request, !isSpamES, "finalMode", "entrepreneur.investment-round.form.error.spam");
 		}
@@ -116,7 +112,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 
 		for (String spamword : sl) {
 			numSpamWords = numSpamWords + this.numDeSpamwords(reallyBigString.toLowerCase(), spamword, 0.);
-			double frequency = (double) Collections.frequency(sl, spamword) / sl.size() * 100;
+			double frequency = numSpamWords / sl.size() * 100;
 			if (frequency > spamList.getSpamThreshold()) {
 				return true;
 			}
@@ -132,5 +128,21 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 			Integer a = fullText.indexOf(spamword);
 			return this.numDeSpamwords(fullText.substring(a + 1), spamword, u + 1);
 		}
+	}
+
+	private String generateTicker(final InvestmentRound i, final String s) {
+		String res;
+
+		res = s.substring(0, 3).toUpperCase();
+
+		res += "-20-";
+
+		Random r = new Random();
+		for (int j = 0; j < 6; j++) {
+			Integer in = r.nextInt(10);
+			res += in.toString();
+		}
+
+		return res;
 	}
 }
