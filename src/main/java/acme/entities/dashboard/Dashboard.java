@@ -60,4 +60,8 @@ public class Dashboard implements Serializable {
 	Double						averageInvestmentRoundPerEntrepreneur;
 	Double						averageApplicationPerEntrepreneur;
 	Double						averageApplicationPerInvestor;
+
+	List<Integer>				numberOfPendingApplicationsPerDay;
+	List<Integer>				numberOfAcceptedApplicationsPerDay;
+	List<Integer>				numberOfRejectedApplicationsPerDay;
 }

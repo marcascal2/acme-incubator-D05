@@ -43,4 +43,8 @@ administrator.dashboard.form.label.averageInvestmentRoundPerEntrepreneur = Avera
 administrator.dashboard.form.label.averageApplicationPerEntrepreneur = Average number of applications per entrepreneur
 administrator.dashboard.form.label.averageApplicationPerInvestor = Average number of applications per investor
 
+administrator.dashboard.form.label.numberOfPendingApplicationsInLast15Days = Applications in last 15 days
+administrator.dashboard.form.label.timeSeries = Time series of applications in las 15 days
+
 administrator.dashboard.form.button.return = Return
+

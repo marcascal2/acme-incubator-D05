@@ -1,7 +1,14 @@
 
 package acme.features.administrator.dashboard;
 
+import java.sql.Date;
+import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,12 +60,12 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Double maximumOfMoneyIntervalsOfActiveOverturesMax = this.repository.maximumOfMoneyIntervalsOfActiveOverturesMax();
 		Double averageOfMoneyIntervalsOfActiveOverturesMax = this.repository.averageOfMoneyIntervalsOfActiveOverturesMax();
 		Double desviationOfMoneyIntervalsOfActiveOverturesMax = this.repository.desviationOfMoneyIntervalsOfActiveOverturesMax();
-    
+
 		Double averageInvestmentRoundPerEntrepreneur = this.repository.averageInvestmentRoundPerEntrepreneur();
 		Double averageApplicationPerEntrepreneur = this.repository.averageApplicationPerEntrepreneur();
 		Double averageApplicationPerInvestor = this.repository.averageApplicationPerInvestor();
-    
-    request.unbind(entity, model, "technologyPerSector", "toolPerSector", "ratioOfClosedSourceTools", "ratioOfOpenSourceTools", "ratioOfClosedSourceTechnologies", "ratioOfOpenSourceTechnologies", "ratioOfSeedInvestmentRounds",
+
+		request.unbind(entity, model, "technologyPerSector", "toolPerSector", "ratioOfClosedSourceTools", "ratioOfOpenSourceTools", "ratioOfClosedSourceTechnologies", "ratioOfOpenSourceTechnologies", "ratioOfSeedInvestmentRounds",
 			"ratioOfAngelInvestmentRounds", "ratioOfSeriesAInvestmentRounds", "ratioOfSeriesBInvestmentRounds", "ratioOfSeriesCInvestmentRounds", "ratioOfBridgeInvestmentRounds", "ratioOfPendingApplications", "ratioOfAcceptedApplications",
 			"ratioOfRejectedApplications");
 
@@ -89,6 +96,15 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		model.setAttribute("averageInvestmentRoundPerEntrepreneur", averageInvestmentRoundPerEntrepreneur);
 		model.setAttribute("averageApplicationPerEntrepreneur", averageApplicationPerEntrepreneur);
 		model.setAttribute("averageApplicationPerInvestor", averageApplicationPerInvestor);
+
+		Date limit_date = Date.valueOf(LocalDate.now().minusDays(15));
+		List<LocalDate> dates = this.getDates(limit_date);
+		List<String> labels = dates.stream().map(d -> d.toString()).collect(Collectors.toList());
+
+		model.setAttribute("labels", labels);
+
+		request.unbind(entity, model, "numberOfPendingApplicationsPerDay", "numberOfAcceptedApplicationsPerDay", "numberOfRejectedApplicationsPerDay");
+
 	}
 
 	@Override
@@ -136,6 +152,45 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setTechnologyPerSector(techPerSector);
 		result.setToolPerSector(toolPerSector);
 
+		Date limit_date = Date.valueOf(LocalDate.now().minusDays(15));
+
+		List<String[]> pend = this.repository.numberOfPendingApplicationsPerDay(limit_date);
+		List<String[]> accep = this.repository.numberOfAcceptedApplicationsPerDay(limit_date);
+		List<String[]> rejec = this.repository.numberOfRejectedApplicationsPerDay(limit_date);
+
+		List<LocalDate> dates = this.getDates(limit_date);
+
+		result.setNumberOfPendingApplicationsPerDay(this.getDataByDate(pend, dates));
+		result.setNumberOfAcceptedApplicationsPerDay(this.getDataByDate(accep, dates));
+		result.setNumberOfRejectedApplicationsPerDay(this.getDataByDate(rejec, dates));
+
 		return result;
 	}
+
+	private List<Integer> getDataByDate(final List<String[]> list, final List<LocalDate> dates) {
+		Map<LocalDate, Integer> lp = new HashMap<LocalDate, Integer>();
+		List<String[]> l = list;
+		for (LocalDate ld1 : dates) {
+			lp.put(ld1, 0);
+		}
+
+		for (int i = 0; i < list.size(); i++) {
+			LocalDate ld2 = LocalDate.parse(list.get(i)[0].substring(0, 10));
+			if (lp.containsKey(ld2)) {
+				lp.replace(ld2, 0, Integer.parseInt(l.get(i)[1]));
+			}
+		}
+
+		TreeMap<LocalDate, Integer> lpo = new TreeMap<>(lp);
+		List<Integer> result = lpo.values().stream().collect(Collectors.toList());
+		return result;
+	}
+
+	private List<LocalDate> getDates(final Date limit_date) {
+		Date now = Date.valueOf(LocalDate.now());
+		long numberOfDaysBetween = (now.getTime() - limit_date.getTime()) / (1000 * 60 * 60 * 24);
+		List<LocalDate> dates = IntStream.iterate(0, i -> i + 1).limit(numberOfDaysBetween).mapToObj(i -> limit_date.toLocalDate().plusDays(i)).collect(Collectors.toList());
+		return dates;
+	}
+
 }
