@@ -131,6 +131,12 @@
 				access="hasRole('Entrepreneur')" />
 			<acme:menu-suboption code="master.menu.user-account.become-bookkeeper" action="/authenticated/bookkeeper-request/create"
 				access="!hasRole('Bookkeeper')" />
+							<acme:menu-suboption code="master.menu.user-account.bookkeeper" action="/authenticated/bookkeeper-request/update"
+				access="hasRole('Bookkeeper')" />
+			<acme:menu-suboption code="master.menu.user-account.become-patron" action="/authenticated/patron/create"
+				access="!hasRole('Patron')" />
+			<acme:menu-suboption code="master.menu.user-account.patron" action="/authenticated/patron/update"
+				access="hasRole('Patron')" />
 <%-- 			<acme:menu-suboption code="master.menu.user-account.bookkeeper" action="/authenticated/bookkeeper-request/create" --%>
 <%-- 				access="hasRole('Bookkeeper')" /> --%>
 		</acme:menu-option>

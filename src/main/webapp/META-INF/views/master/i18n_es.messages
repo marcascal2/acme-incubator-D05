@@ -129,6 +129,8 @@ master.menu.user-account.entrepreneur = Datos de empresario
 master.menu.user-account.become-entrepreneur = Hazte empresario
 master.menu.user-account.become-bookkeeper = Hazte contador
 master.menu.user-account.bookkeeper = Datos contador
+master.menu.user-account.become-patron = Hazte patrocinador
+master.menu.user-account.patron = Datos de patrocinador
 
 ﻿# master.footer ###############################################################
 
