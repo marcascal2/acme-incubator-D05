@@ -33,10 +33,6 @@ public class EntrepreneurActivityListService implements AbstractListService<Entr
 		assert model != null;
 
 		request.unbind(entity, model, "amount", "startDate", "endDate", "title");
-
-		int id = request.getModel().getInteger("id");
-
-		model.setAttribute("id", id);
 	}
 
 	@Override

@@ -29,5 +29,5 @@
 		action="/entrepreneur/activity/update" />
 	<acme:form-return code="entrepreneur.activity.form.button.return" />
 	
-	<input id="id" name="id" value="${id}" type="hidden" />
+	<input id="invId" name="invId" value="${invId}" type="hidden" />
 </acme:form>

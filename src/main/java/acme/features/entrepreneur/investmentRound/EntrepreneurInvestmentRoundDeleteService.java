@@ -3,12 +3,14 @@ package acme.features.entrepreneur.investmentRound;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.investmentApplications.ApplicationStatus;
 import acme.entities.activities.Activity;
+import acme.entities.investmentApplications.ApplicationStatus;
 import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
@@ -52,6 +54,23 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		//Para el boton de mostrar
+		List<InvestmentApplication> list = entity.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).collect(Collectors.toList());
+		model.setAttribute("createForum", entity.getForum() == null && !list.isEmpty());
+
+		Collection<InvestmentApplication> applications = entity.getApplication();
+		boolean canDelete = applications.isEmpty() ? true : applications.stream().allMatch(x -> x.getStatus().equals(ApplicationStatus.REJECTED));
+
+		model.setAttribute("canDelete", canDelete);
+
+		Double sum = 0.;
+		for (Activity a : entity.getWorkProgramme()) {
+			sum += a.getAmount().getAmount();
+		}
+
+		model.setAttribute("sumUp", entity.sumUp());
+
 		request.unbind(entity, model, "ticker", "creationDate", "kindOfRound", "title", "description", "amount", "link");
 	}
 
@@ -70,10 +89,6 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
-		Collection<InvestmentApplication> applications = entity.getApplication();
-		boolean canDelete = applications.stream().allMatch(x -> x.getStatus().equals(ApplicationStatus.REJECTED));
-		errors.state(request, canDelete, "application", "entrepreneur.investment-round.form.error.application");
 	}
 
 	@Override
@@ -81,15 +96,27 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert request != null;
 		assert entity != null;
 
-		if (entity.getWorkProgramme() != null) {
+		if (!entity.getWorkProgramme().isEmpty()) {
 			entity.setWorkProgramme(new ArrayList<Activity>());
 			this.repository.deleteAll(entity.getWorkProgramme());
 		}
-		if (entity.getRecord() != null) {
+		if (!entity.getRecord().isEmpty()) {
 			entity.setRecord(new ArrayList<>());
 			this.repository.deleteAll(entity.getRecord());
 		}
+		if (!entity.getApplication().isEmpty()) {
+			entity.setApplication(new ArrayList<>());
+			this.repository.deleteAll(entity.getApplication());
+		}
 
-		this.repository.delete(entity);		
+		if (entity.getForum() != null) {
+			entity.setForum(null);
+			entity.getForum().setInvestmentRound(null);
+		}
+		if (entity.getEntrepreneur() != null) {
+			entity.setEntrepreneur(null);
+		}
+
+		this.repository.delete(entity);
 	}
 }

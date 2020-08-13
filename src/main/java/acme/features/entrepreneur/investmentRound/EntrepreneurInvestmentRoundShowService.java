@@ -64,7 +64,10 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 
 		model.setAttribute("finalMode", !isSpamEN && !isSpamES && entity.sumUp());
 
-		model.setAttribute("canDelete", entity.getApplication().stream().allMatch(x -> x.getStatus().equals(ApplicationStatus.REJECTED)));
+		List<InvestmentApplication> applications = entity.getApplication().stream().collect(Collectors.toList());
+		boolean canDelete = applications.isEmpty() ? true : applications.stream().allMatch(x -> x.getStatus() == ApplicationStatus.REJECTED);
+
+		model.setAttribute("canDelete", canDelete);
 
 		Double sum = 0.;
 		for (Activity a : entity.getWorkProgramme()) {

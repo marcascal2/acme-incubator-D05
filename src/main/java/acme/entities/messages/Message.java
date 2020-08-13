@@ -45,6 +45,6 @@ public class Message extends DomainEntity {
 	@NotBlank
 	private String				body;
 
-	@ManyToOne
+	@ManyToOne(optional = false)
 	private DiscussionForum		forum;
 }
