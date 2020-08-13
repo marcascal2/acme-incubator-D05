@@ -42,6 +42,7 @@ public class Activity extends DomainEntity {
 	@NotNull
 	private Money				amount;
 
+	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
 	private InvestmentRound		round;

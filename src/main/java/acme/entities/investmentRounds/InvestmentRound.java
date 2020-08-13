@@ -66,13 +66,14 @@ public class InvestmentRound extends DomainEntity {
 	@URL
 	private String						link;
 
+	@NotNull
 	@ManyToOne(optional = false)
 	@Valid
 	private Entrepreneur				entrepreneur;
 
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(mappedBy = "round")
-	private Collection<@Valid Activity>	workProgramme;
+	private Collection<Activity>		workProgramme;
 
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@OneToMany(mappedBy = "investmentApplied")
@@ -82,6 +83,7 @@ public class InvestmentRound extends DomainEntity {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<AccountingRecord>		record;
 
+	@Valid
 	@OneToOne(mappedBy = "investmentRound")
 	private DiscussionForum				forum;
 

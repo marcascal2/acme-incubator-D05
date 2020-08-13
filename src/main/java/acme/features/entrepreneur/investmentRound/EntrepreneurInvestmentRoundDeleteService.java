@@ -1,7 +1,6 @@
 
 package acme.features.entrepreneur.investmentRound;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -96,25 +95,20 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert request != null;
 		assert entity != null;
 
-		if (!entity.getWorkProgramme().isEmpty()) {
-			entity.setWorkProgramme(new ArrayList<Activity>());
-			this.repository.deleteAll(entity.getWorkProgramme());
+		if (entity.getForum() != null) {
+			if (entity.getForum().getMessages() != null) {
+				this.repository.deleteAll(entity.getForum().getMessages());
+			}
+			this.repository.delete(entity.getForum());
 		}
-		if (!entity.getRecord().isEmpty()) {
-			entity.setRecord(new ArrayList<>());
+		if (entity.getRecord() != null) {
 			this.repository.deleteAll(entity.getRecord());
 		}
-		if (!entity.getApplication().isEmpty()) {
-			entity.setApplication(new ArrayList<>());
+		if (entity.getWorkProgramme() != null) {
+			this.repository.deleteAll(entity.getWorkProgramme());
+		}
+		if (entity.getApplication() != null) {
 			this.repository.deleteAll(entity.getApplication());
-		}
-
-		if (entity.getForum() != null) {
-			entity.setForum(null);
-			entity.getForum().setInvestmentRound(null);
-		}
-		if (entity.getEntrepreneur() != null) {
-			entity.setEntrepreneur(null);
 		}
 
 		this.repository.delete(entity);
