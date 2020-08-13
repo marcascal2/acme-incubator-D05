@@ -104,6 +104,17 @@ public class AuthenticatedDiscussionForumUpdateService implements AbstractUpdate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		Integer invId = entity.getInvestmentRound().getId();
+
+		InvestmentRound round = this.repository.findInvestmentRoundById(invId);
+
+		List<UserAccount> acceptedUserAccounts = round.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).map(x -> x.getInvestor().getUserAccount()).collect(Collectors.toList());
+
+		acceptedUserAccounts = acceptedUserAccounts.stream().filter(u -> !entity.getInvestor().stream().map(i -> i.getUserAccount().getId()).collect(Collectors.toList()).contains(u.getId())).collect(Collectors.toList());
+
+		List<String> usernames = acceptedUserAccounts.stream().map(x -> x.getUsername()).collect(Collectors.toList());
+
+		errors.state(request, !usernames.isEmpty(), "userToAdd", "authenticated.discussion-forum.form.error.userToAdd");
 	}
 
 	@Override
