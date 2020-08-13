@@ -711,7 +711,7 @@
 		<property name="title" value="Programme development" />
 		<property name="startDate" value="2020/09/05 18:00" />
 		<property name="endDate" value="2020/10/05 18:00" />
-		<property name="amount" value="50 €" />
+		<property name="amount" value="150 €" />
 		<property name="round" ref="investmentRound01" />
 	</bean>
 
@@ -719,10 +719,71 @@
 		<property name="title" value="Running tour" />
 		<property name="startDate" value="2020/12/25 10:00" />
 		<property name="endDate" value="2020/12/25 18:00" />
-		<property name="amount" value="20 €" />
+		<property name="amount" value="50 €" />
 		<property name="round" ref="investmentRound02" />
 
 	</bean>
+	
+	<bean id="activity03" class="acme.entities.activities.Activity">
+		<property name="title" value="Free activity" />
+		<property name="startDate" value="2020/03/15 18:00" />
+		<property name="endDate" value="2020/10/15 18:00" />
+		<property name="amount" value="10 €" />
+		<property name="round" ref="investmentRound01" />
+	</bean>
+
+	<bean id="activity04" class="acme.entities.activities.Activity">
+		<property name="title" value="Sport actvity" />
+		<property name="startDate" value="2020/10/27 10:00" />
+		<property name="endDate" value="2020/12/18 18:00" />
+		<property name="amount" value="750 €" />
+		<property name="round" ref="investmentRound03" />
+
+	</bean>
+	
+	<bean id="activity05" class="acme.entities.activities.Activity">
+		<property name="title" value="Programme development" />
+		<property name="startDate" value="2020/09/05 18:00" />
+		<property name="endDate" value="2020/10/05 18:00" />
+		<property name="amount" value="450 €" />
+		<property name="round" ref="investmentRound02" />
+	</bean>
+
+	<bean id="activity06" class="acme.entities.activities.Activity">
+		<property name="title" value="Travel activity" />
+		<property name="startDate" value="2020/08/19 10:00" />
+		<property name="endDate" value="2020/11/03 18:00" />
+		<property name="amount" value="2000 €" />
+		<property name="round" ref="investmentRound04" />
+
+	</bean>
+	
+	<bean id="activity07" class="acme.entities.activities.Activity">
+		<property name="title" value="Tour activity" />
+		<property name="startDate" value="2020/07/23 10:00" />
+		<property name="endDate" value="2020/08/17 18:00" />
+		<property name="amount" value="9000 €" />
+		<property name="round" ref="investmentRound04" />
+
+	</bean>
+	
+	<bean id="activity08" class="acme.entities.activities.Activity">
+		<property name="title" value="Cultural activity" />
+		<property name="startDate" value="2020/09/05 18:00" />
+		<property name="endDate" value="2020/10/05 18:00" />
+		<property name="amount" value="200 €" />
+		<property name="round" ref="investmentRound06" />
+	</bean>
+
+	<bean id="activity09" class="acme.entities.activities.Activity">
+		<property name="title" value="Last activity" />
+		<property name="startDate" value="2020/08/16 10:00" />
+		<property name="endDate" value="2020/11/14 18:00" />
+		<property name="amount" value="20 €" />
+		<property name="round" ref="investmentRound01" />
+
+	</bean>
+	
 
 	<!-- Investment rounds -->
 	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
@@ -736,6 +797,8 @@
 		<property name="workProgramme">
 			<list>
 				<ref bean="activity01" />
+				<ref bean="activity03" />
+				<ref bean="activity09" />
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
@@ -767,6 +830,7 @@
 		<property name="workProgramme">
 			<list>
 				<ref bean="activity02" />
+				<ref bean="activity05" />
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
@@ -797,7 +861,7 @@
 		<property name="link" value="http://acme.com" />
 		<property name="workProgramme">
 			<list>
-				<ref bean="activity02" />
+				<ref bean="activity04" />
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
@@ -826,7 +890,8 @@
 		<property name="link" value="http://toreagency.com" />
 		<property name="workProgramme">
 			<list>
-				<ref bean="activity01" />
+				<ref bean="activity06" />
+				<ref bean="activity07" />
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
@@ -853,7 +918,30 @@
 		<property name="link" value="http://swery.com" />
 		<property name="workProgramme">
 			<list>
-				<ref bean="activity02" />
+			</list>
+		</property>
+		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
+		<property name="application">
+			<list>
+			</list>
+		</property>
+		<property name="record">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="investmentRound06" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="SCI-76-109100" />
+		<property name="creationDate" value="2020/07/20 14:40" />
+		<property name="kindOfRound" value="SERIES_A" />
+		<property name="title" value="No applications round" />
+		<property name="description" value="This round has not applications" />
+		<property name="amount" value="250 €" />
+		<property name="link" value="http://tohhi.com" />
+		<property name="workProgramme">
+			<list>
+				<ref bean="activity08" />
 			</list>
 		</property>
 		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
