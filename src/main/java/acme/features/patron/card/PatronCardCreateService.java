@@ -28,9 +28,12 @@ public class PatronCardCreateService implements AbstractCreateService<Patron, Cr
 		Patron patron;
 		Principal principal;
 
+		int id = request.getModel().getInteger("banner");
+		Banner b = this.repository.findBannerById(id);
+
 		patron = this.repository.findOnePatronByUserAccountId(request.getPrincipal().getActiveRoleId());
 		principal = request.getPrincipal();
-		result = patron.getUserAccount().getId() == principal.getAccountId();
+		result = patron.getUserAccount().getId() == principal.getAccountId() && patron.getBanners().stream().anyMatch(a -> a.getId() == b.getId());
 
 		return result;
 	}
@@ -41,7 +44,7 @@ public class PatronCardCreateService implements AbstractCreateService<Patron, Cr
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "patron", "banner");
 	}
 
 	@Override
@@ -60,6 +63,11 @@ public class PatronCardCreateService implements AbstractCreateService<Patron, Cr
 		CreditCard result;
 
 		result = new CreditCard();
+
+		result.setPatron(null);
+		Integer id = request.getModel().getInteger("banner");
+		Banner banner = this.repository.findBannerById(id);
+		result.setBanner(banner);
 
 		return result;
 	}

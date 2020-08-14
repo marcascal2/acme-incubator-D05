@@ -20,4 +20,7 @@ public interface PatronCardRepository extends AbstractRepository {
 
 	@Query("select b from Banner b where b.id = ?1")
 	Banner findBannerById(int bannerId);
+
+	@Query("select b from Banner b where b.card.id = ?1")
+	Banner findBannerByCardId(int cardId);
 }

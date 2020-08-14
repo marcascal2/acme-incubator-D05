@@ -36,6 +36,6 @@
 	</jstl:if>
 	
 	
-
+	<input id="banner" name="banner" value="${banner}" type="hidden" />
 	<acme:form-return code="patron.banner.form.button.return" />
 </acme:form>

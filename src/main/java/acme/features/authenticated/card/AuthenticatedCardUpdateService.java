@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.creditCards.CreditCard;
+import acme.entities.roles.Patron;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -22,7 +23,13 @@ public class AuthenticatedCardUpdateService implements AbstractUpdateService<Aut
 	public boolean authorise(final Request<CreditCard> request) {
 		assert request != null;
 
-		return true;
+		int id = request.getModel().getInteger("card");
+		Patron p = this.repository.findPatronByCardId(id);
+
+		int idUA = request.getPrincipal().getAccountId();
+		Patron e = this.repository.findOnePatronByUserAccountId(idUA);
+
+		return p.equals(e);
 	}
 
 	@Override
@@ -31,7 +38,7 @@ public class AuthenticatedCardUpdateService implements AbstractUpdateService<Aut
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "patron");
 	}
 
 	@Override

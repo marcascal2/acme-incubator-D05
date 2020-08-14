@@ -4,6 +4,7 @@ package acme.features.patron.card;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.banners.Banner;
 import acme.entities.creditCards.CreditCard;
 import acme.entities.roles.Patron;
 import acme.framework.components.Errors;
@@ -27,9 +28,12 @@ public class PatronCardUpdateService implements AbstractUpdateService<Patron, Cr
 		Patron patron;
 		Principal principal;
 
+		int id = request.getModel().getInteger("card");
+		Banner b = this.repository.findBannerByCardId(id);
+
 		patron = this.repository.findOnePatronByUserAccountId(request.getPrincipal().getActiveRoleId());
 		principal = request.getPrincipal();
-		result = patron.getUserAccount().getId() == principal.getAccountId();
+		result = patron.getUserAccount().getId() == principal.getAccountId() && patron.getBanners().stream().anyMatch(a -> a.getId() == b.getId());
 
 		return result;
 	}
@@ -40,7 +44,7 @@ public class PatronCardUpdateService implements AbstractUpdateService<Patron, Cr
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors);
+		request.bind(entity, errors, "patron", "banner");
 	}
 
 	@Override
