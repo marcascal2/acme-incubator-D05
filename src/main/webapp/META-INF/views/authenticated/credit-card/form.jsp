@@ -21,8 +21,10 @@
 	<acme:form-textbox code="authenticated.card.label.brand" path="brand" />
 	<acme:form-textbox code="authenticated.card.label.expirationDate" path="expirationDate" />
 	<acme:form-textbox code="authenticated.card.label.cvv" path="cvv" />
+	
+	<input id="patron" name="patron" value="${patron}" hidden="true"/>
 
-	<acme:form-submit method="post" test="${command == 'create'}" code="authenticated.card.form.button.create" action="/authenticated/credit-card/create" />
+	<acme:form-submit method="post" test="${command == 'create'}" code="authenticated.card.form.button.create" action="/authenticated/credit-card/create?patron=${patron}" />
 	<acme:form-submit test="${command == 'update'}" code="authenticated.card.form.button.update" action="/authenticated/credit-card/update" />
 	<input id="card" name="card" value="${card}" type="hidden" />
 	<acme:form-return code="authenticated.card.button.return" />

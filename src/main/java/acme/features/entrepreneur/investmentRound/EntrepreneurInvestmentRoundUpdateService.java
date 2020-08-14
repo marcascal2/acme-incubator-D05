@@ -3,10 +3,14 @@ package acme.features.entrepreneur.investmentRound;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentApplications.ApplicationStatus;
+import acme.entities.investmentApplications.InvestmentApplication;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.spamWords.SpamList;
@@ -54,6 +58,14 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 
 		int id = model.getInteger("id");
 		model.setAttribute("invId", id);
+
+		List<InvestmentApplication> list = entity.getApplication().stream().filter(a -> a.getStatus() == ApplicationStatus.ACCEPTED).collect(Collectors.toList());
+		model.setAttribute("createForum", entity.getForum() == null && !list.isEmpty());
+
+		List<InvestmentApplication> applications = entity.getApplication().stream().collect(Collectors.toList());
+		boolean canDelete = applications.isEmpty() ? true : applications.stream().allMatch(x -> x.getStatus() == ApplicationStatus.REJECTED);
+
+		model.setAttribute("canDelete", canDelete);
 
 		request.unbind(entity, model, "ticker", "kindOfRound", "title", "description", "amount", "link");
 	}

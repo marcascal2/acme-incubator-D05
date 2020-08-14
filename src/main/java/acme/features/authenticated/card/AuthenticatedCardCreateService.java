@@ -22,8 +22,13 @@ public class AuthenticatedCardCreateService implements AbstractCreateService<Aut
 	@Override
 	public boolean authorise(final Request<CreditCard> request) {
 		assert request != null;
+		int id = request.getModel().getInteger("patron");
+		Patron p = this.repository.findPatronById(id);
 
-		return true;
+		int idUA = request.getPrincipal().getAccountId();
+		Patron e = this.repository.findOnePatronByUserAccountId(idUA);
+
+		return p.equals(e);
 	}
 
 	@Override

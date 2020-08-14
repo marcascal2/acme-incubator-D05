@@ -3,11 +3,13 @@ package acme.entities.creditCards;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
+import acme.entities.banners.Banner;
 import acme.entities.roles.Patron;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -41,7 +43,12 @@ public class CreditCard extends DomainEntity {
 	@Pattern(regexp = "[0-9]{3}")
 	private String				cvv;
 
+	@Valid
 	@OneToOne(optional = true)
 	private Patron				patron;
+
+	@Valid
+	@OneToOne(optional = false)
+	private Banner				banner;
 
 }

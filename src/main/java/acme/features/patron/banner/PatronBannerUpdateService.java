@@ -52,6 +52,9 @@ public class PatronBannerUpdateService implements AbstractUpdateService<Patron, 
 		assert entity != null;
 		assert model != null;
 
+		int bannerId = (int) model.getAttribute("banner");
+		model.setAttribute("banner", bannerId);
+
 		request.unbind(entity, model, "picture", "slogan", "url");
 	}
 
