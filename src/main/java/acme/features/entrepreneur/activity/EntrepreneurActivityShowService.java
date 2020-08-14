@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
-import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -26,10 +25,9 @@ public class EntrepreneurActivityShowService implements AbstractShowService<Entr
 		int actId = request.getModel().getInteger("id");
 
 		Activity a = this.repository.findOneById(actId);
-		InvestmentRound round = a.getRound();
 		Entrepreneur e = this.repository.findEntrepreneurById(entId);
 
-		boolean isAuthorised = round.getEntrepreneur().equals(e);
+		boolean isAuthorised = a.getRound().getEntrepreneur().equals(e);
 
 		return isAuthorised;
 	}

@@ -38,51 +38,54 @@ import lombok.Setter;
 @Setter
 public class InvestmentRound extends DomainEntity {
 
-	private static final long							serialVersionUID	= 1L;
+	private static final long			serialVersionUID	= 1L;
 
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[A-Z]{3}([0-9]{2})?-[0-9]{2}-[0-9]{6}")
-	private String										ticker;
+	private String						ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
 	@Past
-	private Date										creationDate;
+	private Date						creationDate;
 
 	@NotNull
-	private KindOfRound									kindOfRound;
+	private KindOfRound					kindOfRound;
 
 	@NotBlank
-	private String										title;
+	private String						title;
 
 	@NotBlank
-	private String										description;
+	private String						description;
 
 	@NotNull
 	@Valid
-	private Money										amount;
+	private Money						amount;
 
 	@URL
-	private String										link;
+	private String						link;
 
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany(mappedBy = "round")
-	private Collection<@Valid Activity>					workProgramme;
-
+	@NotNull
 	@ManyToOne(optional = false)
-	private Entrepreneur								entrepreneur;
+	@Valid
+	private Entrepreneur				entrepreneur;
 
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany()
-	private Collection<@Valid InvestmentApplication>	application;
+	@OneToMany(mappedBy = "round")
+	private Collection<Activity>		workProgramme;
+
+	@LazyCollection(LazyCollectionOption.FALSE)
+	@OneToMany(mappedBy = "investmentApplied")
+	private List<InvestmentApplication>	application;
 
 	@OneToMany(mappedBy = "round")
 	@LazyCollection(LazyCollectionOption.FALSE)
-	private List<AccountingRecord>						record;
+	private List<AccountingRecord>		record;
 
-	@OneToOne(optional = true)
-	private DiscussionForum								forum;
+	@Valid
+	@OneToOne(mappedBy = "investmentRound")
+	private DiscussionForum				forum;
 
 
 	@Transient

@@ -23,6 +23,7 @@ authenticated.discussion-forum.form.button.update = Add user
 
 authenticated.discussion-forum.form.label.investor = Initial investor
 authenticated.discussion-forum.check.error = It's necessary a forum creation confirmation
+authenticated.discussion-forum.form.error.userToAdd = There are not more users to add
 
 authenticated.discussion-forum.form.button.message.create = Create message
 authenticated.discussion-forum.form.button.delete = Delete forum

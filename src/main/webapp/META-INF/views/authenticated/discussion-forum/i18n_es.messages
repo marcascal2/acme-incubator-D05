@@ -24,6 +24,7 @@ authenticated.discussion-forum.form.button.update.forum = Gestionar foro
 authenticated.discussion-forum.form.button.update = Añadir usuario
 
 authenticated.discussion-forum.check.error = Es necesaria una confirmación de creación del foro
+authenticated.discussion-forum.form.error.userToAdd = No hay más usuarios para añadir
 
 authenticated.discussion-forum.form.button.message.create = Crear mensaje
 authenticated.discussion-forum.form.button.delete = Eliminar foro

@@ -34,10 +34,10 @@ public class DiscussionForum extends DomainEntity {
 	private InvestmentRound				investmentRound;
 
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany
+	@OneToMany(mappedBy = "forum")
 	private Collection<@Valid Message>	messages;
 
-	@ManyToMany
+	@ManyToMany()
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<@Valid Investor>		investor;
 

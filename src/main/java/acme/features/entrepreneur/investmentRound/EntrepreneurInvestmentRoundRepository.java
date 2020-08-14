@@ -65,4 +65,13 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select m from Message m")
 	Collection<Message> findAllMessages();
+
+	@Query("select m from Activity m")
+	List<Activity> findAllActivities();
+
+	@Query("select m from AccountingRecord m")
+	List<AccountingRecord> findAllRecords();
+
+	@Query("select m from InvestmentApplication m")
+	List<InvestmentApplication> findAllApplications();
 }
