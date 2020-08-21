@@ -58,7 +58,6 @@
 			<acme:menu-suboption code="master.menu.administrator.inquires" action="/administrator/inquire/list" />
 			<acme:menu-suboption code="master.menu.administrator.challenges" action="/administrator/challenge/list" />
 			<acme:menu-suboption code="master.menu.administrator.technologyrecords.list" action="/administrator/technology-record/list" />
-			<acme:menu-suboption code="master.menu.administrator.banners" action="/administrator/banner/list" />
 			<acme:menu-suboption code="master.menu.administrator.overtures" action="/administrator/overture/list" />
 			<acme:menu-suboption code="master.menu.administrator.toolrecords" action="/administrator/tool-record/list" />
 			<acme:menu-separator />
@@ -67,7 +66,6 @@
 			<acme:menu-suboption code="master.menu.administrator.technologyrecords.create" action="/administrator/technology-record/create" />
 			<acme:menu-suboption code="master.menu.administrator.notice.create" action="/administrator/notice/create" />
 			<acme:menu-suboption code="master.menu.administrator.overtures.create" action="/administrator/overture/create" />
-			<acme:menu-suboption code="master.menu.administrator.banners.create" action="/administrator/banner/create" />
 			<acme:menu-suboption code="master.menu.administrator.toolrecord.create" action="/administrator/tool-record/create" />
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show" />
