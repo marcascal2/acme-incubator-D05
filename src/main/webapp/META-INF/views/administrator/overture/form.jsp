@@ -26,7 +26,7 @@
 	<acme:form-submit test="${ command == 'show' }" 
 		code="administrator.overture.form.button.update" action="/administrator/overture/update"/>
 	
-	<acme:form-submit test="${ command == 'show' }" 
+	<acme:form-submit test="${ command != 'create' }" 
 		code="administrator.overture.form.button.delete" action="/administrator/overture/delete"/>
 	
 	<acme:form-submit test="${ command == 'create' }" 

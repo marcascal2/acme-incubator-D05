@@ -28,7 +28,7 @@
 	<acme:form-submit test="${ command == 'show' }" code="administrator.toolrecord.form.button.update"
 		action="/administrator/tool-record/update" />
 
-	<acme:form-submit test="${ command == 'show' }" code="administrator.toolrecord.form.button.delete"
+	<acme:form-submit test="${ command != 'create' }" code="administrator.toolrecord.form.button.delete"
 		action="/administrator/tool-record/delete" />
 
 	<acme:form-submit test="${ command == 'create' }" code="administrator.toolrecord.form.button.create"

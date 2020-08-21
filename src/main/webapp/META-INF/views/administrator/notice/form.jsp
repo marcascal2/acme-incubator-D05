@@ -37,10 +37,10 @@
 		</h5>
 		<h6>Los links deben ser introducidos separados por comas(,)</h6>
 		<acme:form-textarea code="" path="relatedNotices" />
+		
+		<acme:form-checkbox code="administrator.notice.form.label.check" path="accept"/>
 	</jstl:if>
-
-	<acme:form-checkbox code="administrator.notice.form.label.check" path="accept"/>
-
+	
 	<acme:form-submit test="${ command == 'create' }" code="administrator.technology-record.form.button.create"
 		action="/administrator/notice/create" />
 	<acme:form-return code="administrator.notice.form.button.return" />

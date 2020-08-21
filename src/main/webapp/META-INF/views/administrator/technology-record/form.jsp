@@ -28,7 +28,7 @@
 	<acme:form-submit test="${ command == 'show' }" code="administrator.technology-record.form.button.update"
 		action="/administrator/technology-record/update" />
 
-	<acme:form-submit test="${ command == 'show' }" code="administrator.technology-record.form.button.delete"
+	<acme:form-submit test="${ command != 'create' }" code="administrator.technology-record.form.button.delete"
 		action="/administrator/technology-record/delete" />
 
 	<acme:form-submit test="${ command == 'create' }" code="administrator.technology-record.form.button.create"

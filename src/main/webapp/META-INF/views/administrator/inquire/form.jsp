@@ -26,7 +26,7 @@
 	<acme:form-submit test="${ command == 'show' }" 
 		code="administrator.inquire.form.button.update" action="/administrator/inquire/update"/>
 
-	<acme:form-submit test="${ command == 'show' }" 
+	<acme:form-submit test="${ command != 'create' }" 
 		code="administrator.inquire.form.button.delete" action="/administrator/inquire/delete"/>
 
 	<acme:form-submit test="${ command == 'create' }" 
