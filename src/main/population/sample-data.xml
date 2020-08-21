@@ -645,8 +645,6 @@
 		<property name="brand" value="Visa Oro" />
 		<property name="expirationDate" value="06/2022" />
 		<property name="cvv" value="123" />
-		<property name="banner" ref="banner03" />
-		<property name="patron" ref="patron1Patron" />
 	</bean>
 
 	<bean id="card02" class="acme.entities.creditCards.CreditCard">
@@ -655,8 +653,6 @@
 		<property name="brand" value="Visa Oro" />
 		<property name="expirationDate" value="09/2022" />
 		<property name="cvv" value="145" />
-		<property name="banner" ref="banner06" />
-		<property name="patron" ref="patron2Patron" />
 	</bean>
 
 	<bean id="card03" class="acme.entities.creditCards.CreditCard">
@@ -665,7 +661,6 @@
 		<property name="brand" value="Visa Oro" />
 		<property name="expirationDate" value="09/2024" />
 		<property name="cvv" value="136" />
-		<property name="banner" ref="banner01" />
 	</bean>
 
 	<!-- Patrons -->

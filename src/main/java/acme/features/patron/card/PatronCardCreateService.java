@@ -65,9 +65,6 @@ public class PatronCardCreateService implements AbstractCreateService<Patron, Cr
 		result = new CreditCard();
 
 		result.setPatron(null);
-		Integer id = request.getModel().getInteger("banner");
-		Banner banner = this.repository.findBannerById(id);
-		result.setBanner(banner);
 
 		return result;
 	}

@@ -9,7 +9,6 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 
-import acme.entities.banners.Banner;
 import acme.entities.roles.Patron;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -46,9 +45,5 @@ public class CreditCard extends DomainEntity {
 	@Valid
 	@OneToOne(optional = true)
 	private Patron				patron;
-
-	@Valid
-	@OneToOne(optional = true)
-	private Banner				banner;
 
 }

@@ -31,11 +31,11 @@ public class Patron extends UserRole {
 	@NotBlank
 	private String						organisationName;
 
-	@OneToOne(mappedBy = "patron")
+	@OneToOne(optional = true)
 	@Valid
 	private CreditCard					card;
 
 	@LazyCollection(LazyCollectionOption.FALSE)
-	@OneToMany
+	@OneToMany(mappedBy = "patron")
 	private Collection<@Valid Banner>	banners;
 }
