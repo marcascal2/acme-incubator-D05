@@ -86,6 +86,17 @@ public class AuthenticatedDiscussionForumUpdateService implements AbstractUpdate
 		model.setAttribute("userToAdd", null);
 
 		request.unbind(entity, model);
+
+		Boolean result = false;
+		int idUA = request.getPrincipal().getAccountId();
+		UserAccount ua = this.repository.findOneUserAccountById(idUA);
+		Entrepreneur e = this.repository.findEntrepreneurById(idUA);
+
+		if (ua.getRoles().contains(e)) {
+			result = true;
+		}
+
+		model.setAttribute("entrepreneurRole", result);
 	}
 
 	@Override

@@ -25,7 +25,7 @@
 
 	<jstl:if test="${command == 'create' || canUpdate}">
 		<acme:form-textbox code="bookkeeper.accounting-record.form.label.title" path="title" />
-		<acme:form-textbox code="bookkeeper.accounting-record.form.label.status" path="status" />
+		<acme:form-textbox code="bookkeeper.accounting-record.form.label.status" path="status" placeholder="DRAFT or PUBLISHED"/>
 		<acme:form-textbox code="bookkeeper.accounting-record.form.label.body" path="body" />
 
 		<acme:form-submit test="${command == 'create'}" code="bookkeeper.accounting-record.form.button.create" action="/bookkeeper/accounting-record/create" />

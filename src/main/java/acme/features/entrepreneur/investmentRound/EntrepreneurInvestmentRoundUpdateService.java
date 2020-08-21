@@ -97,6 +97,11 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 			errors.state(request, !isSpamES, "finalMode", "entrepreneur.investment-round.form.error.spam");
 		}
 
+		List<InvestmentApplication> applications = entity.getApplication().stream().collect(Collectors.toList());
+		boolean canDelete = applications.isEmpty() ? true : applications.stream().allMatch(x -> x.getStatus() == ApplicationStatus.REJECTED);
+
+		request.getModel().setAttribute("canDelete", canDelete);
+
 	}
 
 	@Override

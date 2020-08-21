@@ -45,6 +45,7 @@ public class BookkeeperInvestmentRoundShowService implements AbstractShowService
 		int id = model.getInteger("id");
 
 		model.setAttribute("invId", id);
+
 	}
 
 	@Override

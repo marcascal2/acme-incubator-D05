@@ -48,7 +48,7 @@ public class CreditCard extends DomainEntity {
 	private Patron				patron;
 
 	@Valid
-	@OneToOne(optional = false)
+	@OneToOne(optional = true)
 	private Banner				banner;
 
 }

@@ -73,7 +73,7 @@ public class AuthenticatedCardCreateService implements AbstractCreateService<Aut
 		assert request != null;
 		assert entity != null;
 		Integer id = request.getModel().getInteger("patron");
-		Patron patron = this.repository.findOnePatronByUserAccountId(id);
+		Patron patron = this.repository.findPatronById(id);
 		entity.setPatron(patron);
 		entity.getPatron().setCard(entity);
 		this.repository.save(entity);

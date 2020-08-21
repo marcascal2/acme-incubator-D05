@@ -75,7 +75,13 @@ public class PatronBannerDeleteService implements AbstractDeleteService<Patron, 
 		assert request != null;
 		assert entity != null;
 
-		entity.setCard(null);
+		if (entity.getCard() != null) {
+			entity.getCard().setPatron(null);
+			entity.getCard().setBanner(null);
+			this.repository.delete(entity.getCard());
+		}
+
+		entity.setPatron(null);
 		this.repository.delete(entity);
 
 	}

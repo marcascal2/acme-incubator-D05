@@ -11,6 +11,7 @@ import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
 import acme.framework.entities.Principal;
+import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -60,7 +61,16 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 
 		model.setAttribute("noMessages", entity.getMessages().isEmpty());
 
-		model.setAttribute("isInvestor", request.getPrincipal().hasRole(Investor.class));
+		Boolean result = false;
+		int idUA = request.getPrincipal().getAccountId();
+		UserAccount ua = this.repository.findOneUserAccountById(idUA);
+		Entrepreneur e = this.repository.findEntrepreneurById(idUA);
+
+		if (ua.getRoles().contains(e)) {
+			result = true;
+		}
+
+		model.setAttribute("entrepreneurRole", result);
 
 	}
 

@@ -19,4 +19,4 @@ bookkeeper.investment-round.label.ticker = Ticker
 bookkeeper.investment-round.button.return = Return
 bookkeeper.investment-round.form.button.activity = Show work programme
 bookkeeper.investment-round.form.button.accounting = Show accounting records
-bookkeeper.investment-round-not-mine.form.button.create.accounting = Write a record for this round
+bookkeeper.investment-round.form.button.create.accounting = Write a record for this round

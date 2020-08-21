@@ -14,6 +14,7 @@ import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.components.Response;
+import acme.framework.entities.Principal;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractCreateService;
 
@@ -28,7 +29,16 @@ public class BookkeeperAccountingRecordCreateService implements AbstractCreateSe
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		boolean isAuthorised = request.getPrincipal().hasRole(Bookkeeper.class);
+		boolean isAuthorised;
+		Bookkeeper bookkeeper;
+		Principal principal;
+
+		principal = request.getPrincipal();
+
+		int id = request.getPrincipal().getActiveRoleId();
+		bookkeeper = this.repository.findBookkeeperById(id);
+
+		isAuthorised = bookkeeper.getUserAccount().getId() == principal.getAccountId();
 
 		return isAuthorised;
 	}

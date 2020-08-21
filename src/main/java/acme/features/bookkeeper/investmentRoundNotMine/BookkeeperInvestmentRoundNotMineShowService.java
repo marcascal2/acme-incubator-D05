@@ -41,16 +41,6 @@ public class BookkeeperInvestmentRoundNotMineShowService implements AbstractShow
 
 		request.unbind(entity, model, "title", "kindOfRound", "creationDate", "description", "amount", "link", "ticker");
 
-		int roundId = request.getModel().getInteger("id");
-		int keeperId = request.getPrincipal().getActiveRoleId();
-
-		Bookkeeper b = this.repository.findBookkeeperById(keeperId);
-		Collection<Bookkeeper> keeper = this.repository.findManyBookkeepers(roundId);
-
-		boolean isMine = keeper.contains(b);
-
-		model.setAttribute("isMine", !isMine);
-
 		int id = model.getInteger("id");
 
 		model.setAttribute("invId", id);

@@ -35,14 +35,15 @@
 		<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.messages"
 			action="/authenticated/message/list?id=${forumId}" />
 
-		<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.update.forum"
-			action="/authenticated/discussion-forum/update?id=${forumId}" />
-
+		<jstl:if test="${entrepreneurRole}">
+			<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.update.forum"
+				action="/authenticated/discussion-forum/update?id=${forumId}" />
+		</jstl:if>
+		
 		<acme:form-submit method="get" code="authenticated.discussion-forum.form.button.message.create"
 			action="/authenticated/message/create?forumId=${forumId}" />
 
-		<acme:form-submit test="${!isInvestor}" code="authenticated.discussion-forum.form.button.delete"
-			action="/authenticated/discussion-forum/delete" />
+
 	</jstl:if>
 
 	<jstl:if test="${command == 'update'}">
