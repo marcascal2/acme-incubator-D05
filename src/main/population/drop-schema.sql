@@ -59,14 +59,6 @@
        drop 
        foreign key `FKm5owhlecb7x22m3y73l50p0pb`;
 
-    alter table `discussion_forum_message` 
-       drop 
-       foreign key `FKafe6r8il0imnloykcaegsots3`;
-
-    alter table `discussion_forum_message` 
-       drop 
-       foreign key `FKet7pg2eb44o8klp2hcvkh1my8`;
-
     alter table `entrepreneur` 
        drop 
        foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
@@ -82,22 +74,6 @@
     alter table `investment_round` 
        drop 
        foreign key `FKkj1l8c2ftn9c65y061me6t37j`;
-
-    alter table `investment_round` 
-       drop 
-       foreign key `FK4awqwgh5l0b0j16ur2g6afu0p`;
-
-    alter table `investment_round_investment_application` 
-       drop 
-       foreign key `FKqs2rsd4sb5errg2uiv8tww7g3`;
-
-    alter table `investment_round_investment_application` 
-       drop 
-       foreign key `FKni3r2yvw2xmwmkq040ts9ln4g`;
-
-    alter table `investor` 
-       drop 
-       foreign key `FKdhwcb7642hi219n23ajpvow43`;
 
     alter table `investor` 
        drop 
@@ -126,6 +102,10 @@
     alter table `notice_related_notices` 
        drop 
        foreign key `FKqc9an4dp5k6wuis8dyx289lg2`;
+
+    alter table `patron` 
+       drop 
+       foreign key `FKlyiwy22y6u5hmqeb4s0bmoh13`;
 
     alter table `patron` 
        drop 
@@ -179,8 +159,6 @@
 
     drop table if exists `discussion_forum_investor`;
 
-    drop table if exists `discussion_forum_message`;
-
     drop table if exists `entrepreneur`;
 
     drop table if exists `inquire`;
@@ -188,8 +166,6 @@
     drop table if exists `investment_application`;
 
     drop table if exists `investment_round`;
-
-    drop table if exists `investment_round_investment_application`;
 
     drop table if exists `investor`;
 
