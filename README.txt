@@ -16,3 +16,5 @@ up and running very quickly.
 We consider that the relationship of Investment Round with Activity is ManyToMany because we think that the same Activity can be performed in different work programs
 
 We consider that when a request from a user to be an bookkeeper is rejected, that user cannot make more requests to be an bookkeeper.
+
+We consider that the justification in the accepted applications is not necessary, but if it is entered, it is saved. Conversely, in the case of the rejected ones, the justification is mandatory as the statement marks.
